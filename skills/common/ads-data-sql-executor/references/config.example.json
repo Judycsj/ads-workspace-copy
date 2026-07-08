@@ -1,0 +1,22 @@
+{
+  "python_bin": "/path/to/python-with-dataservice",
+  "personal_token": "replace-with-your-token",
+  "end_user": "your.name@shopee.com",
+  "presto_queue": "mkplpaidads-adhoc",
+  "idc_region": "SG",
+  "priority": "25",
+  "clickhouse": {
+    "clusters": {
+      "sg": {
+        "url": "https://clickhouse-office-only-ytl.data-infra.shopee.io",
+        "auth": "UserName-ClusterName:password",
+        "timeout_seconds": 30
+      },
+      "us_va2": {
+        "url": "https://clickhouse-office-only-us-va2.data-infra.shopee.io",
+        "auth": "UserName-ClusterName:password",
+        "timeout_seconds": 30
+      }
+    }
+  }
+}

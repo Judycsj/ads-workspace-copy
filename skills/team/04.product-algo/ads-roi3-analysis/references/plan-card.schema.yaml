@@ -1,0 +1,81 @@
+# 分析计划卡 schema/Analysis Plan Card Schema
+# hub 的唯一输出、所有 spoke 的统一输入。契约改动须升 version 并向后兼容。
+# 起草模板：plan-card.template.yaml；校验脚本：../scripts/validate_plan_card.py。
+version: 1
+updated: "2026-06-23"
+
+tracks:
+  快速: { 适用: [读数, 校验], 确认次数上限: 1, 必填: core }
+  标准: { 适用: [评估, 诊断], 确认次数上限: 2, 必填: core + facts_base }
+  完整: { 适用: [探索, 决策, 合成], 确认次数上限: 3, 必填: core + full }
+
+fields:
+  core:   # 所有流程必填
+    decision:
+      desc: 这个分析改变什么决策；答不出→不立项或降为事实澄清（路由 ads-knowledge-qa）
+      type: string
+      required: true
+    question:
+      desc: 一句话问题
+      type: string
+      required: true
+    axes:
+      question_type: { enum: [校验, 读数, 诊断, 探索, 评估, 决策], required: true }
+      lever:        { enum: [发多少, 发给谁, 怎么发, 怎么控], note: 探索/评估/决策类必填 }
+      layer:        { enum: [效果指标层, 控制器层, 模型层, 策略层, 数据口径层], note: 诊断/校验类必填，其余默认效果指标层 }
+      slices:       { type: list, 取值: [region, 时段, 人群, 商品品类, 价格带, 渠道, 漏斗节点] }
+      evidence:     { enum: [AB实验, 观测对比, 线上trace, 模型外推], note: 模型外推仅限标定区（见定律"深档饱和"） }
+    scope:
+      time_window:  { desc: 起止日期；只用满日（表落库滞后约 2 小时） }
+      regions:      { type: list }
+      experiment:   { desc: 实验标识/exp_tag/桶号；exp_tag↔bucket 映射必须显式写出 }
+    caliber:
+      value_metric:
+        enum: [advv, broad_gmv, platform_gmv, guardrail, cost_ratio]
+        required: true
+        # cost_ratio：预算转移类实验读的是 realized 券成本倍数 R（cost 口径，非 value 口径），
+        # 单一目标=成本达标；2026-06-13 验收第一跑补入（原 enum 缺此项）
+      multi_caliber: { type: bool, desc: 高风险决策须 true，多口径并行分别给结论 }
+      notes:        { desc: 口径备注（gross/net、归因窗口、tz 等） }
+    audience:       { enum: [自己, PM, 老板], desc: 决定报告版本（全量版/决策版/三句话版） }
+    output:
+      report_version: { enum: [全量版, 决策版, 三句话版] }
+      archive_path:   { desc: "报告归档文件夹（不是单文件）。ROI3 分析强制按'一分析一中文文件夹'：docs/personal/<user>/roi3/experiments/<中文分析事项>-<YYYYMMDD>/，内含 <中文报告名>-<YYYYMMDD>.md + 伴生 -repro.md，多版报告同文件夹。详见 report-skeleton.md'归档结构与命名'" }
+    route:
+      entry_id:      { desc: routing-matrix.yaml entry id }
+      entrypoint:    { desc: skill name 或 playbook path }
+      maturity:      { enum: [skill, playbook, 手工, 超域] }
+    track:          { enum: [快速, 标准, 完整] }
+    estimated_cost: { desc: 预计耗时（分钟级/小时级），来自注册表 entry }
+
+  full:   # 完整流程附加（探索/决策/合成）
+    hypothesis:
+      statement:     { desc: 初始假设（从定律台账+历史计划卡起草；快照类标"待重验"） }
+      kill_criteria: { desc: 什么数据会推翻它（反证条件，必填） }
+    facts_base:
+      desc: 事实底座——本次依赖的机制/口径事实清单，逐条标"已确认/待验证"；
+        取证刷新四步：知识库锁概念 → AB 配置锁分支 → 代码锁实现 → 最新数据补数字
+      type: list
+    sub_analyses:
+      desc: 父问题的子格子清单 + 优先级（对决策影响大、取数便宜的先做）
+      type: list
+    checkpoints:
+      desc: 中期读数节点（长分析必设；节点回贴一句话方向性结论）
+      type: list
+    pending:
+      desc: 提问预算装不下的待定项，执行中按需补
+      type: list
+
+example:
+  decision: 决定预算转移实验 MY 档2 是继续压系数还是加流量
+  question: MY 档2（695008）的 realized cost 离 16.04x 目标还差多少、靠压系数还够不够
+  axes: { question_type: 评估, lever: 发多少, layer: 效果指标层, slices: [region, 时段], evidence: AB实验 }
+  scope: { time_window: 2026-06-06..2026-06-12, regions: [MY], experiment: "预算转移实验 桶695008 vs 对照695009" }
+  caliber: { value_metric: guardrail, multi_caliber: true, notes: realized cost 口径见 data-sources.md }
+  audience: 自己
+  output: { report_version: 全量版, archive_path: "docs/personal/<user>/roi3/experiments/MY预算转移实验读数-20260606/" }
+  track: 标准
+  estimated_cost: 分钟级
+  hypothesis:
+    statement: 深档已饱和，单靠压系数够不到 16x（引自定律"深档饱和"，2026-06 快照，待重验）
+    kill_criteria: 若 0.14 档满日 R 持续 ≥14x 且无凌晨飙高，则假设被推翻

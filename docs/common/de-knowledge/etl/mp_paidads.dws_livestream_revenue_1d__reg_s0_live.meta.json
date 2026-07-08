@@ -1,0 +1,18 @@
+{
+  "table": "dws_livestream_revenue_1d__reg_s0_live",
+  "asset_ids": [
+    "6524120"
+  ],
+  "status": "unchanged",
+  "old_exists": true,
+  "old_hash": "e6f341db8324264661b403bce40f940d9e99cc5e2ee5b49c50b9445468eab7e2",
+  "new_hash": "e6f341db8324264661b403bce40f940d9e99cc5e2ee5b49c50b9445468eab7e2",
+  "fetches": [
+    {
+      "asset_id": "6524120",
+      "ok": true,
+      "fetch_info": "正在提取 asset_id=6524120 的 SQL ...\n任务名称: dws_livestream_revenue_1d__id_s0_live_regional\nSQL 长度: 5957 字符\n--- SQL 内容 ---",
+      "sql_chars": 5958
+    }
+  ]
+}

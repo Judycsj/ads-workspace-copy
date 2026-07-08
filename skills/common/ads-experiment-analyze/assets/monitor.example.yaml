@@ -1,0 +1,272 @@
+experiment:
+  name: example_ads_experiment
+  type: traffic
+  business_direction: auto # auto | bidding | voucher | model | recall | traffic
+  report_url: "https://abtest.shopee.io/scenes/42/experiment/viewReport?shareId=321230&tab=1"
+  owner: ""
+  target_pricing_types: [all, "target_roas 2.0"]
+
+analysis:
+  language: zh-CN
+  window_days: 7
+  noise_band_pct: 0.5
+  rev_advv_gap_risk_pct: 0.5
+  daily_compare: yesterday_vs_day_before
+  market_baseline: all_buckets_sum
+  min_direction_consistency: 0.6
+  day_over_day_jump_pct: 30
+  single_day_dominance_pct: 50
+  auto_infer: true
+  ask_only_ambiguities: true
+  show_statistical_scope: true
+  split_promo_days: true
+  promo_days:
+    monthly_days: [15, 25]
+    double_day: true
+  region_scope: all # all | top_gmv | selected
+  default_merge_policy:
+    base: separate
+    treatment: separate
+  aa_policy:
+    enabled: auto
+    source: inferred_base_groups
+    warn_if_missing: true
+
+selectors:
+  group_field: abtest_group
+  date_fields: [abtest_date, grass_date, date, dt]
+  treatment_values: []
+  market_baseline_values: [all, overall, ALL, total, all_buckets_sum]
+  segment_fields: [pricing_type, region]
+
+statistical_scope:
+  requested_dates: []
+  actual_returned_dates: []
+  regions: []
+  filters: {}
+  template_tabs: []
+  group_mapping:
+    base_groups: []
+    treatment_groups: []
+  traffic_allocation:
+    # Required in reports. For traffic-side experiments, use AB traffic percentage.
+    # For bidding tail-bucket experiments, use tail/bucket ratio such as "20/100 = 20%".
+    by_group: []
+    by_region: []
+  merge_policy:
+    base: separate
+    treatment: separate
+  aa_groups: []
+
+metrics:
+  traffic_core:
+    - name: ads_revenue_usd
+      aliases: [rev, rev_usd, revenue_usd]
+      direction: increase
+      required: true
+      decision_role: primary
+    - name: advv_cost_1d
+      aliases: [advv, advv_cost]
+      direction: increase
+      required: true
+      decision_role: primary
+    - name: gmv
+      direction: non_decrease
+      required: false
+      decision_role: secondary
+    - name: imp_cnt
+      direction: non_decrease
+      required: false
+      decision_role: secondary
+    - name: cpm
+      formula: ads_revenue_usd / imp_cnt
+      direction: increase
+      required: false
+      decision_role: secondary
+    - name: advv_per_imp
+      formula: advv_cost_1d / imp_cnt
+      direction: increase
+      required: false
+      decision_role: secondary
+  voucher_core:
+    - name: gmv
+      direction: increase
+      required: true
+      decision_role: secondary
+    - name: gmv_995_v2
+      direction: non_decrease
+      required: true
+      decision_role: constraint
+    - name: ads_revenue_usd
+      aliases: [rev, rev_usd, revenue_usd]
+      direction: increase
+      required: true
+      decision_role: primary
+    - name: advv_cost_1d
+      aliases: [advv, advv_cost]
+      direction: increase
+      required: true
+      decision_role: primary
+    - name: ads_voucher_cost
+      direction: non_increase
+      required: false
+      decision_role: secondary
+    - name: imp_cnt
+      direction: non_decrease
+      required: false
+      decision_role: secondary
+    - name: cpm
+      formula: ads_revenue_usd / imp_cnt
+      direction: increase
+      required: false
+      decision_role: secondary
+    - name: advv_per_imp
+      formula: advv_cost_1d / imp_cnt
+      direction: increase
+      required: false
+      decision_role: secondary
+  bidding_core:
+    - name: cpm
+      formula: rev_usd / imp_cnt
+      direction: increase
+      scope: both
+      required: true
+      decision_role: primary
+    - name: advv_per_imp
+      formula: advv_cost / imp_cnt
+      direction: increase
+      scope: both
+      required: true
+      decision_role: primary
+    - name: fulfilled_rev_pct_1d
+      formula_mode: absolute_diff_pct_points
+      direction: non_decrease
+      unit: pp
+      scope: both
+      required: true
+      decision_role: constraint
+    - name: underbid_rev_pct_1d
+      formula_mode: absolute_diff_pct_points
+      direction: non_increase
+      unit: pp
+      scope: both
+      required: true
+      decision_role: constraint
+    - name: overbid_rev_pct_1d
+      formula_mode: absolute_diff_pct_points
+      direction: non_increase
+      unit: pp
+      scope: both
+      required: true
+      decision_role: constraint
+    - name: no_gmv_rev_pct_1d
+      formula_mode: absolute_diff_pct_points
+      direction: non_increase
+      unit: pp
+      scope: both
+      required: true
+      decision_role: constraint
+    - name: underbid_rev_pct_7d
+      formula_mode: absolute_diff_pct_points
+      direction: non_increase
+      unit: pp
+      scope: both
+      required: false
+      decision_role: constraint
+    - name: overbid_rev_pct_7d
+      formula_mode: absolute_diff_pct_points
+      direction: non_increase
+      unit: pp
+      scope: both
+      required: false
+      decision_role: constraint
+    - name: no_gmv_rev_pct_7d
+      formula_mode: absolute_diff_pct_points
+      direction: non_increase
+      unit: pp
+      scope: both
+      required: false
+      decision_role: constraint
+    - name: rev_usd
+      direction: increase
+      scope: both
+      required: false
+      decision_role: secondary
+    - name: net_rev_after_rebate
+      direction: increase
+      scope: both
+      required: false
+      decision_role: secondary
+    - name: advv_cost
+      direction: increase
+      scope: both
+      required: false
+      decision_role: secondary
+    - name: advv_999
+      aliases: [advv_cost_999]
+      direction: non_decrease
+      scope: both
+      required: false
+      diagnostic: true
+      decision_role: diagnostic
+    - name: advv_999_per_imp
+      aliases: [advv_cost_999_per_imp, "advv 999 per imp", "advv_999 per imp"]
+      formula: advv_cost_999 / imp_cnt
+      formula_mode: ratio_uplift
+      direction: non_decrease
+      scope: both
+      required: false
+      diagnostic: true
+      decision_role: diagnostic
+  guardrail:
+    - name: guardrail_gmv_995_v2
+      source_metric: gmv_995_v2
+      source_aliases: [gmv_995_v2]
+      direction: non_decrease
+      fail_decrease_pct: 0.5
+      applies_to: [traffic, model, recall]
+      required: true
+      decision_role: guardrail
+    - name: search_gmv_995_v2
+      direction: non_decrease
+      fail_decrease_pct: 0.5
+      applies_to: [traffic, voucher, model, recall]
+      required: false
+      decision_role: guardrail
+    - name: rcmd_unify_gmv_995_v2
+      direction: non_decrease
+      fail_decrease_pct: 0.5
+      applies_to: [traffic, voucher, model, recall]
+      required: false
+      decision_role: guardrail
+    - name: guardrail_fulfill
+      source_metric: fulfilled_rev_pct(7d)
+      source_aliases: [fulfilled_rev_pct_7d]
+      formula_mode: absolute_diff_pct_points
+      direction: non_decrease
+      unit: pp
+      fail_decrease_pp: 2.0
+      applies_to: [bidding]
+      required: false
+      decision_role: guardrail
+    - name: guardrail_voucher
+      formula: gmv_995_v2 / 4 + advv_cost_1d - ads_voucher_cost
+      pass_min: 0
+      allow_relative_formula: true
+      applies_to: [voucher]
+      required: false
+    - name: bad_query_rate
+      direction: non_increase
+      fail_deterioration_pct: 1.0
+      applies_to: [traffic, voucher, model, recall]
+      required: false
+
+outputs:
+  markdown: true
+  json: true
+  google_doc:
+    enabled: false
+    doc_url: ""
+  seatalk:
+    enabled: false
+    webhook: ""

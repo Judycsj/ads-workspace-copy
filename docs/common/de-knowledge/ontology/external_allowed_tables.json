@@ -1,0 +1,297 @@
+{
+  "generated_at": "2026-05-19T08:11:48+00:00",
+  "source_manifest": "dist/business_docs/manifest.json",
+  "tables": {
+    "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live": {
+      "requested_table": "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live",
+      "canonical_table": "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live",
+      "description": "",
+      "allowed_doc_ids": [
+        "roi3_ads_voucher"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/roi3_ads_voucher.md"
+      ],
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "h",
+        "bz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region"
+      ],
+      "columns_count": 115,
+      "doc_path": "dist/external_tables/mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live.md",
+      "raw_path": "data/business_docs/external_tables/mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live.json",
+      "status": "external_allowed",
+      "resolution": "describe:exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    },
+    "mp_item.dim_item__reg_s0_live": {
+      "requested_table": "mp_item.dim_item__reg_s0_live",
+      "canonical_table": "mp_item.dim_item__reg_s0_live",
+      "description": "",
+      "allowed_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "columns_count": 103,
+      "doc_path": "dist/external_tables/mp_item.dim_item__reg_s0_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_item.dim_item__reg_s0_live.json",
+      "status": "external_allowed",
+      "resolution": "describe:exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    },
+    "mp_mgmt.ads_mgmtview_pl_1d__reg_live": {
+      "requested_table": "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+      "canonical_table": "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+      "description": "",
+      "allowed_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "columns_count": 36,
+      "doc_path": "dist/external_tables/mp_mgmt.ads_mgmtview_pl_1d__reg_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_mgmt.ads_mgmtview_pl_1d__reg_live.json",
+      "status": "external_allowed",
+      "resolution": "describe:exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    },
+    "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live": {
+      "requested_table": "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+      "canonical_table": "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+      "description": "",
+      "allowed_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "partition_keys": [
+        "grass_date",
+        "grass_region"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region"
+      ],
+      "columns_count": 156,
+      "doc_path": "dist/external_tables/mp_mgmt.dws_order_3pl_margin_di__reg_s1_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_mgmt.dws_order_3pl_margin_di__reg_s1_live.json",
+      "status": "external_allowed",
+      "resolution": "describe:exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    },
+    "mp_mgmt.dws_order_item_rebate_di__reg_s0_live": {
+      "requested_table": "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+      "canonical_table": "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+      "description": "",
+      "allowed_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "partition_keys": [
+        "grass_date",
+        "grass_region"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region"
+      ],
+      "columns_count": 327,
+      "doc_path": "dist/external_tables/mp_mgmt.dws_order_item_rebate_di__reg_s0_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_mgmt.dws_order_item_rebate_di__reg_s0_live.json",
+      "status": "external_allowed",
+      "resolution": "describe:exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    },
+    "mp_mgmt.dws_order_item_rev_di__reg_s0_live": {
+      "requested_table": "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+      "canonical_table": "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+      "description": "",
+      "allowed_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "partition_keys": [
+        "grass_date",
+        "grass_region"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region"
+      ],
+      "columns_count": 278,
+      "doc_path": "dist/external_tables/mp_mgmt.dws_order_item_rev_di__reg_s0_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_mgmt.dws_order_item_rev_di__reg_s0_live.json",
+      "status": "external_allowed",
+      "resolution": "describe:exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    },
+    "mp_voucher.dim_voucher__reg_live": {
+      "requested_table": "mp_voucher.dim_voucher__reg_live",
+      "canonical_table": "mp_voucher.dim_voucher__reg_live",
+      "description": "",
+      "allowed_doc_ids": [
+        "roi3_ads_voucher"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/roi3_ads_voucher.md"
+      ],
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "columns_count": 69,
+      "doc_path": "dist/external_tables/mp_voucher.dim_voucher__reg_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_voucher.dim_voucher__reg_live.json",
+      "status": "external_allowed",
+      "resolution": "describe:exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    },
+    "mp_voucher.dwd_user_voucher_claim_df__reg_live": {
+      "requested_table": "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+      "canonical_table": "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+      "description": "",
+      "allowed_doc_ids": [
+        "roi3_ads_voucher"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/roi3_ads_voucher.md"
+      ],
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "columns_count": 69,
+      "doc_path": "dist/external_tables/mp_voucher.dwd_user_voucher_claim_df__reg_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_voucher.dwd_user_voucher_claim_df__reg_live.json",
+      "status": "external_allowed",
+      "resolution": "describe:exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    },
+    "traffic_omni_oa.dim_item_pc2_rate_map__reg_live": {
+      "requested_table": "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+      "canonical_table": "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+      "description": "This table contains data related to pc2 rates for items, which are internally ingested from a Google sheet maintained by local teams. It is primarily used for mapping item categories to their respective pc2 rates as part of a business event.  The primary key is item_id . The update frequeny is Daily snapshot",
+      "allowed_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "columns_count": 14,
+      "doc_path": "dist/external_tables/traffic_omni_oa.dim_item_pc2_rate_map__reg_live.md",
+      "raw_path": "data/business_docs/external_tables/traffic_omni_oa.dim_item_pc2_rate_map__reg_live.json",
+      "status": "external_allowed",
+      "resolution": "exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    },
+    "traffic_omni_oa.dwd_order_item_atc_journey_di__ar_sensitive_live": {
+      "requested_table": "traffic_omni_oa.dwd_order_item_atc_journey_di",
+      "canonical_table": "traffic_omni_oa.dwd_order_item_atc_journey_di__ar_sensitive_live",
+      "description": "This table contains order attribution details, supporting detailed queries for order items and tracking item click and source click information. The business event captures the linkage of all matching add-to-cart (ATC) events from the last 7 days for each order item. If no ATC is found in 7 days, it searches for the latest ATC in days 8-30. If no ATC is found in last 30 days, it records that ATC is not found. It identifies the first and last click events within 24 hours of the ATC event, and source1 and source2 clicks within 2 hours of their preceding events.  The primary key is order_id, order_item_id, order_model_id, group_id, bundle_order_item_id, atc_event_id, click_event_id . The update frequeny is Daily incremental updates.",
+      "allowed_doc_ids": [
+        "ads_metric_ads_item_gmv_pct",
+        "ads_metric_ads_seller_gmv_pct",
+        "ads_metric_seller_adoption"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/ads_metric_ads_item_gmv_pct.md",
+        "dist/business_docs/ads_metric_ads_seller_gmv_pct.md",
+        "dist/business_docs/ads_metric_seller_adoption.md"
+      ],
+      "partition_keys": [
+        "grass_date"
+      ],
+      "required_filters": [
+        "grass_date"
+      ],
+      "columns_count": 125,
+      "doc_path": "dist/external_tables/traffic_omni_oa.dwd_order_item_atc_journey_di.md",
+      "raw_path": "data/business_docs/external_tables/traffic_omni_oa.dwd_order_item_atc_journey_di.json",
+      "status": "external_allowed",
+      "resolution": "datamap_search:exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    },
+    "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live": {
+      "requested_table": "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+      "canonical_table": "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+      "description": "This table contains order attribution details, supporting detailed queries for order items and tracking item click and source click information. The business event captures the linkage of all matching add-to-cart (ATC) events from the last 7 days for each order item. If no ATC is found in 7 days, it searches for the latest ATC in days 8-30. If no ATC is found in last 30 days, it records that ATC is not found. It identifies the first and last click events within 24 hours of the ATC event, and source1 and source2 clicks within 2 hours of their preceding events.  The primary key is order_id, order_item_id, order_model_id, group_id, bundle_order_item_id, atc_event_id, click_event_id . The update frequeny is Daily incremental updates.",
+      "allowed_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "columns_count": 129,
+      "doc_path": "dist/external_tables/traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live.md",
+      "raw_path": "data/business_docs/external_tables/traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live.json",
+      "status": "external_allowed",
+      "resolution": "exact",
+      "allowed_usage": "Only when a matched business document explicitly allows this external table."
+    }
+  }
+}

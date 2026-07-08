@@ -1,0 +1,18 @@
+{
+  "table": "dim_shop_info_monthly__reg_s0_live",
+  "asset_ids": [
+    "4645886"
+  ],
+  "status": "unchanged",
+  "old_exists": true,
+  "old_hash": "1ed2a12812088026fea79ae394aeef01d2a236e070a62a9e2336c1ef45a4e6d1",
+  "new_hash": "1ed2a12812088026fea79ae394aeef01d2a236e070a62a9e2336c1ef45a4e6d1",
+  "fetches": [
+    {
+      "asset_id": "4645886",
+      "ok": true,
+      "fetch_info": "正在提取 asset_id=4645886 的 SQL ...\n任务名称: dim_shop_info_monthly__id_s0_live\nSQL 长度: 30874 字符\n--- SQL 内容 ---",
+      "sql_chars": 30875
+    }
+  ]
+}

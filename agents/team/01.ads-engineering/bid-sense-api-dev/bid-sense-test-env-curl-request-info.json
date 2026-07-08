@@ -1,0 +1,39 @@
+{
+  "_comment": "静态连接信息，一次填好长期复用。agent 读取此文件组装 curl 请求，request body 中的具体字段值由 TD schema.input 和用户提供的 test entity 决定。",
+  "base_endpoint": "https://http-gateway.spex.test.shopee.sg/sprpc",
+  "service_key": "f487cefe5104c82f1940217ca8529a0e",
+  "sdu": "paidads.bidsense.global.test.master.default",
+  "timeout_ms": "3000",
+  "api_commands": {
+    "general_api": "paidads.bidsense.general_api_by_pipeline",
+    "roi": "paidads.bidsense.universal_suggest_roi_by_pipeline",
+    "budget": "paidads.bidsense.universal_suggest_budget_by_pipeline"
+  },
+  "default_cid": "global",
+  "request_body_structure": {
+    "_comment": "固定外层结构，items 内的字段由各 API 的 TD schema.input element 级别字段决定",
+    "api_code": "<int, 来自 TD api_code 枚举值>",
+    "request_id": "<string, 测试时自由填写>",
+    "country": "<string, 如 SG / ID / MY>",
+    "items": [
+      {
+        "<element 级别字段>": "<值，嵌套结构参照 sample_request>"
+      }
+    ]
+  },
+  "sample_request": {
+    "_comment": "参照此样例了解 items 内嵌套字段的写法",
+    "api_code": 7,
+    "request_id": "test_20241118",
+    "country": "ID",
+    "items": [
+      {
+        "item_id": 122,
+        "get_uplift_item_info": {
+          "seller_input_roi": 2.25,
+          "suggest_roi": 2.5
+        }
+      }
+    ]
+  }
+}

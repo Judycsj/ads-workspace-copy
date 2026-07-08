@@ -1,0 +1,3018 @@
+{
+  "generated_at": "2026-05-19T18:18:11.488670+08:00",
+  "collection": "business_docs",
+  "doc_count": 11,
+  "chunk_count": 87,
+  "docs": [
+    {
+      "doc_id": "ads_metric_ads_item_gmv_pct",
+      "path": "dist/business_docs/ads_metric_ads_item_gmv_pct.md",
+      "title": "Ads Item GMV%（广告商品GMV占比）",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "metric_formula",
+      "owner": "ads_pm",
+      "source_type": "curated_metric_formula",
+      "source_refs": [
+        {
+          "type": "curated_json",
+          "path": "data/business_docs/ads_metric_formulas.json",
+          "title": "Migrated from old ads_knowledge_v3 composite_metrics; this is the curated source for generated metric formula business docs."
+        }
+      ],
+      "last_reviewed": "2026-04-02",
+      "aliases": [
+        "ads item gmv%",
+        "广告商品GMV占比",
+        "item gmv penetration"
+      ],
+      "related_tables": [
+        "mp_paidads.ads_advertise_mkt_1d"
+      ],
+      "external_tables": [
+        "traffic_omni_oa.dwd_order_item_atc_journey_di"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ads_metric_ads_item_gmv_pct.口径定义",
+          "heading": "1. 口径定义",
+          "heading_path": "1. 口径定义",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ads item gmv%",
+            "item gmv penetration",
+            "广告商品GMV占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_ads_item_gmv_pct.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_item_gmv_pct.计算公式",
+          "heading": "2. 计算公式",
+          "heading_path": "2. 计算公式",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ads item gmv%",
+            "item gmv penetration",
+            "广告商品GMV占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_ads_item_gmv_pct.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_item_gmv_pct.使用注意",
+          "heading": "3. 使用注意",
+          "heading_path": "3. 使用注意",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ads item gmv%",
+            "item gmv penetration",
+            "广告商品GMV占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_ads_item_gmv_pct.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_item_gmv_pct.推荐表",
+          "heading": "4. 推荐表",
+          "heading_path": "4. 推荐表",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ads item gmv%",
+            "item gmv penetration",
+            "广告商品GMV占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_ads_item_gmv_pct.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_item_gmv_pct.适用范围",
+          "heading": "5. 适用范围",
+          "heading_path": "5. 适用范围",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ads item gmv%",
+            "item gmv penetration",
+            "广告商品GMV占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_ads_item_gmv_pct.md"
+        }
+      ]
+    },
+    {
+      "doc_id": "ads_metric_ads_load",
+      "path": "dist/business_docs/ads_metric_ads_load.md",
+      "title": "Ads Load（广告加载率）",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "metric_formula",
+      "owner": "ads_pm",
+      "source_type": "curated_metric_formula",
+      "source_refs": [
+        {
+          "type": "curated_json",
+          "path": "data/business_docs/ads_metric_formulas.json",
+          "title": "Migrated from old ads_knowledge_v3 composite_metrics; this is the curated source for generated metric formula business docs."
+        }
+      ],
+      "last_reviewed": "2026-04-02",
+      "aliases": [
+        "ads load",
+        "广告加载率",
+        "广告渗透率",
+        "ad load rate"
+      ],
+      "related_tables": [
+        "mp_paidads.ads_advertise_take_rate_v2_1d"
+      ],
+      "external_tables": [],
+      "chunks": [
+        {
+          "chunk_id": "ads_metric_ads_load.口径定义",
+          "heading": "1. 口径定义",
+          "heading_path": "1. 口径定义",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ad load rate",
+            "ads load",
+            "广告加载率",
+            "广告渗透率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_ads_load.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_load.计算公式",
+          "heading": "2. 计算公式",
+          "heading_path": "2. 计算公式",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ad load rate",
+            "ads load",
+            "广告加载率",
+            "广告渗透率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_ads_load.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_load.使用注意",
+          "heading": "3. 使用注意",
+          "heading_path": "3. 使用注意",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ad load rate",
+            "ads load",
+            "广告加载率",
+            "广告渗透率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_ads_load.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_load.推荐表",
+          "heading": "4. 推荐表",
+          "heading_path": "4. 推荐表",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ad load rate",
+            "ads load",
+            "广告加载率",
+            "广告渗透率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_ads_load.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_load.适用范围",
+          "heading": "5. 适用范围",
+          "heading_path": "5. 适用范围",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ad load rate",
+            "ads load",
+            "广告加载率",
+            "广告渗透率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_ads_load.md"
+        }
+      ]
+    },
+    {
+      "doc_id": "ads_metric_ads_seller_gmv_pct",
+      "path": "dist/business_docs/ads_metric_ads_seller_gmv_pct.md",
+      "title": "Ads Seller GMV%（广告卖家GMV占比）",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "metric_formula",
+      "owner": "ads_pm",
+      "source_type": "curated_metric_formula",
+      "source_refs": [
+        {
+          "type": "curated_json",
+          "path": "data/business_docs/ads_metric_formulas.json",
+          "title": "Migrated from old ads_knowledge_v3 composite_metrics; this is the curated source for generated metric formula business docs."
+        }
+      ],
+      "last_reviewed": "2026-04-02",
+      "aliases": [
+        "ads seller gmv%",
+        "广告卖家GMV占比",
+        "seller gmv penetration"
+      ],
+      "related_tables": [
+        "mp_paidads.ads_advertise_mkt_1d"
+      ],
+      "external_tables": [
+        "traffic_omni_oa.dwd_order_item_atc_journey_di"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ads_metric_ads_seller_gmv_pct.口径定义",
+          "heading": "1. 口径定义",
+          "heading_path": "1. 口径定义",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ads seller gmv%",
+            "seller gmv penetration",
+            "广告卖家GMV占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_ads_seller_gmv_pct.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_seller_gmv_pct.计算公式",
+          "heading": "2. 计算公式",
+          "heading_path": "2. 计算公式",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ads seller gmv%",
+            "seller gmv penetration",
+            "广告卖家GMV占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_ads_seller_gmv_pct.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_seller_gmv_pct.使用注意",
+          "heading": "3. 使用注意",
+          "heading_path": "3. 使用注意",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ads seller gmv%",
+            "seller gmv penetration",
+            "广告卖家GMV占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_ads_seller_gmv_pct.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_seller_gmv_pct.推荐表",
+          "heading": "4. 推荐表",
+          "heading_path": "4. 推荐表",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ads seller gmv%",
+            "seller gmv penetration",
+            "广告卖家GMV占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_ads_seller_gmv_pct.md"
+        },
+        {
+          "chunk_id": "ads_metric_ads_seller_gmv_pct.适用范围",
+          "heading": "5. 适用范围",
+          "heading_path": "5. 适用范围",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "ads seller gmv%",
+            "seller gmv penetration",
+            "广告卖家GMV占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_ads_seller_gmv_pct.md"
+        }
+      ]
+    },
+    {
+      "doc_id": "ads_metric_budget_utilization",
+      "path": "dist/business_docs/ads_metric_budget_utilization.md",
+      "title": "预算使用率（Budget Utilization）",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "metric_formula",
+      "owner": "ads_pm",
+      "source_type": "curated_metric_formula",
+      "source_refs": [
+        {
+          "type": "curated_json",
+          "path": "data/business_docs/ads_metric_formulas.json",
+          "title": "Migrated from old ads_knowledge_v3 composite_metrics; this is the curated source for generated metric formula business docs."
+        }
+      ],
+      "last_reviewed": "2026-04-02",
+      "aliases": [
+        "预算使用率",
+        "预算利用率",
+        "budget utilization",
+        "budget usage rate"
+      ],
+      "related_tables": [
+        "mp_paidads.ads_campaign_valid_budget_1d"
+      ],
+      "external_tables": [],
+      "chunks": [
+        {
+          "chunk_id": "ads_metric_budget_utilization.口径定义",
+          "heading": "1. 口径定义",
+          "heading_path": "1. 口径定义",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "budget usage rate",
+            "budget utilization",
+            "预算使用率",
+            "预算利用率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_campaign_valid_budget_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_budget_utilization.md"
+        },
+        {
+          "chunk_id": "ads_metric_budget_utilization.计算公式",
+          "heading": "2. 计算公式",
+          "heading_path": "2. 计算公式",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "budget usage rate",
+            "budget utilization",
+            "预算使用率",
+            "预算利用率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_campaign_valid_budget_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_budget_utilization.md"
+        },
+        {
+          "chunk_id": "ads_metric_budget_utilization.使用注意",
+          "heading": "3. 使用注意",
+          "heading_path": "3. 使用注意",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "budget usage rate",
+            "budget utilization",
+            "预算使用率",
+            "预算利用率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_campaign_valid_budget_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_budget_utilization.md"
+        },
+        {
+          "chunk_id": "ads_metric_budget_utilization.推荐表",
+          "heading": "4. 推荐表",
+          "heading_path": "4. 推荐表",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "budget usage rate",
+            "budget utilization",
+            "预算使用率",
+            "预算利用率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_campaign_valid_budget_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_budget_utilization.md"
+        },
+        {
+          "chunk_id": "ads_metric_budget_utilization.适用范围",
+          "heading": "5. 适用范围",
+          "heading_path": "5. 适用范围",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "budget usage rate",
+            "budget utilization",
+            "预算使用率",
+            "预算利用率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_campaign_valid_budget_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_budget_utilization.md"
+        }
+      ]
+    },
+    {
+      "doc_id": "ads_metric_cpc",
+      "path": "dist/business_docs/ads_metric_cpc.md",
+      "title": "CPC（每次点击成本）",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "metric_formula",
+      "owner": "ads_pm",
+      "source_type": "curated_metric_formula",
+      "source_refs": [
+        {
+          "type": "curated_json",
+          "path": "data/business_docs/ads_metric_formulas.json",
+          "title": "Migrated from old ads_knowledge_v3 composite_metrics; this is the curated source for generated metric formula business docs."
+        }
+      ],
+      "last_reviewed": "2026-04-02",
+      "aliases": [
+        "CPC",
+        "每次点击成本",
+        "点击成本",
+        "cost per click"
+      ],
+      "related_tables": [
+        "mp_paidads.ads_advertise_mkt_1d",
+        "mp_paidads.ads_advertise_take_rate_v2_1d"
+      ],
+      "external_tables": [],
+      "chunks": [
+        {
+          "chunk_id": "ads_metric_cpc.口径定义",
+          "heading": "1. 口径定义",
+          "heading_path": "1. 口径定义",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "CPC",
+            "cost per click",
+            "每次点击成本",
+            "点击成本"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_cpc.md"
+        },
+        {
+          "chunk_id": "ads_metric_cpc.计算公式",
+          "heading": "2. 计算公式",
+          "heading_path": "2. 计算公式",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "CPC",
+            "cost per click",
+            "每次点击成本",
+            "点击成本"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_cpc.md"
+        },
+        {
+          "chunk_id": "ads_metric_cpc.使用注意",
+          "heading": "3. 使用注意",
+          "heading_path": "3. 使用注意",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "CPC",
+            "cost per click",
+            "每次点击成本",
+            "点击成本"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_cpc.md"
+        },
+        {
+          "chunk_id": "ads_metric_cpc.推荐表",
+          "heading": "4. 推荐表",
+          "heading_path": "4. 推荐表",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "CPC",
+            "cost per click",
+            "每次点击成本",
+            "点击成本"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_cpc.md"
+        },
+        {
+          "chunk_id": "ads_metric_cpc.适用范围",
+          "heading": "5. 适用范围",
+          "heading_path": "5. 适用范围",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "CPC",
+            "cost per click",
+            "每次点击成本",
+            "点击成本"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_cpc.md"
+        }
+      ]
+    },
+    {
+      "doc_id": "ads_metric_cpm",
+      "path": "dist/business_docs/ads_metric_cpm.md",
+      "title": "CPM（千次曝光成本）",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "metric_formula",
+      "owner": "ads_pm",
+      "source_type": "curated_metric_formula",
+      "source_refs": [
+        {
+          "type": "curated_json",
+          "path": "data/business_docs/ads_metric_formulas.json",
+          "title": "Migrated from old ads_knowledge_v3 composite_metrics; this is the curated source for generated metric formula business docs."
+        }
+      ],
+      "last_reviewed": "2026-04-02",
+      "aliases": [
+        "CPM",
+        "千次曝光成本",
+        "cost per mille"
+      ],
+      "related_tables": [
+        "mp_paidads.ads_advertise_mkt_1d",
+        "mp_paidads.ads_advertise_take_rate_v2_1d"
+      ],
+      "external_tables": [],
+      "chunks": [
+        {
+          "chunk_id": "ads_metric_cpm.口径定义",
+          "heading": "1. 口径定义",
+          "heading_path": "1. 口径定义",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "CPM",
+            "cost per mille",
+            "千次曝光成本"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_cpm.md"
+        },
+        {
+          "chunk_id": "ads_metric_cpm.计算公式",
+          "heading": "2. 计算公式",
+          "heading_path": "2. 计算公式",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "CPM",
+            "cost per mille",
+            "千次曝光成本"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_cpm.md"
+        },
+        {
+          "chunk_id": "ads_metric_cpm.使用注意",
+          "heading": "3. 使用注意",
+          "heading_path": "3. 使用注意",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "CPM",
+            "cost per mille",
+            "千次曝光成本"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_cpm.md"
+        },
+        {
+          "chunk_id": "ads_metric_cpm.推荐表",
+          "heading": "4. 推荐表",
+          "heading_path": "4. 推荐表",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "CPM",
+            "cost per mille",
+            "千次曝光成本"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_cpm.md"
+        },
+        {
+          "chunk_id": "ads_metric_cpm.适用范围",
+          "heading": "5. 适用范围",
+          "heading_path": "5. 适用范围",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "CPM",
+            "cost per mille",
+            "千次曝光成本"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_cpm.md"
+        }
+      ]
+    },
+    {
+      "doc_id": "ads_metric_seller_adoption",
+      "path": "dist/business_docs/ads_metric_seller_adoption.md",
+      "title": "Seller Adoption%（广告卖家渗透率）",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "metric_formula",
+      "owner": "ads_pm",
+      "source_type": "curated_metric_formula",
+      "source_refs": [
+        {
+          "type": "curated_json",
+          "path": "data/business_docs/ads_metric_formulas.json",
+          "title": "Migrated from old ads_knowledge_v3 composite_metrics; this is the curated source for generated metric formula business docs."
+        }
+      ],
+      "last_reviewed": "2026-04-02",
+      "aliases": [
+        "seller adoption",
+        "卖家渗透率",
+        "广告卖家占比",
+        "adoption rate"
+      ],
+      "related_tables": [
+        "mp_paidads.ads_advertise_mkt_1d"
+      ],
+      "external_tables": [
+        "traffic_omni_oa.dwd_order_item_atc_journey_di"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ads_metric_seller_adoption.口径定义",
+          "heading": "1. 口径定义",
+          "heading_path": "1. 口径定义",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "adoption rate",
+            "seller adoption",
+            "卖家渗透率",
+            "广告卖家占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_seller_adoption.md"
+        },
+        {
+          "chunk_id": "ads_metric_seller_adoption.计算公式",
+          "heading": "2. 计算公式",
+          "heading_path": "2. 计算公式",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "adoption rate",
+            "seller adoption",
+            "卖家渗透率",
+            "广告卖家占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_seller_adoption.md"
+        },
+        {
+          "chunk_id": "ads_metric_seller_adoption.使用注意",
+          "heading": "3. 使用注意",
+          "heading_path": "3. 使用注意",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "adoption rate",
+            "seller adoption",
+            "卖家渗透率",
+            "广告卖家占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_seller_adoption.md"
+        },
+        {
+          "chunk_id": "ads_metric_seller_adoption.推荐表",
+          "heading": "4. 推荐表",
+          "heading_path": "4. 推荐表",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "adoption rate",
+            "seller adoption",
+            "卖家渗透率",
+            "广告卖家占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_seller_adoption.md"
+        },
+        {
+          "chunk_id": "ads_metric_seller_adoption.适用范围",
+          "heading": "5. 适用范围",
+          "heading_path": "5. 适用范围",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "adoption rate",
+            "seller adoption",
+            "卖家渗透率",
+            "广告卖家占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_mkt_1d"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di"
+          ],
+          "doc_path": "dist/business_docs/ads_metric_seller_adoption.md"
+        }
+      ]
+    },
+    {
+      "doc_id": "ads_metric_sku_adoption",
+      "path": "dist/business_docs/ads_metric_sku_adoption.md",
+      "title": "SKU Adoption%（广告SKU渗透率）",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "metric_formula",
+      "owner": "ads_pm",
+      "source_type": "curated_metric_formula",
+      "source_refs": [
+        {
+          "type": "curated_json",
+          "path": "data/business_docs/ads_metric_formulas.json",
+          "title": "Migrated from old ads_knowledge_v3 composite_metrics; this is the curated source for generated metric formula business docs."
+        }
+      ],
+      "last_reviewed": "2026-04-02",
+      "aliases": [
+        "SKU adoption",
+        "SKU渗透率",
+        "广告SKU占比",
+        "sku adoption rate"
+      ],
+      "related_tables": [
+        "mp_paidads.ads_item_supply_1d"
+      ],
+      "external_tables": [],
+      "chunks": [
+        {
+          "chunk_id": "ads_metric_sku_adoption.口径定义",
+          "heading": "1. 口径定义",
+          "heading_path": "1. 口径定义",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "SKU adoption",
+            "SKU渗透率",
+            "sku adoption rate",
+            "广告SKU占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_item_supply_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_sku_adoption.md"
+        },
+        {
+          "chunk_id": "ads_metric_sku_adoption.计算公式",
+          "heading": "2. 计算公式",
+          "heading_path": "2. 计算公式",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "SKU adoption",
+            "SKU渗透率",
+            "sku adoption rate",
+            "广告SKU占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_item_supply_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_sku_adoption.md"
+        },
+        {
+          "chunk_id": "ads_metric_sku_adoption.使用注意",
+          "heading": "3. 使用注意",
+          "heading_path": "3. 使用注意",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "SKU adoption",
+            "SKU渗透率",
+            "sku adoption rate",
+            "广告SKU占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_item_supply_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_sku_adoption.md"
+        },
+        {
+          "chunk_id": "ads_metric_sku_adoption.推荐表",
+          "heading": "4. 推荐表",
+          "heading_path": "4. 推荐表",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "SKU adoption",
+            "SKU渗透率",
+            "sku adoption rate",
+            "广告SKU占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_item_supply_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_sku_adoption.md"
+        },
+        {
+          "chunk_id": "ads_metric_sku_adoption.适用范围",
+          "heading": "5. 适用范围",
+          "heading_path": "5. 适用范围",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "SKU adoption",
+            "SKU渗透率",
+            "sku adoption rate",
+            "广告SKU占比"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_item_supply_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_sku_adoption.md"
+        }
+      ]
+    },
+    {
+      "doc_id": "ads_metric_take_rate",
+      "path": "dist/business_docs/ads_metric_take_rate.md",
+      "title": "Take Rate（广告变现率）",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "metric_formula",
+      "owner": "ads_pm",
+      "source_type": "curated_metric_formula",
+      "source_refs": [
+        {
+          "type": "curated_json",
+          "path": "data/business_docs/ads_metric_formulas.json",
+          "title": "Migrated from old ads_knowledge_v3 composite_metrics; this is the curated source for generated metric formula business docs."
+        }
+      ],
+      "last_reviewed": "2026-04-02",
+      "aliases": [
+        "take rate",
+        "变现率",
+        "广告变现率",
+        "monetization rate"
+      ],
+      "related_tables": [
+        "mp_paidads.ads_advertise_take_rate_v2_1d"
+      ],
+      "external_tables": [],
+      "chunks": [
+        {
+          "chunk_id": "ads_metric_take_rate.口径定义",
+          "heading": "1. 口径定义",
+          "heading_path": "1. 口径定义",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "monetization rate",
+            "take rate",
+            "变现率",
+            "广告变现率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_take_rate.md"
+        },
+        {
+          "chunk_id": "ads_metric_take_rate.计算公式",
+          "heading": "2. 计算公式",
+          "heading_path": "2. 计算公式",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "monetization rate",
+            "take rate",
+            "变现率",
+            "广告变现率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_take_rate.md"
+        },
+        {
+          "chunk_id": "ads_metric_take_rate.使用注意",
+          "heading": "3. 使用注意",
+          "heading_path": "3. 使用注意",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "monetization rate",
+            "take rate",
+            "变现率",
+            "广告变现率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_take_rate.md"
+        },
+        {
+          "chunk_id": "ads_metric_take_rate.推荐表",
+          "heading": "4. 推荐表",
+          "heading_path": "4. 推荐表",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "monetization rate",
+            "take rate",
+            "变现率",
+            "广告变现率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_take_rate.md"
+        },
+        {
+          "chunk_id": "ads_metric_take_rate.适用范围",
+          "heading": "5. 适用范围",
+          "heading_path": "5. 适用范围",
+          "domain": "ads_mart",
+          "doc_type": "metric_formula",
+          "aliases": [
+            "monetization rate",
+            "take rate",
+            "变现率",
+            "广告变现率"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_advertise_take_rate_v2_1d"
+          ],
+          "external_tables": [],
+          "doc_path": "dist/business_docs/ads_metric_take_rate.md"
+        }
+      ]
+    },
+    {
+      "doc_id": "pc2_metrics",
+      "path": "dist/business_docs/pc2_metrics.md",
+      "title": "PC2 Metrics Guide",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "business_playbook",
+      "owner": "ads_dpm",
+      "source_type": "manual",
+      "source_refs": [
+        {
+          "type": "confluence",
+          "url": "https://confluence.shopee.io/display/SPV/PC+2",
+          "title": "PC 2",
+          "status": "read",
+          "note": "canonical page, last updated 2026-05-18"
+        },
+        {
+          "type": "confluence",
+          "url": "https://confluence.shopee.io/pages/viewpage.action?spaceKey=SPV&title=%5BDRD_20251111%5D+Add+New+PC2+Metrics",
+          "title": "[DRD_20251111] Add New PC2 Metrics",
+          "status": "read",
+          "note": "DRD page, last updated 2026-04-21"
+        },
+        {
+          "type": "google_doc",
+          "url": "https://docs.google.com/document/d/1_opR7lGV60HrvmWI7G_p7W8M44tNiODNmR2yr-Lh0Aw/edit?tab=t.0#heading=h.vj10f3ktqzb5",
+          "title": "[User Guide] PC2 data",
+          "status": "read"
+        },
+        {
+          "type": "google_sheet",
+          "url": "https://docs.google.com/spreadsheets/d/1SkMRIb-fb5ybhhsN7-503GkpLLcAqZ3ucJU2e4Qhr9k/edit?gid=279010624#gid=279010624",
+          "title": "[Support Doc] Central Mart User Guide by Reg BI - Sample Queries",
+          "status": "read"
+        },
+        {
+          "type": "google_sheet",
+          "url": "https://docs.google.com/spreadsheets/d/1zo9LlZaSvlpSeJk8wWTHdtrbVIWtsHfIKbsesetdcb8/edit?gid=0#gid=0",
+          "title": "Ads Common Feature Mapping V2.0",
+          "status": "read"
+        },
+        {
+          "type": "google_sheet",
+          "url": "https://docs.google.com/spreadsheets/d/1Se19xyfBII7nDInHf_I-WSpgXJYLWXtmh3P7PFvmiOY/edit?gid=1629122432#gid=1629122432",
+          "title": "[data check] PC2 - Fee Rate Analysis",
+          "status": "read"
+        },
+        {
+          "type": "google_sheet",
+          "url": "https://docs.google.com/spreadsheets/d/1Se19xyfBII7nDInHf_I-WSpgXJYLWXtmh3P7PFvmiOY/edit?gid=1871344961#gid=1871344961",
+          "title": "[data check] PC2 - FPA vs order data source comparison",
+          "status": "read"
+        },
+        {
+          "type": "google_sheet",
+          "url": "https://docs.google.com/spreadsheets/d/1Jk40qFXY6hJoYO5RPIlC0OK_1sqOyKelBTYt0gCDyuA/edit?gid=0#gid=0",
+          "title": "PC 2 Template for Food",
+          "status": "no_access"
+        },
+        {
+          "type": "google_sheet",
+          "url": "https://docs.google.com/spreadsheets/d/1ClBb-g0sYp0qV12fMps3idrdEmkLiM61j7WGzM5IeKo/edit?gid=0#gid=0",
+          "title": "PC2 related sheet",
+          "status": "no_access"
+        },
+        {
+          "type": "datasuite",
+          "url": "https://datasuite.shopee.io/scheduler/task/data_paidadsmart.studio_10306943/code",
+          "title": "dws_common_feature_user_item_pc2_1d__my",
+          "status": "read",
+          "note": "pulled with sra-get-dashboard-sql after Chrome cookie became available; SQL length about 41K"
+        },
+        {
+          "type": "local_etl",
+          "path": "dist/etl/mp_paidads.dws_common_feature_user_item_pc2_1d__reg_s0_live.json",
+          "status": "read"
+        },
+        {
+          "type": "local_etl",
+          "path": "dist/etl/mp_paidads.dws_user_pc2_1d__reg_s0_live.json",
+          "status": "read"
+        },
+        {
+          "type": "local_etl",
+          "path": "dist/etl/mp_paidads.ads_new_pc2_rate_exp_1d__reg_s0_live.json",
+          "status": "read"
+        }
+      ],
+      "last_reviewed": "2026-05-19",
+      "aliases": [
+        "PC2",
+        "PC 2",
+        "Platform Contribution 2",
+        "Local PC2",
+        "Proxy PC2",
+        "Adjusted Proxy PC2",
+        "True PC2",
+        "pc2_rate",
+        "PC2 rate",
+        "proxy_pc2_usd_1d",
+        "adjusted_proxy_pc2_usd_1d",
+        "adjusted_proxy_pc2_exp_usd_1d",
+        "true_pc2_usd_1d",
+        "local_pc2_usd_1d",
+        "平台利润",
+        "贡献利润",
+        "PC2口径"
+      ],
+      "related_tables": [
+        "mp_paidads.dws_common_feature_user_item_pc2_1d",
+        "mp_paidads.dws_user_pc2_1d",
+        "mp_paidads.ads_new_pc2_rate_exp_1d",
+        "mp_paidads.dws_user_net_ads_revenue_1d",
+        "mp_paidads.ads_order_voucher_1d",
+        "mp_paidads.dim_common_feature_mapping_v2"
+      ],
+      "external_tables": [
+        "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+        "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+        "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+        "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+        "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+        "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+        "mp_item.dim_item__reg_s0_live"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "pc2_metrics.一页速览",
+          "heading": "1. 一页速览",
+          "heading_path": "1. 一页速览",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "ROI3 cost",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "ads part ROI3 cost",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "广告券广告承担成本",
+            "广告券成本",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.local_pc2",
+          "heading": "2.1 Local PC2",
+          "heading_path": "2. 四套 PC2 口径 > 2.1 Local PC2",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.proxy_pc2",
+          "heading": "2.2 Proxy PC2",
+          "heading_path": "2. 四套 PC2 口径 > 2.2 Proxy PC2",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "cofund",
+            "local_pc2_usd_1d",
+            "match_voucher_click",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "voucher OA",
+            "voucher_cofund_ratio",
+            "平台利润",
+            "广告承担金额",
+            "普通广告 OA",
+            "用券归因",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.adjusted_proxy_pc2",
+          "heading": "2.3 Adjusted Proxy PC2",
+          "heading_path": "2. 四套 PC2 口径 > 2.3 Adjusted Proxy PC2",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.true_pc2",
+          "heading": "2.4 True PC2",
+          "heading_path": "2. 四套 PC2 口径 > 2.4 True PC2",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "match_voucher_click",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "voucher OA",
+            "平台利润",
+            "普通广告 OA",
+            "用券归因",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.mp_paidads_dws_common_feature_user_item_pc2_1d",
+          "heading": "3.1 `mp_paidads.dws_common_feature_user_item_pc2_1d`",
+          "heading_path": "3. 推荐用表 > 3.1 `mp_paidads.dws_common_feature_user_item_pc2_1d`",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "match_voucher_click",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "voucher OA",
+            "平台利润",
+            "普通广告 OA",
+            "用券归因",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.mp_paidads_dws_user_pc2_1d",
+          "heading": "3.2 `mp_paidads.dws_user_pc2_1d`",
+          "heading_path": "3. 推荐用表 > 3.2 `mp_paidads.dws_user_pc2_1d`",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.mp_paidads_ads_new_pc2_rate_exp_1d",
+          "heading": "3.3 `mp_paidads.ads_new_pc2_rate_exp_1d`",
+          "heading_path": "3. 推荐用表 > 3.3 `mp_paidads.ads_new_pc2_rate_exp_1d`",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.common_feature_口径",
+          "heading": "4. Common Feature 口径",
+          "heading_path": "4. Common Feature 口径",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.item_fee_rate_和_local_rate_选择",
+          "heading": "5. Item Fee Rate 和 Local Rate 选择",
+          "heading_path": "5. Item Fee Rate 和 Local Rate 选择",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.org_algo_与_ads_algo_的目标不同",
+          "heading": "6.1 Org Algo 与 Ads Algo 的目标不同",
+          "heading_path": "6. 业务解释边界 > 6.1 Org Algo 与 Ads Algo 的目标不同",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.proxy_pc2_与_true_pc2_不应互相替代",
+          "heading": "6.2 Proxy PC2 与 True PC2 不应互相替代",
+          "heading_path": "6. 业务解释边界 > 6.2 Proxy PC2 与 True PC2 不应互相替代",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "match_voucher_click",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "voucher OA",
+            "平台利润",
+            "普通广告 OA",
+            "用券归因",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.paid_ads_voucher_ads_part_amt_usd_1d_是扣减项",
+          "heading": "6.3 `paid_ads_voucher_ads_part_amt_usd_1d` 是扣减项",
+          "heading_path": "6. 业务解释边界 > 6.3 `paid_ads_voucher_ads_part_amt_usd_1d` 是扣减项",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "ROI3 cost",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "ads part ROI3 cost",
+            "cofund",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "voucher_cofund_ratio",
+            "平台利润",
+            "广告券广告承担成本",
+            "广告券成本",
+            "广告承担金额",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.如何查某个_common_feature_的_pc2_rate",
+          "heading": "7.1 如何查某个 common_feature 的 PC2 rate？",
+          "heading_path": "7. 常见问题 > 7.1 如何查某个 common_feature 的 PC2 rate？",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.如何查平台整体_true_pc2",
+          "heading": "7.2 如何查平台整体 True PC2？",
+          "heading_path": "7. 常见问题 > 7.2 如何查平台整体 True PC2？",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.如何做_a_b_实验_pc2_评估",
+          "heading": "7.3 如何做 A/B 实验 PC2 评估？",
+          "heading_path": "7. 常见问题 > 7.3 如何做 A/B 实验 PC2 评估？",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.为什么表里有_platform_还要有各_feature",
+          "heading": "7.4 为什么表里有 `Platform` 还要有各 feature？",
+          "heading_path": "7. 常见问题 > 7.4 为什么表里有 `Platform` 还要有各 feature？",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "平台利润",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        },
+        {
+          "chunk_id": "pc2_metrics.为什么_true_pc2_不能按_feature_拆",
+          "heading": "7.5 为什么 True PC2 不能按 feature 拆？",
+          "heading_path": "7. 常见问题 > 7.5 为什么 True PC2 不能按 feature 拆？",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "Adjusted Proxy PC2",
+            "Local PC2",
+            "PC 2",
+            "PC2",
+            "PC2 rate",
+            "PC2口径",
+            "Platform Contribution 2",
+            "Proxy PC2",
+            "True PC2",
+            "adjusted_proxy_pc2_exp_usd_1d",
+            "adjusted_proxy_pc2_usd_1d",
+            "local_pc2_usd_1d",
+            "match_voucher_click",
+            "pc2_rate",
+            "proxy_pc2_usd_1d",
+            "true_pc2_usd_1d",
+            "voucher OA",
+            "平台利润",
+            "普通广告 OA",
+            "用券归因",
+            "贡献利润"
+          ],
+          "related_tables": [
+            "mp_paidads.dws_common_feature_user_item_pc2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.ads_new_pc2_rate_exp_1d",
+            "mp_paidads.dws_user_net_ads_revenue_1d",
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.dim_common_feature_mapping_v2"
+          ],
+          "external_tables": [
+            "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+            "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+            "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+            "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+            "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+            "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+            "mp_item.dim_item__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/pc2_metrics.md"
+        }
+      ]
+    },
+    {
+      "doc_id": "roi3_ads_voucher",
+      "path": "dist/business_docs/roi3_ads_voucher.md",
+      "title": "ROI3 Ads Voucher Diagnosis",
+      "status": "verified",
+      "domain": "ads_mart",
+      "doc_type": "business_playbook",
+      "owner": "ads_pm",
+      "source_type": "manual",
+      "source_refs": [
+        {
+          "type": "google_doc",
+          "url": "https://docs.google.com/document/d/1_xjMyNjhR-KmKXZnSFdbsZkWA3_YCYxMWuVytdUV3J0/edit?tab=t.0#heading=h.lqo1tq22f7be",
+          "title": "ROI3 业务解释文档"
+        },
+        {
+          "type": "confluence",
+          "url": "https://confluence.shopee.io/pages/viewpage.action?pageId=2953123905",
+          "title": "ROI3.0 数据使用"
+        },
+        {
+          "type": "confluence",
+          "url": "https://confluence.shopee.io/display/SPV/%5BDRD_260224%5DROI3.0-Ads+voucher+OA+online",
+          "title": "ROI3.0 Ads voucher OA online"
+        },
+        {
+          "type": "google_sheet",
+          "url": "https://docs.google.com/spreadsheets/d/1LUZIU4fZMxnBHXkIQ86pa-VJj1PREFhZ1U4wYgdIp38/edit?gid=667903485#gid=667903485",
+          "title": "ROI3 核心分析指标参考"
+        }
+      ],
+      "last_reviewed": "2026-05-08",
+      "aliases": [
+        "ROI3 cost",
+        "ads part ROI3 cost",
+        "Ads Smart Voucher",
+        "QCPX",
+        "广告券成本",
+        "广告券广告承担成本",
+        "券成本",
+        "voucher OA",
+        "普通广告 OA",
+        "claim 掉了",
+        "auto claim",
+        "ADS-ROI"
+      ],
+      "related_tables": [
+        "mp_paidads.ads_order_voucher_1d",
+        "mp_paidads.ads_advertise_take_rate_v2_1d",
+        "mp_paidads.dws_user_pc2_1d",
+        "mp_paidads.dwd_advertise_performance_di",
+        "mp_paidads.dwd_advertise_tracking_item_hi",
+        "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+      ],
+      "external_tables": [
+        "mp_voucher.dim_voucher__reg_live",
+        "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+        "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "roi3_ads_voucher.一页速览",
+          "heading": "1. 一页速览",
+          "heading_path": "1. 一页速览",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "match_voucher_click",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "用券归因",
+            "自动领券",
+            "领券下降"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.产品定位",
+          "heading": "2.1 产品定位：",
+          "heading_path": "2. 业务知识整理 > 2.1 产品定位：",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.发券链路",
+          "heading": "2.2 发券链路",
+          "heading_path": "2. 业务知识整理 > 2.2 发券链路",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "自动领券",
+            "领券下降"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.用券链路",
+          "heading": "2.3 用券链路",
+          "heading_path": "2. 业务知识整理 > 2.3 用券链路",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "match_voucher_click",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "用券归因"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.归因链路",
+          "heading": "2.4 归因链路",
+          "heading_path": "2. 业务知识整理 > 2.4 归因链路",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "match_voucher_click",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "用券归因",
+            "自动领券",
+            "领券下降"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.广告券识别",
+          "heading": "3.1 广告券识别",
+          "heading_path": "3. 数据使用指南 > 3.1 广告券识别",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.发券_曝光_点击",
+          "heading": "3.2 发券、曝光、点击",
+          "heading_path": "3. 数据使用指南 > 3.2 发券、曝光、点击",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.领券_claim",
+          "heading": "3.3 领券 Claim",
+          "heading_path": "3. 数据使用指南 > 3.3 领券 Claim",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "自动领券",
+            "领券下降"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.用券订单",
+          "heading": "3.4 用券订单",
+          "heading_path": "3. 数据使用指南 > 3.4 用券订单",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "cofund",
+            "match_voucher_click",
+            "voucher OA",
+            "voucher_cofund_ratio",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "广告承担金额",
+            "普通广告 OA",
+            "用券归因"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.gross_ods_口径",
+          "heading": "3.5 Gross ODS 口径",
+          "heading_path": "3. 数据使用指南 > 3.5 Gross ODS 口径",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.performance_order_event_口径",
+          "heading": "3.6 Performance order event 口径",
+          "heading_path": "3. 数据使用指南 > 3.6 Performance order event 口径",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.核心指标",
+          "heading": "4.1 核心指标",
+          "heading_path": "4. 数据分析场景 > 4.1 核心指标",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.核心拆分维度",
+          "heading": "4.2 核心拆分维度",
+          "heading_path": "4. 数据分析场景 > 4.2 核心拆分维度",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "match_voucher_click",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "用券归因"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.用券成本显著下降",
+          "heading": "4.3 用券成本显著下降",
+          "heading_path": "4. 数据分析场景 > 4.3 用券成本显著下降",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "自动领券",
+            "领券下降"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.领券数量显著下降",
+          "heading": "4.4 领券数量显著下降",
+          "heading_path": "4. 数据分析场景 > 4.4 领券数量显著下降",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "自动领券",
+            "领券下降"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.best_voucher_比例下降",
+          "heading": "4.5 Best voucher 比例下降",
+          "heading_path": "4. 数据分析场景 > 4.5 Best voucher 比例下降",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.归因匹配率下降",
+          "heading": "4.6 归因匹配率下降",
+          "heading_path": "4. 数据分析场景 > 4.6 归因匹配率下降",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "match_voucher_click",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "用券归因",
+            "自动领券",
+            "领券下降"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.cofund_或广告承担金额异常上升",
+          "heading": "4.7 Cofund 或广告承担金额异常上升",
+          "heading_path": "4. 数据分析场景 > 4.7 Cofund 或广告承担金额异常上升",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "cofund",
+            "match_voucher_click",
+            "voucher OA",
+            "voucher_cofund_ratio",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "广告承担金额",
+            "普通广告 OA",
+            "用券归因"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.bid_rerank_trace_有但缺_bid_voucher_id",
+          "heading": "4.8 `bid_rerank_trace` 有但缺 `bid_voucher_id`",
+          "heading_path": "4. 数据分析场景 > 4.8 `bid_rerank_trace` 有但缺 `bid_voucher_id`",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "match_voucher_click",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "用券归因"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.查看广告券用券趋势",
+          "heading": "5.1 查看广告券用券趋势",
+          "heading_path": "5. 常用诊断 SQL > 5.1 查看广告券用券趋势",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.查看_bid_rerank_trace_有但缺_bid_voucher_id",
+          "heading": "5.2 查看 `bid_rerank_trace` 有但缺 `bid_voucher_id`",
+          "heading_path": "5. 常用诊断 SQL > 5.2 查看 `bid_rerank_trace` 有但缺 `bid_voucher_id`",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.查看_cofund_空值影响",
+          "heading": "5.3 查看 cofund 空值影响",
+          "heading_path": "5. 常用诊断 SQL > 5.3 查看 cofund 空值影响",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "cofund",
+            "voucher OA",
+            "voucher_cofund_ratio",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "广告承担金额",
+            "普通广告 OA"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.按用户查包含某个_promotion_id_的曝光或点击",
+          "heading": "5.4 按用户查包含某个 promotion_id 的曝光或点击",
+          "heading_path": "5. 常用诊断 SQL > 5.4 按用户查包含某个 promotion_id 的曝光或点击",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "自动领券",
+            "领券下降"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        },
+        {
+          "chunk_id": "roi3_ads_voucher.参考文档",
+          "heading": "6. 参考文档",
+          "heading_path": "6. 参考文档",
+          "domain": "ads_mart",
+          "doc_type": "business_playbook",
+          "aliases": [
+            "ADS-ROI",
+            "Ads Smart Voucher",
+            "QCPX",
+            "ROI3 cost",
+            "ads part ROI3 cost",
+            "auto claim",
+            "claim 掉了",
+            "match_voucher_click",
+            "voucher OA",
+            "券成本",
+            "广告券广告承担成本",
+            "广告券成本",
+            "普通广告 OA",
+            "用券归因"
+          ],
+          "related_tables": [
+            "mp_paidads.ads_order_voucher_1d",
+            "mp_paidads.ads_advertise_take_rate_v2_1d",
+            "mp_paidads.dws_user_pc2_1d",
+            "mp_paidads.dwd_advertise_performance_di",
+            "mp_paidads.dwd_advertise_tracking_item_hi",
+            "mp_paidads.ads_advertise_roi2_key_metrics_daily"
+          ],
+          "external_tables": [
+            "mp_voucher.dim_voucher__reg_live",
+            "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+            "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live"
+          ],
+          "doc_path": "dist/business_docs/roi3_ads_voucher.md"
+        }
+      ]
+    }
+  ]
+}

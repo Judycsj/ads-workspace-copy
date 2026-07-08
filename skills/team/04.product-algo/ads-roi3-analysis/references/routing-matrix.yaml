@@ -1,0 +1,325 @@
+# 路由注册表/Routing Registry
+# hub 只读本文件路由，不靠现场理解文档。新增能力 = 加一条 entry，hub 零改动。
+# match 维度：question_type ∈ [校验,读数,诊断,探索,评估,决策]；
+#   lever ∈ [发多少,发给谁,怎么发,怎么控]；layer ∈ [效果指标层,控制器层,模型层,策略层,数据口径层]；
+#   evidence ∈ [AB实验,观测对比,线上trace,模型外推]
+# maturity ∈ [手工, playbook, skill]
+# 可选路由字段：route_priority 越高越先匹配；trigger_keywords / negative_keywords 用于
+# overlap 场景消歧（如“生成日报”直达 monitoring，“日报里异常为什么”进 diagnosis）。
+# 合成类 entry 额外声明 sub_cells / merge_rule / conflict_handling，
+#   冲突五分类：口径冲突 / 证据层冲突 / 新鲜度冲突 / 因果关联冲突 / 叠加效应冲突；原则=报冲突+给口径前提，不硬合。
+version: 1
+updated: "2026-06-23"
+
+entries:
+  - id: experiment-analysis
+    match:
+      question_type: [评估, 读数]
+      evidence: [AB实验]
+    maturity: skill
+    entrypoint: ads-roi3-experiment-analysis
+    owner: roger.li
+    route_priority: 80
+    trigger_keywords: [实验 readout, 实验效果评估, base vs exp, 多桶对比, 实验该不该扩, AB实验读数]
+    negative_keywords: [生成日报, ROI3日报, 周报, rollout文档, 全量申请文档, EGO eval, AUUC, uplift PCOC]
+    required_inputs: [实验标识或桶号, 时间窗, regions, value口径]
+    preflight_checks:
+      - 涉及券类型/新字段/新口径：先查 data-sources.md §2 + docs/common/datamap，禁止现翻记忆/tmp 旧 SQL 重新发现已登记口径（2026-06-17 教训）
+      - 跨臂比"总券/MP/平台券"或做 SRM：用全流量源（P0 ClickHouse 按 exp_tag，或 AB 分流日志 scene1361/layer190830 按 user 分桶），勿用 voucher_click_context（只在 ads 券订单上，有选择偏差）
+      - 实验桶映射已在 experiment-contracts.md 确认；快照超 7 天先经 sp-ab 刷新
+      - 时间窗均为满日（表落库滞后约 2 小时）
+      - value 口径已锁定；高风险决策 multi_caliber=true
+    output_contract: 总-分-附录报告 + 会话内结论速览；归档"一分析一中文文件夹" docs/personal/<user>/roi3/experiments/<中文分析事项>-<YYYYMMDD>/（报告 + 伴生 -repro.md，见 report-skeleton.md 归档结构与命名）
+    known_failures:
+      - voucher_click_context 只落在 ads 券订单上（orders==voucher_orders）→ 跨臂比 MP/总券选择偏差；干净分桶用 AB 分流日志（scene1361/layer190830）按 user join 订单
+      - 券类型×实验臂(ads/MP smart/MP local)走 raw log 订单级 join 很慢（~8min/满日，串行）；优先 P0 ClickHouse（秒级，但当前仅 ads/total，smart 拆分待扩列）
+      - ClickHouse DataSuite 会话约数分钟过期（pycookiecheat 缺失/token 失效），连查会断，刷新 Chrome 登录后重试，勿降级到慢的 Presto raw-log
+      - 预算转移实验口径下 SG 无数据、BR 数据残缺（R<1）；MY 低量日比值虚高，看绝对花费/多日
+      - 重订单级查询并行会饿死队列（mkplpaidads-adhoc），必须串行
+      - 网关不支持 lambda 表达式（dim_voucher 取 smart 用 UNNEST 不用 filter）
+      - text2da 脚本须用 venv python 直跑（python3 入口 re-exec 失效，报 dataservice 不可用）— 见 data-sources.md §3
+      - 实验放量有爬坡期，未放量日（订单个位数）按天 R 是噪声，满日检验须剔除
+    freshness_rule: 实验配置快照超过 7 天须重新确认
+    estimated_cost: 分钟级
+
+  - id: model-uplift-offline-eval
+    match:
+      question_type: [评估, 校验, 读数]
+      layer: [模型层]
+      evidence: [模型外推, 观测对比]
+      # 触发：ads-roi3-gmv-uplift-analysis / roi3-gmv-uplift-analysis / /ego-gmv-uplift / ego-auuc / EGO eval job / 离线评估指标 / AUUC / uplift PCOC / platform_gmv_uplift / 新旧 base 对比
+    maturity: skill
+    entrypoint: ads-roi3-gmv-uplift-analysis
+    owner: team-04.product-algo
+    route_priority: 85
+    trigger_keywords: [ads-roi3-gmv-uplift-analysis, roi3-gmv-uplift-analysis, /ego-gmv-uplift, ego-auuc, EGO eval job, AUUC, uplift PCOC, pgmv_0_pcoc, platform_gmv_uplift, 新版base离线指标]
+    negative_keywords: [线上AB结论, rollout文档, 全量申请, 日报, 周报, guardrail根因]
+    required_inputs: [base/exp EGO eval job 或版本名, eval日期或共同最新日期, target family(platform_gmv_uplift 或 CR uplift), 输出位置(会话/Sheet/报告)]
+    preflight_checks:
+      - 明确这是模型离线 eval 证据，不替代线上 AB/rollout 结论；上线决策需再接 experiment-analysis 或 rollout-doc
+      - base/exp 使用同一 eval 数据日；若用户未给日期，用两侧共同最新 eval date，不混用不同天
+      - platform GMV 任务必须确认目标族包含 platform_gmv_0 与 platform_gmv_uplift_{95,92,88,85,80}_{auuc,pcoc}
+      - Grafana 取数必须用 All Metrics Per Day + All Custom Metrics Per Day；不要用默认 gAUC/AUC panel
+      - 写 Sheet 前先读取表头；同 date+version 更新旧行，没有匹配才 append；70 档不默认写入
+      - 产出需同时给原始 metrics、base/exp delta、uplift_pcoc error(abs(pcoc-1))、跨档均衡性(max-min/std/平均偏离1)、验收阈值对照
+    output_contract: EGO 离线评估结论速览 + metrics/delta 表 + 验收对照；可写 Google Sheet 或归档到项目 analysis/
+    known_failures:
+      - ads-roi3-gmv-uplift-analysis 依赖本地 EGO/Grafana/Google OAuth 凭据；缺凭据时只能做 job 元信息或 wiring 检查，不能把空指标当真实结果
+      - Custom metric 为空常见原因是取错 panel 或 plugin 未产出；先换 All Custom Metrics Per Day，再查 ego_plugin_path/target name
+      - base/exp eval 日期不一致会制造假提升；必须对齐共同日期或明确标注不可比
+      - platform GMV uplift 与 CR uplift target 命名不同；未确认 target family 前不要套错 schema
+      - AUUC 改善与 PCOC 改善含义不同：AUUC 是排序能力，PCOC 是校准；验收标准需分别解读
+    freshness_rule: EGO eval job 快照；每次新 job/date 重新拉 Grafana，不复用旧 Sheet 行
+    estimated_cost: 分钟级
+
+  - id: roi3-daily-monitoring
+    match:
+      question_type: [读数]
+      layer: [效果指标层]
+    maturity: skill
+    entrypoint: ads-roi3-monitoring-report
+    owner: team-04.product-algo
+    route_priority: 65
+    trigger_keywords: [生成ROI3日报, ROI3日报, ROI3 monitoring, ROI3趋势, ROI3走势, 最新一天数据]
+    negative_keywords: [为什么, 根因, 诊断, 异常, guardrail没涨, coverage掉, 该不该扩]
+    required_inputs: [日期或 --latest, 可选 regions/exp-tags, 可选 --trend]
+    preflight_checks:
+      - P0 ClickHouse 表当日分区就绪（不就绪则回退最近满日）
+    output_contract: 中文日报/趋势矩阵 + rows JSON（/tmp/ads-workspace/roi3/）
+    known_failures:
+      - ClickHouse 直连失败时走 DataSuite fallback，耗时上升
+    freshness_rule: 日级表，T+1 为准
+    estimated_cost: 分钟级
+
+  - id: profitability-dimensional-analysis
+    match:
+      question_type: [评估, 探索]
+      lever: [发给谁, 发多少]
+      layer: [效果指标层]
+      # 触发：维度边际利润率 / 利润率 / 按 entrance·品类·人群·价格带 施加差异化系数的实验
+    maturity: skill
+    entrypoint: ads-roi3-profitability-analysis
+    owner: roger.li
+    route_priority: 78
+    trigger_keywords: [边际利润率, 利润率分析, 边际还有没有空间, 维度发券, 分维度调系数, entrance维度, 品类维度, 预算分配是否生效]
+    negative_keywords: [生成日报, rollout文档, EGO eval, AUUC, 纯控制器trace]
+    required_inputs: [实验桶或coef档实验, 维度(entrance/L0/人群/价格带), value口径(advv 或 advv+broad_gmv/W), 时间窗]
+    preflight_checks:
+      - 系数复合关系已问清（线上强度约 10 实验连乘，本实验是哪层/和谁复合/是否正交；决定能否用叠加 dose 实验测调整后边际）
+      - 维度字段映射已确认（entrance id↔名称、L0 品类 l1_id 映射；entrance 映射曾是 best-effort，跑前必确认）
+      - 施策类实验：先做落地验证（动作-响应闭环），未落地不出效率结论
+      - value 口径显式（advv 单口径与 advv+broad_gmv/W 结论可能反向）
+      - 边际需多档 coef 实验（拟合切线）；单桶只能算利润率——除非有正交叠加的 dose 实验可在本桶内切片测边际
+      - 打平/趋同类目标：看维度间边际离散度下降 + 趋近 λ；近线性 b≈0 时打平靠一阶移预算
+      - 先确认实验运行天数 ≥ trailing 窗（≈14 天）：新实验往往不够（如品类实验仅上线数天），边际/打平结论坐实不了，只能给落地验证+平均利润率+方向信号；多天取数必须分天串行（PB 表单查超时，实测 6 分钟未回）
+    output_contract: 总-分-附录报告，按"施策类实验评估范式"四步；维度表含 边际利润率/份额/CI/系数/动作/落地
+    known_failures:
+      - broad_order_cnt>0 幸存者偏差（只在成交行估边际，保本结论偏乐观）
+      - gmv_995_v2 可能缺失，用 platform_gmv_usd 作 proxy 需注明
+      - 多维系数相乘破坏预算中性（重复抑制），叠加桶单独评估
+      - ent29 等低边际离群 entrance 映射需线上 entrance_group_idx 核对
+    freshness_rule: 维度系数频繁变；边际估计 trailing 窗 ≥14 天
+    estimated_cost: 小时级（多档拟合 + bootstrap CI + 双维度口径）
+
+  - id: roi3-diagnosis
+    match:
+      question_type: [诊断]
+      layer: [效果指标层, 模型层, 策略层]
+      # guardrail 拆解 / 价值窗口 / 品类(level0)级 guardrail / 小时级发券诊断 / base vs exp 真值
+    maturity: skill
+    entrypoint: ads-roi3-diagnosis-v2
+    owner: team-04.product-algo
+    route_priority: 90
+    trigger_keywords: [为什么, 根因, 诊断, guardrail没涨, coverage掉, cost升, 小时级发券诊断, base vs exp真值]
+    negative_keywords: [生成日报, 周报, rollout文档, EGO eval, AUUC]
+    required_inputs: [region, date, 症状(为什么 coverage 掉/guardrail 没涨/cost 升)]
+    preflight_checks:
+      - 默认 v2（统一 L0 底座 + 真 platform_gmv guardrail + 价值窗口 CDF）；要 v1 对比才用 ads-roi3-rootcause-diagnosis
+    output_contract: Markdown 诊断报告（confirmed/likely/possible/unknown 分级）
+    known_failures:
+      - "⚠️ 不做'深档饱和 vs 流量不足'判别（全仓零饱和逻辑）——饱和类问题路由到 profitability-dimensional-analysis 的饱和判别 checklist，勿误路由至此"
+      - 纯日级 readout 用 roi3-daily-monitoring；纯控制器 trace 用 roi3-budget-control
+    freshness_rule: 日级/小时级，T+1
+    estimated_cost: 分钟级
+
+  - id: roi3-rootcause-diagnosis
+    match:
+      question_type: [诊断]
+      # 串联四层证据(模型/策略/校准/预算控制)给主因，KA5 orchestrator
+    maturity: skill
+    entrypoint: ads-roi3-rootcause-diagnosis
+    owner: team-04.product-algo
+    route_priority: 86
+    trigger_keywords: [四层证据, root cause, 根因诊断, ROI3 case card, KA5, 串联模型策略校准控制]
+    negative_keywords: [单层预算控制, 纯日报, rollout文档, EGO eval, AUUC]
+    required_inputs: [ROI3 case card(date/region/症状)]
+    preflight_checks:
+      - 需要多层证据串联+主因分级才用；单层分析用对应单层 skill
+    output_contract: Markdown 根因报告（四层证据 + confirmed/likely/possible/unknown）
+    known_failures:
+      - v1 版；默认诊断优先 ads-roi3-diagnosis-v2，本 skill 用于四层证据编排或 v1 对比
+    freshness_rule: 日级，T+1
+    estimated_cost: 分钟到小时级
+
+  - id: roi3-budget-control
+    match:
+      question_type: [诊断, 校验]
+      layer: [控制器层]
+      # 预算控制/cofund 节奏/PID/CDF/预算利用率/voucher cost 对齐/控制器 trace
+    maturity: skill
+    entrypoint: ads-roi3-budget-control-analysis
+    owner: team-04.product-algo
+    route_priority: 88
+    trigger_keywords: [预算控制, pacing, CDF, PID, 预算利用率, voucher cost对齐, HyperX trace, 控制器trace]
+    negative_keywords: [模型pcoc, AUUC, rollout文档, 纯日报]
+    required_inputs: [date, region, 症状(节奏/CDF/利用率异常)]
+    preflight_checks:
+      - ultra-core HyperX trace 表可用（mp_paidads.dwd_trace_bidding_hyperx_hi__reg_s0_live）
+    output_contract: Markdown 控制诊断（控制器 evidence + 业务真值对齐 + verdict）
+    known_failures:
+      - 只看控制器侧；模型 pCoC/策略/校准用别的层
+    freshness_rule: 小时级 trace
+    estimated_cost: 分钟级
+
+  - id: roi3-weekly-sync
+    match:
+      question_type: [读数]
+      layer: [效果指标层]
+      # 周级 leader-facing 效果同步（从 Google Sheet）
+    maturity: skill
+    entrypoint: ads-roi3-weekly-sync
+    owner: team-04.product-algo
+    route_priority: 60
+    trigger_keywords: [ROI3 weekly, ROI3周报, ROI3效果同步, weekly sync]
+    negative_keywords: [为什么, 根因, 诊断, 实验该不该扩, rollout文档]
+    required_inputs: [周时间窗, Google Sheet 配置]
+    preflight_checks:
+      - Google Sheet 可达（API 非匿名 CSV）
+    output_contract: Markdown 周效果同步（Ads_exp/Diff 指标 + 健康度/波动判断）
+    known_failures:
+      - 面向 leader 的周对齐；日级读数用 roi3-daily-monitoring
+    freshness_rule: 周级
+    estimated_cost: 分钟级
+
+  - id: roi3-rollout-doc
+    match:
+      question_type: [评估]
+      evidence: [AB实验]
+      # 从 AB 平台链接填全量发布文档模板
+    maturity: skill
+    entrypoint: ads-rollout-generate
+    owner: common
+    route_priority: 82
+    trigger_keywords: [rollout文档, 全量申请文档, AB平台链接填模板, rollout doc, 生成rollout]
+    negative_keywords: [深度实验评估, 为什么, 根因, EGO eval, AUUC, 日报]
+    required_inputs: [AB 平台实验报告链接, bucket/对照确认]
+    preflight_checks:
+      - 经 sp-ab 取 AB 平台数据；guardrail 阈值见 references/guardrail-thresholds.yaml
+    output_contract: Markdown rollout 文档（模板填充，非根因分析）
+    known_failures:
+      - 只做数据映射+模板填充；实验效果评估用 experiment-analysis；日级风险用 ads-experiment-analyze
+    freshness_rule: 取 AB 平台快照
+    estimated_cost: 分钟级
+
+  - id: net-incremental-did
+    match:
+      question_type: [评估, 探索]
+      layer: [效果指标层]
+      evidence: [观测对比]
+      # 净增量价值 / 剥离自然增长 / DiD / 调整后边际带 CI / "花得值不值"
+    maturity: playbook
+    entrypoint: skills/team/04.product-algo/ads-roi3-experiment-analysis/references/did-net-incremental.md
+    owner: roger.li
+    route_priority: 72
+    trigger_keywords: [净增量, 剥离自然增长, DiD, 差分法, 花得值不值, 自然增长]
+    negative_keywords: [有明确AB桶读数, 生成日报, rollout文档, EGO eval]
+    required_inputs: [region/档, 实验前N天基线窗, 实验期窗, value口径]
+    preflight_checks:
+      - 平行趋势检验（实验前两桶斜率差≤15%）；不满足则 DiD 打折
+      - value 双口径并行（advv + broad_gmv）；右偏重尾时 CI 切 order-level cluster bootstrap
+    output_contract: 净增量 value/cost + 调整后边际利润率带 CI + 打平/显著判定（周会决策树）
+    known_failures:
+      - 直接 test−control 会把自然增长算进发券效果，必须 DiD 或纯差分按情形选
+      - 天数不足 trailing 窗 CI 很宽，只作方向信号
+    freshness_rule: 满日累计；trailing ≥14 天才坐实
+    estimated_cost: 小时级（基线+趋势检验+bootstrap）
+
+  - id: cross-layer-joint-analysis
+    match:
+      question_type: [评估, 读数]
+      evidence: [AB实验]
+      # 两实验在不同正交层，看 (层A桶×层B桶) 组合格 vs prod默认组合：模型层×策略层、模型×预算、策略×强度…
+      # 触发词：交叉实验/联合分析/正交叠加/两个layer/组合格/cross cell/ab_sign 两层取桶
+    maturity: playbook
+    entrypoint: skills/team/04.product-algo/ads-roi3-analysis/references/cross-layer-joint-analysis.md
+    owner: roger.li
+    route_priority: 83
+    trigger_keywords: [交叉实验, 联合分析, 正交叠加, 两个layer, 组合格, cross cell, ab_sign两层取桶]
+    negative_keywords: [单实验readout, 生成日报, rollout文档, EGO eval]
+    required_inputs: [两层各自桶号与流量%, 目标组合格与prod默认base组合, 时间窗(满日), regions, value口径]
+    preflight_checks:
+      - Step0 正交性确认：两层独立分流、scene/layer_id 已确认；组合格流量=两层份额相乘
+      - base=层A_base×层B_base 的 prod 默认组合（不是任一单层 base）
+      - 打平流量用分流日志用户数（exogenous），严禁用曝光/点击（被处理影响，会翻转结论）
+      - 全盘 platform_gmv 跨臂走 split-log（分流日志按 user join 订单），不用 voucher_click_context
+      - 抽干格剔除：用户/曝光比远偏设计份额比则弃
+    output_contract: 总-分-附录报告（spoke experiment-analysis 出）；双栏指标表+VPR+稳健性；明写隔离了什么/没隔离什么
+    known_failures:
+      - 曝光打平把效果除掉、翻转结论（2026-06-22 rev +2.2% 被假掉成 −1.7%）—— 只能 per-user 打平
+      - AB 平台单实验报表是跨另一层 blended，不能当组合格读
+      - perf 表个人 Presto 被 Ranger 拒、重 join 超时 → DataSuite（POLL_MAX_RETRIES 调高）
+      - 组合格流量小（~1%），需多满日；单格易被抽干
+    freshness_rule: 满日累计；组合格小，trailing ≥14 天才坐实，否则只作方向信号
+    estimated_cost: 小时级（两路取数 perf + split-log + 合并打平）
+
+  - id: synthesis-boss-account
+    match:
+      question_type: [评估, 决策]
+      # 老板级跨实验总账：赚不赚/值不值/扩不扩，多实验摊同口径合成判断
+    maturity: playbook
+    entrypoint: skills/team/04.product-algo/ads-roi3-analysis/references/synthesis-playbook.md
+    owner: roger.li
+    route_priority: 75
+    trigger_keywords: [ROI3赚不赚, 值不值, 扩不扩, 老板怎么看, 总账, 一页纸, 多实验合成]
+    negative_keywords: [单实验readout, 生成日报, EGO eval, rollout文档]
+    required_inputs: [父问题, 涉及哪些实验/region/档, 受众(中层/VP)]
+    sub_cells: [预算转移读数(experiment-analysis), 维度边际(profitability), 全局dose边际, 各实验净增量(did-net-incremental)]
+    merge_rule: 新鲜度过滤(标可信度等级)→同口径对齐(advv+broad_gmv双栏)→加权聚合→冲突处理
+    conflict_handling: 五分类(口径/证据层/新鲜度/因果关联/叠加效应)，报冲突+给前提，不硬合；口径反向自动标红
+    preflight_checks:
+      - 每子读数标运行天数→可信度(坐实≥14d/方向信号7-13d/不足<7d)，数据不够显式标"不知道"
+      - VP 版强制输出实测闭环 vs 模型外推两栏（外推标高估风险）
+    output_contract: 一页纸（结论先行+同口径对比表+饱和地图+实测vs外推两栏+诚实标注+动作）
+    known_failures:
+      - v1 半自动（非全自动合成）；当前多实验仅 ~4-6 天，多数子读数只能给方向信号
+      - 平均 ROI 永远好看，会掩盖边际已塌的部分——必须看边际不看平均
+    freshness_rule: 受最新子读数约束
+    estimated_cost: 小时级（多实验聚合 + 冲突核对）
+
+  - id: out-of-scope-sentinel
+    # 边界哨兵：在 manual-fallback 兜底前先查超域信号，命中则主动说不+指路，别让模糊跨域诉求被兜底接住才发现做不了（Round2 暴露）
+    match:
+      out_of_scope_signals: [用户LTV/cohort/留存/复购/用户ID纵向序列, 长期因果/习惯养成/撤券衰减/6-12周, 自然推荐流量隔离/对全站非广告GMV净影响, MP券×Ads券交叉归因, 大促实时自适应/动态特征/供给侧预测]
+    maturity: 超域
+    entrypoint: 主动说不 + 指路（ROI3 单域=订单桶级×短期7-14天×发券→交易AB/DiD 因果）
+    owner: roger.li
+    route_priority: 100
+    output_contract: 一句话说清 ROI3 能做的那部分（如发券对 ROI3 自身净增量）+ 超域部分指向（CRM/商智/推荐/经济学/引擎，见设计蓝本 §8）
+    known_failures:
+      - 用户粒度纵向/LTV/留存→CRM/商智；长期因果/习惯养成→预估模型/经济学(明确不做)；自然流量隔离→推荐系统；MP×Ads交叉→商务政策；大促实时→引擎/供应链
+      - 切忌为接住而硬塞跨域能力（会越界、ROI 低）；诚实划界比勉强承接更有价值
+
+  - id: manual-fallback
+    match:
+      question_type: [校验, 读数, 诊断, 探索, 评估, 决策]   # 任意格兜底
+    maturity: 手工
+    entrypoint: ads-text2da
+    owner: roger.li
+    required_inputs: [明确的取数口径（表/字段/过滤）, 时间窗]
+    preflight_checks:
+      - 口径已在 data-sources.md 或 datamap 中核对（首跑前 desc 表确认字段）
+    output_contract: 按 report-skeleton.md 组织产出；结论须标注三分类（事实/快照/推断）
+    known_failures:
+      - 自由 SQL 容易踩口径坑——先查 data-sources.md 的已知坑清单
+    freshness_rule: 逐次确认
+    estimated_cost: 视查询而定（声明给用户）

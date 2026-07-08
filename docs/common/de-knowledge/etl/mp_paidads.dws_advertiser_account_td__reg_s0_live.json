@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 2865149,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "INSERT OVERWRITE TABLE dws_advertiser_account_td__reg_s0_live PARTITION (tz_type='local', grass_region, grass_date)\n    SELECT  \n            COALESCE(a.user_id, b.user_id) AS user_id\n           ,COALESCE(a.shop_id, b.shop_id) AS shop_id\n           ,COALESCE(a.acc_before_balance, b.acc_before_balance) AS acc_before_balance\n           ,COALESCE(a.acc_before_balance_usd, b.acc_before_balance_usd) AS acc_before_balance_usd\n           ,COALESCE(a.acc_after_balance, b.acc_after_balance) AS acc_after_balance\n           ,COALESCE(a.acc_after_balance_usd, b.acc_after_balance_usd) AS acc_after_balance_usd\n           ,COALESCE(a.low_threshold, b.low_threshold) AS low_threshold\n           ,COALESCE(a.low_threshold_usd, b.low_threshold_usd) AS low_threshold_usd\n           ,COALESCE(a.is_reach_threshold, b.is_reach_threshold) AS is_reach_threshold\n           ,COALESCE(a.grass_region, b.grass_region) AS grass_region\n           ,date('${grass_date}') AS grass_date\n    FROM (\n        SELECT  user_id\n               ,shop_id\n               ,acc_before_balance\n               ,acc_before_balance_usd\n               ,acc_after_balance\n               ,acc_after_balance_usd\n               ,low_threshold\n               ,low_threshold_usd\n               ,is_reach_threshold\n               ,grass_region\n        FROM mp_paidads.dws_advertiser_account_1d__reg_s0_live\n        WHERE grass_region = upper('${region}')\n        AND grass_date = date('${grass_date}')\n    ) a\n    FULL OUTER JOIN (\n        SELECT  user_id\n               ,shop_id\n               ,acc_before_balance\n               ,acc_before_balance_usd\n               ,acc_after_balance\n               ,acc_after_balance_usd\n               ,low_threshold\n               ,low_threshold_usd\n               ,is_reach_threshold\n               ,grass_region\n        FROM mp_paidads.dws_advertiser_account_td__reg_s0_live\n        WHERE grass_region = upper('${region}')\n        AND grass_date = date_sub(date('${grass_date}'), 1)\n    ) b\n    ON a.shop_id = b.shop_id AND a.grass_region = b.grass_region;\n\nalter table dws_advertiser_account_td__${region}_s0_live add if not exists partition (grass_date = \"${grass_date}\");\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:08 GMT",
+      "task_code": "data_paidadsmart.studio_2865149",
+      "tbl_name": "dws_advertiser_account_td__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 2881835,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "INSERT OVERWRITE TABLE dws_advertise_activeness_1d__reg_s0_live PARTITION (tz_type='local', grass_region, grass_date)\nSELECT\n    ads_id\n     ,shop_id\n     ,seller_id AS user_id\n     ,MIN(first_mm_kw_ads_active_date) AS first_mm_kw_ads_active_date\n     ,MIN(first_sm_kw_ads_active_date) AS first_sm_kw_ads_active_date\n     ,upper('${region}') AS grass_region\n     ,date('${grass_date}')  AS grass_date\nFROM (\n    SELECT\n    ads_id\n        ,shop_id\n        ,seller_id\n        ,CASE\n    WHEN placement = 0 THEN grass_date\n    END AS first_mm_kw_ads_active_date\n        ,CASE\n    WHEN placement = 4 THEN grass_date\n    END AS first_sm_kw_ads_active_date\n        ,CASE\n    WHEN placement = 1000 THEN grass_date\n    END AS first_boost_kw_ads_active_date\n    FROM mp_paidads.dim_advertise__${region}_s0_live\n    WHERE grass_date = date('${grass_date}')\n    AND is_ads_active = 1\n    )\nGROUP BY ads_id, shop_id, seller_id;\n\nalter table dws_advertise_activeness_1d__${region}_s0_live add if not exists partition (grass_date = '${grass_date}');\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:39 GMT",
+      "task_code": "data_paidadsmart.studio_2881835",
+      "tbl_name": "dws_advertise_activeness_1d__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

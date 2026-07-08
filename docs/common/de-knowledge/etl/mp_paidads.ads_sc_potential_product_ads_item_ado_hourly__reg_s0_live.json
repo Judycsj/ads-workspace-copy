@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 8878261,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "\ncreate external table if not exists ads_sc_potential_product_ads_item_ado_hourly__reg_s0_live (\n    key string \n    ,item_id bigint\n    ,l7d bigint comment 'platform order count within last 7 days'\n) comment 'scope: potential product item; value: sum of L7d platform order count; hourly updated' partitioned by (\n    grass_region string\n    ,grass_date date comment 'date'\n    ,h tinyint comment 'hour'\n) stored as parquet location \"${HIVE_PATH}/ads_sc_potential_product_ads_item_ado_hourly__reg_s0_live\"\n;\n\ncreate or replace temporary view product_item_rcmd as (\n    SELECT t.grass_region\n        ,t.item_id\n    FROM mp_paidads.ads_sc_potential_product_ads_item_rcmd_daily__reg_s0_live t\n    JOIN (\n        select grass_region, max(grass_date) AS latest_date\n        from mp_paidads.ads_sc_potential_product_ads_item_rcmd_daily__reg_s0_live\n        where grass_region in ('SG', 'MY', 'PH', 'TW', 'ID', 'TH', 'VN', 'BR')\n        and grass_date >= date('${PREV_7D}')\n        group by grass_region\n    ) latest\n    ON t.grass_date = latest.latest_date\n    and t.grass_region = latest.grass_region\n    where t.grass_date >= date('${PREV_7D}')\n);\n\ninsert overwrite table ads_sc_potential_product_ads_item_ado_hourly__reg_s0_live partition (grass_region, grass_date,h)\nselect\n    concat('item_ado_data:', item.grass_region, '_', item.item_id) as key\n    ,item.item_id\n    ,coalesce(platform_order_cnt_7d, 0) as l7d\n    ,item.grass_region\n    ,date('${BIZ_DT}') as grass_date\n    ,cast('${BIZ_H}' as tinyint) as h\nfrom product_item_rcmd item\nleft join (\n    select \n        grass_region\n        ,item_id \n        ,sum(platform_order_cnt) as platform_order_cnt_7d\n    from (\n        --实时订单\n        select\n            grass_region\n            ,item_id\n            ,count(distinct order_id) as platform_order_cnt\n        from mp_order.rt_dwd_order_item_all_ent_rf__reg_s0_live\n        where\n            order_be_status_id in (1,2,4,6,7,8,9,10,11,12,13,14,15,16)\n            and grass_region in ('SG', 'MY', 'PH', 'TW', 'ID', 'TH', 'VN', 'BR')\n            and create_timestamp > unix_timestamp(date_sub(date('${BIZ_DT}'),2))\n            and create_timestamp <= unix_timestamp(CONCAT('${BIZ_DT}', ' ', lpad('${BIZ_H}', 2, 0), ':00:00'))\n        group by 1, 2\n\n        union all\n\n        --离线订单\n        select \n            grass_region\n            ,item_id\n            ,count(distinct order_id) as platform_order_cnt\n        from mp_paidads.ads_simple_roi2_npb_item_last_order_di__reg_s0_temp\n        where \n            grass_region in ('SG', 'MY', 'PH', 'TW', 'ID', 'TH', 'VN', 'BR')\n            and grass_date = date'${PREV_2D}'\n            and create_timestamp >= unix_timestamp(CONCAT(date_sub(date('${BIZ_DT}'),7), ' ', lpad('${BIZ_H}', 2, 0), ':00:00'))\n            and create_timestamp <= unix_timestamp(date_sub(date('${BIZ_DT}'),2))\n        group by 1 , 2\n    )\n    group by grass_region\n            ,item_id\n) o \non item.grass_region = o.grass_region\nand item.item_id = o.item_id\n;",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:47 GMT",
+      "task_code": "data_paidadsmart.studio_8878261",
+      "tbl_name": "ads_sc_potential_product_ads_item_ado_hourly__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

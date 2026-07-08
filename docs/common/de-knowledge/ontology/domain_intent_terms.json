@@ -1,0 +1,22 @@
+{
+  "version": "domain_intent.v1",
+  "domains": {
+    "ads_mart": {
+      "aliases": [
+        "advertising data mart",
+        "ads mart",
+        "ads_mart",
+        "mp_paidads",
+        "paidads",
+        "广告数仓"
+      ]
+    },
+    "srdi": {
+      "aliases": [
+        "srdi",
+        "srdi_mart",
+        "搜推"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "table": "ads_advertise_take_rate_1d__reg_s0_live",
+  "asset_ids": [
+    "6138301"
+  ],
+  "status": "unchanged",
+  "old_exists": true,
+  "old_hash": "1617d73b111fe01b54573ccb05f67048823ebe63cbf72836211da4b9cb28b1ec",
+  "new_hash": "1617d73b111fe01b54573ccb05f67048823ebe63cbf72836211da4b9cb28b1ec",
+  "fetches": [
+    {
+      "asset_id": "6138301",
+      "ok": true,
+      "fetch_info": "正在提取 asset_id=6138301 的 SQL ...\n任务名称: ads_advertise_take_rate_1d__id_s0_live_regional\nSQL 长度: 23773 字符\n--- SQL 内容 ---",
+      "sql_chars": 23774
+    }
+  ]
+}

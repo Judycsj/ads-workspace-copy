@@ -1,0 +1,18 @@
+{
+  "table": "dws_shop_item_order_ads_performance_1d__reg_s0_live",
+  "asset_ids": [
+    "10931061"
+  ],
+  "status": "unchanged",
+  "old_exists": true,
+  "old_hash": "260e018d9bfee09388be816896251b4199007bef75e4e917a972959d9619c08f",
+  "new_hash": "260e018d9bfee09388be816896251b4199007bef75e4e917a972959d9619c08f",
+  "fetches": [
+    {
+      "asset_id": "10931061",
+      "ok": true,
+      "fetch_info": "正在提取 asset_id=10931061 的 SQL ...\n任务名称: dws_shop_item_order_ads_performance_1d__id_s0_live\nSQL 长度: 1600 字符\n--- SQL 内容 ---",
+      "sql_chars": 1601
+    }
+  ]
+}

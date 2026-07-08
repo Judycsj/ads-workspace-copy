@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 6639966,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "create external table if not exists dws_livestream_brand_portal_1d__reg_s0_live\n(\n    shop_id bigint\n     ,campaign_id bigint\n     ,campaign_type int\n     ,views bigint\n     ,orders bigint\n     ,gross_sales double\n     ,gross_sales_usd double\n     ,ads_spend double\n     ,ads_spend_usd double\n     ,paid_order_cnt bigint\n     ,paid_order_gmv double\n     ,paid_order_gmv_usd double\n) \npartitioned by\n(\n    tz_type string comment 'tz_type'\n    ,grass_region string comment 'grass_region'\n    ,grass_date DATE comment 'grass_date'\n)\nstored as PARQUET\nlocation '${HIVE_PATH}/dws_livestream_brand_portal_1d'\n;\n\ncreate or replace temporary view dim_advertise as \nselect \n    campaign_id\n    ,shop_id\nfrom mp_paidads.dim_advertise__reg_s0_live\nwhere   grass_region = upper('${region}')\nand   grass_date = DATE('${grass_date}')\nand  placement = 3327\ngroup by 1,2;\n\n\ncreate or replace temporary view revenue as \nselect \n    campaign_id\n    ,pricing_type\n    ,sum(total_expenditure_amt_local_1d) as ads_spend\n    ,sum(total_expenditure_amt_usd_1d) as ads_spend_usd\nfrom mp_paidads.dws_advertise_livestream_revenue_1d__reg_s0_live\nwhere   grass_region = upper('${region}')\nand   grass_date = DATE('${grass_date}')\nand tz_type = 'local'\ngroup by 1,2;\n\nINSERT OVERWRITE TABLE dws_livestream_brand_portal_1d__reg_s0_live PARTITION (tz_type = 'local', grass_region, grass_date)\nselect \n    shop_id\n    ,a.campaign_id as campaign_id\n    ,campaign_type\n    ,views\n    ,orders \n    ,gross_sales\n    ,gross_sales_usd\n    ,ads_spend\n    ,ads_spend_usd\n    ,paid_order_cnt\n    ,paid_order_gmv\n    ,paid_order_gmv_usd\n    ,upper('${region}') as grass_region\n    ,date('${grass_date}') as grass_date\nfrom\n(select \n    campaign_id\n    ,pricing_type as campaign_type\n    ,sum(view) as views\n    ,sum(checkout) as orders \n    ,sum(broad_gmv) as gross_sales\n    ,sum(broad_gmv_usd) as gross_sales_usd\n    ,sum(paid_order) as paid_order_cnt\n    ,sum(paid_order_gmv) as paid_order_gmv\n    ,sum(paid_order_gmv_usd) as paid_order_gmv_usd\nfrom mp_paidads.dwd_livestream_performance_di__reg_s0_live\nwhere grass_region = upper('${region}')\n    and   grass_date = date('${grass_date}')\n    and tz_type = 'local'\ngroup by 1,2\n)a\nleft join dim_advertise b \non a.campaign_id = b.campaign_id\nleft join revenue c \non a.campaign_id = c.campaign_id\nand a.campaign_type = c.pricing_type\n;",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:27 GMT",
+      "task_code": "data_paidadsmart.studio_6639966",
+      "tbl_name": "dws_livestream_brand_portal_1d__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 2533687,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "INSERT OVERWRITE TABLE dwd_advertise_order_attribution_di__reg_s0_live PARTITION (tz_type='local', grass_region = 'BR', grass_date)\n    SELECT /*+ REPARTITION(100) */\n         order_id\n        ,request_id\n        ,query\n        ,keyword\n        ,ads_id\n        ,shop_id\n        ,item_id\n        ,placement\n        ,click_timestamp\n        ,click_datetime\n        ,event_timestamp\n        ,event_datetime\n        ,paid_timestamp\n        ,paid_datetime\n        ,confirmed_timestamp\n        ,confirmed_datetime\n        ,pricing_type\n        ,daily_order_cnt\n        ,order_cnt\n        ,paid_order_cnt\n        ,confirmed_order_cnt\n        ,ads_order_gmv_local AS ads_order_gmv\n        ,(ads_order_gmv_local/exchange_rate) AS ads_order_gmv_usd\n        ,ads_item_sold_cnt\n        ,broad_order_cnt\n        ,broad_gmv_amt_local AS broad_gmv_amt\n        ,(broad_gmv_amt_local/exchange_rate) AS broad_gmv_amt_usd\n        ,broad_item_cnt\n        ,broad_shop_item_click_cnt\n        ,broad_shop_item_impression_cnt\n        ,match_type\n        ,matched_premium_segment_value_id\n        ,entrance\n        ,grass_date\n    FROM mp_paidads.dwd_advertise_performance_di__reg_s0_live a\n    LEFT OUTER JOIN (\n        SELECT\n            grass_region\n            ,exchange_rate\n        FROM mp_order.dim_exchange_rate__reg_s0_live\n        WHERE grass_region = upper('${region}')\n        AND grass_date = DATE('${grass_date}') \n    ) ex_rate\n    ON a.grass_region = ex_rate.grass_region\n    WHERE a.grass_region = upper('${region}')\n    AND a.grass_date = DATE('${grass_date}') \n    AND (\n        a.order_id is not NULL\n        OR a.paid_datetime is not NULL\n        OR a.confirmed_datetime is not NULL\n    );\n\n    alter table dwd_advertise_order_attribution_di__${region}_s0_live add if not exists partition (grass_date= '${grass_date}');",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:13 GMT",
+      "task_code": "data_paidadsmart.studio_2533687",
+      "tbl_name": "dwd_advertise_order_attribution_di__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

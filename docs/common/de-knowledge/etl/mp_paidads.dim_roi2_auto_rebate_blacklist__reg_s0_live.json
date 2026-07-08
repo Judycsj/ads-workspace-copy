@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 9895864,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "-- blacklist\ncreate external table if not exists dim_roi2_auto_rebate_blacklist__reg_s0_live \n(\n\tshop_id BIGINT comment 'shop_id'\n\t,blacklist_date date comment '黑名单日期'\n) \npartitioned by\n(\n    grass_region string comment 'region'\n    ,grass_date DATE comment 'date'\n)\nstored as parquet\nlocation \"${HIVE_PATH}/dim_roi2_auto_rebate_blacklist__reg_s0_live\"\n;\n\nINSERT OVERWRITE TABLE dim_roi2_auto_rebate_blacklist__reg_s0_live PARTITION (grass_region, grass_date)\nselect entity_id as shop_id\n    ,date(create_datetime) as blacklist_date\n    ,upper('${region}') as grass_region\n    ,date('${BIZ_YESTERDAY}') as grass_date\nfrom mp_seller.dim_seller_tag_entity__reg_live \nwhere grass_region = UPPER('${region}') and grass_date = date('${BIZ_YESTERDAY}') and is_valid=1 and entity_type='ENTITY_TYPE_SHOP' and tag_name = '1P_SIP'\n;\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:18 GMT",
+      "task_code": "data_paidadsmart.studio_9895864",
+      "tbl_name": "dim_roi2_auto_rebate_blacklist__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

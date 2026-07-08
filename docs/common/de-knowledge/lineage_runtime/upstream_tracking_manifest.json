@@ -1,0 +1,20 @@
+{
+  "artifact": "upstream_tracking_index",
+  "compressed_bytes": 5533657,
+  "counts": {
+    "field_nodes": 13738,
+    "recursive_lineage_fields": 11156,
+    "source_fields": 4986,
+    "table_aliases": 544,
+    "table_statuses": 418,
+    "tables": 686,
+    "target_fields": 11156,
+    "transform_nodes": 15511
+  },
+  "generated_at": "2026-05-20T12:11:01Z",
+  "generated_at_epoch": 1779279061,
+  "index_filename": "upstream_tracking_index.json.gz",
+  "schema_version": "lineage_context.v1",
+  "source_paths_included": false,
+  "uncompressed_bytes": 179282720
+}

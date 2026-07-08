@@ -1,0 +1,25 @@
+{
+  "table": "dwd_ads_request_performance_di__reg_s0_live",
+  "asset_ids": [
+    "7038005",
+    "6615014"
+  ],
+  "status": "changed",
+  "old_exists": true,
+  "old_hash": "0dfe4ef6f6001037901be5ddca83eda97ce622a5e3947993f6a247da8269d1f8",
+  "new_hash": "3a483ca0f1debb6136e9b663b3873ec34f0bcf45e1d3001a5d735cc56836454a",
+  "fetches": [
+    {
+      "asset_id": "7038005",
+      "ok": true,
+      "fetch_info": "正在提取 asset_id=7038005 的 SQL ...\n任务名称: dwd_ads_request_performance_di__id_s0_live\nSQL 长度: 12507 字符\n--- SQL 内容 ---",
+      "sql_chars": 12508
+    },
+    {
+      "asset_id": "6615014",
+      "ok": true,
+      "fetch_info": "正在提取 asset_id=6615014 的 SQL ...\n任务名称: dwd_ads_request_performance_di__id_s0_live_oa\nSQL 长度: 19710 字符\n--- SQL 内容 ---",
+      "sql_chars": 19711
+    }
+  ]
+}

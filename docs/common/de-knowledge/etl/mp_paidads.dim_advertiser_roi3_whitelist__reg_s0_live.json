@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 7785682,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "CREATE EXTERNAL TABLE IF NOT EXISTS dim_advertiser_roi3_whitelist__reg_s0_live\n(   \n    shop_id bigint\n    ,whitelist_date date\n)\nCOMMENT 'simple roi2 item first adopted date'\npartitioned by\n(\n     tz_type                        string          comment               'timezone type'\n    ,grass_region                   string          comment               'partition key'\n    ,grass_date                     date            comment               'partition key, yyyy-MM-dd'\n)\nSTORED AS PARQUET\nLOCATION '${HIVE_PATH}/dim_advertiser_roi3_whitelist__reg_s0_live/'\n;\n\n\ninsert overwrite table dim_advertiser_roi3_whitelist__reg_s0_live partition (tz_type = 'local', grass_region, grass_date)\nselect \n    shop_id\n    ,whitelist_date\n    ,upper('${region}') as grass_region\n    ,date('${BIZ_YESTERDAY}') as grass_date\nfrom \n(\n    select \n        shop_id \n        ,min(whitelist_date) as whitelist_date\n    from \n    (\n       \n        select \n            shop_id \n            ,date('${BIZ_YESTERDAY}') as whitelist_date\n        from mp_paidads.dim_advertiser__reg_s0_live\n        where tz_type = 'local'\n        and grass_date = date('${BIZ_YESTERDAY}')\n        and grass_region = upper('${region}')\n        and shop_id > 0\n        and is_roi_three_voucher_enabled > 0\n        group by shop_id\n        \n\n        union all \n\n        select \n            shop_id\n            ,whitelist_date\n        from mp_paidads.dim_advertiser_roi3_whitelist__reg_s0_live\n        where tz_type = 'local'\n        and grass_region = upper('${region}')\n        and grass_date = date('${PREV_2D}')\n    )\n    group by shop_id \n)\n;\n\ncreate or replace view dim_advertiser_roi3_whitelist__${region}_s0_live as \nselect *\nfrom dim_advertiser_roi3_whitelist__reg_s0_live\nwhere grass_region = upper('${region}')\n;\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:36 GMT",
+      "task_code": "data_paidadsmart.studio_7785682",
+      "tbl_name": "dim_advertiser_roi3_whitelist__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

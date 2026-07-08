@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 2896564,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "INSERT OVERWRITE TABLE dws_advertiser_active_status_td__reg_s0_live partition (tz_type='local', grass_region, grass_date)\nSELECT  \n         shop_id\n        ,user_id\n        ,MAX(last_active_date) AS last_active_date\n        ,upper('${region}') AS grass_region\n        ,date('${grass_date}') AS grass_date\nFROM\n(\n    SELECT   shop_id\n            ,user_id\n            ,MAX(grass_date) AS last_active_date\n    FROM mp_paidads.dws_advertise_activeness_1d__${region}_s0_live\n    WHERE grass_date = '${grass_date}'\n    GROUP BY shop_id, user_id\n    UNION ALL\n    SELECT   shop_id\n            ,user_id\n            ,last_active_date\n    FROM mp_paidads.dws_advertiser_active_status_td__${region}_s0_live\n    WHERE grass_date = '${day_before_grass_date}'\n)\nGROUP BY shop_id, user_id;\n\nalter table dws_advertiser_active_status_td__${region}_s0_live add if not exists partition (grass_date = '${grass_date}');\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:08 GMT",
+      "task_code": "data_paidadsmart.studio_2896564",
+      "tbl_name": "dws_advertiser_active_status_td__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

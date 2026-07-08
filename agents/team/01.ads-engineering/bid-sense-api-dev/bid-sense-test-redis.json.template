@@ -1,0 +1,8 @@
+{
+  "roi2_redis": {
+    "addr": "nifvf.elasticredis.cloud.shopee.io",
+    "port": "10559",
+    "username": "cache_readwrite_134920",
+    "password": "oJ8R0y5t"
+  }
+}

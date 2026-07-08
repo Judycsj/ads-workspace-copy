@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 5649629,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "CREATE TABLE if not exists dwd_log_translog_unsuccessful_event_deduction_di__reg_s0_live (\n    unique_id bigint\n    ,ads_id bigint\n    ,account_id bigint\n    -- ,country string\n    ,campaign_id bigint\n    ,seller_user_id bigint\n    ,item_id bigint\n    ,shop_id bigint\n    ,deduct_type int\n    -- ,event_time bigint\n    ,entrance int\n    ,pricing_type int\n    ,placement int\n    ,daily_quota bigint\n    ,total_quota bigint\n    ,operation int\n    ,price bigint\n    ,platform int\n    ,sub_entrance int\n    ,ls_session_id bigint\n    ,deduct_date string\n    ,is_seller boolean\n    ,quota_split struct<placement:int,daily_available_quota:bigint,version:int,placements:array<int>>\n    ,status int\n    ,account struct<accountid:bigint,userid:bigint,balance:bigint,ctime:bigint,mtime:bigint,status:int,overdue_limit:bigint,extinfo:binary,display_ads_balance:bigint>\n    ,ads_credits array<struct<order_id:bigint,order_type:int,user_id:bigint,shop_id:int,amount:bigint,balance:bigint,main_type:int,subtype:bigint,start_time:bigint,end_time:bigint,ctime:bigint,mtime:bigint,extinfo:binary>>\n    ,campaign_balance_by_date struct<campaignid:bigint,userid:bigint,daily_balance:bigint,mtime:bigint,ctime:bigint,extinfo:binary>\n    ,campaign_balance struct<campaignid:bigint,daily_balance:bigint,mtime:bigint,history_balance:bigint,userid:bigint>\n    ,country string\n    ,event_time bigint \n    ,adjusted_cost bigint \n    ,credit_cost bigint \n    ,balance_cost bigint\n    ,campaign_balance_by_date_extinfo struct<placement_expenses:array<struct<placement:int, expense:bigint >>, initial_balance:bigint>\n    ,grass_region string \n    ,grass_date date\n)\nPARTITIONED BY (grass_region, grass_date)\nSTORED AS parquet\nLOCATION 'hdfs://R2/projects/data_paidadsmart/hive/mp_paidads/dwd_log_translog_unsuccessful_event_deduction_di__reg_s0_live';\n\ncreate or replace temporary function campaign_daily_balance_ext_info as 'com.shopee.deepdata.warehouse.hive.udf.CampaignDailyBalanceExtInfoUDF';\n\ninsert overwrite table dwd_log_translog_unsuccessful_event_deduction_di__reg_s0_live partition (grass_region, grass_date)\nSELECT\n    deduction_event.unique_id\n    ,deduction_event.ads_id\n    ,deduction_event.account_id\n    -- ,deduction_event.country\n    ,deduction_event.campaign_id\n    ,deduction_event.seller_user_id\n    ,deduction_event.item_id\n    ,deduction_event.shop_id\n    ,deduction_event.deduct_type\n    -- ,deduction_event.event_time\n    ,deduction_event.entrance\n    ,deduction_event.pricing_type\n    ,deduction_event.placement\n    ,deduction_event.daily_quota\n    ,deduction_event.total_quota\n    ,deduction_event.operation\n    ,deduction_event.price\n    ,deduction_event.platform\n    ,deduction_event.sub_entrance\n    ,deduction_event.ls_session_id\n    ,deduction_event.deduct_date\n    ,deduction_event.is_seller\n    ,deduction_event.quota_split\n    ,status\n    ,account\n    ,ads_credits\n    ,campaign_balance_by_date\n    ,campaign_balance\n    ,country\n    ,event_time\n    ,adjusted_cost\n    ,credit_cost\n    ,balance_cost\n    ,campaign_daily_balance_ext_info(campaign_balance_by_date.extinfo) as campaign_balance_by_date_extinfo\n    ,tracking_json_data \n    ,item_json_data \n    ,shop_json_data \n    ,recall_source \n    ,order_id \n    ,valid_balance\n    ,available_balance\n    ,version int\n    ,user_id\n    ,grass_region\n    ,grass_date\nFROM mp_paidads.ods_log_translog_unsuccessful_event_deduction_hi__reg_s0_live\nwhere grass_date = '${BIZ_YESTERDAY}';",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:20 GMT",
+      "task_code": "data_paidadsmart.studio_5649629",
+      "tbl_name": "dwd_log_translog_unsuccessful_event_deduction_di__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

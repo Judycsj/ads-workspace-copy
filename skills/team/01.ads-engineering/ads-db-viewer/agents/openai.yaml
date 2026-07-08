@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ads DB Viewer"
+  short_description: "Explain Ads DB schemas and query live DB safely."
+  default_prompt: "Use $ads-db-viewer to explain an Ads DB table and query one safe live sample row."

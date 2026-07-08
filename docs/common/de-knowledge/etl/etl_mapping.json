@@ -1,0 +1,397 @@
+[
+  {
+    "sheet_row": 1,
+    "type": "Ads Overall",
+    "tracker_name": "Ads Key Metrics Tracker",
+    "description": "daily更新广告核心指标（tr、cpm、cpc、ads load、ctr、cr、roi）",
+    "region": "ALL",
+    "pic": "Zhangyu Zhu",
+    "assets": [
+      {"asset_id": "7291229", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=video_bi&asset_id=7291229"}
+    ]
+  },
+  {
+    "sheet_row": 2,
+    "type": "Ads Overall",
+    "tracker_name": "Ads supply tracker",
+    "description": "daily更新广告核心指标（tr、cpm、cpc、ads load、ctr、cr、roi，可以通过编辑维护进行筛选）",
+    "region": "ALL",
+    "pic": "Xin Luo",
+    "assets": [
+      {"asset_id": "6775447", "role": "main", "url": "https://datasuite.shopee.io/studio?asset_id=6775447&share_mode=1"}
+    ]
+  },
+  {
+    "sheet_row": 3,
+    "type": "Ads Overall",
+    "tracker_name": "Product Ads Key Metrics",
+    "description": "Ads Net TR mtd口径归因，platform traffic, bidding, supply",
+    "region": "ALL",
+    "pic": "Siqi Ren",
+    "assets": [
+      {"asset_id": "8196595", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=8196595"}
+    ]
+  },
+  {
+    "sheet_row": 4,
+    "type": "Shop Ads",
+    "tracker_name": "Shop ads tracker",
+    "description": "",
+    "region": "ALL",
+    "pic": "Jingwen Zhang",
+    "assets": [
+      {"asset_id": "5516491", "role": "main", "url": "https://datasuite.shopee.io/studio?asset_id=5516491&share_mode=1"}
+    ]
+  },
+  {
+    "sheet_row": 5,
+    "type": "Brand Ads",
+    "tracker_name": "Search brand ads tracker",
+    "description": "",
+    "region": "ALL",
+    "pic": "Jingwen Zhang",
+    "assets": [
+      {"asset_id": "10072370", "role": "main", "url": "https://datasuite.shopee.io/studio?asset_id=10072370&share_mode=1"}
+    ]
+  },
+  {
+    "sheet_row": 6,
+    "type": "Brand Max",
+    "tracker_name": "Brand max tracker",
+    "description": "",
+    "region": "ALL",
+    "pic": "Jingwen Zhang",
+    "assets": [
+      {"asset_id": "10798502", "role": "main", "url": "https://datasuite.shopee.io/studio?asset_id=10798502&share_mode=1"}
+    ]
+  },
+  {
+    "sheet_row": 7,
+    "type": "Ads Platform",
+    "tracker_name": "广告平台看板",
+    "description": "平台关键功能效果（auto topup/auto budget increase等）",
+    "region": "ALL",
+    "pic": "Li Robin",
+    "assets": [
+      {"asset_id": "10462118", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10462118"}
+    ]
+  },
+  {
+    "sheet_row": 8,
+    "type": "GMV MAX",
+    "tracker_name": "Campaign surge",
+    "description": "",
+    "region": "ALL",
+    "pic": "Jingwen Zhang",
+    "assets": [
+      {"asset_id": "9809284", "role": "adoption_中间表", "url": "https://datasuite.shopee.io/studio?asset_id=9809284&share_mode=1"},
+      {"asset_id": "9809866", "role": "adoption_写入看板", "url": "https://datasuite.shopee.io/studio?asset_id=9809866&share_mode=1"},
+      {"asset_id": "9816656", "role": "大促表现_中间表", "url": "https://datasuite.shopee.io/studio?asset_id=9816656&share_mode=1"},
+      {"asset_id": "9816797", "role": "大促表现_写入看板", "url": "https://datasuite.shopee.io/studio?asset_id=9816797&share_mode=1"},
+      {"asset_id": "9903502", "role": "系统调价_中间表", "url": "https://datasuite.shopee.io/studio?asset_id=9903502&share_mode=1"},
+      {"asset_id": "9903591", "role": "系统调价_写入看板", "url": "https://datasuite.shopee.io/studio?asset_id=9903591&share_mode=1"},
+      {"asset_id": "10190174", "role": "seller_type采纳率_中间表", "url": "https://datasuite.shopee.io/studio?asset_id=10190174&share_mode=1"},
+      {"asset_id": "10190796", "role": "seller_type采纳率_写入看板", "url": "https://datasuite.shopee.io/studio?asset_id=10190796&share_mode=1"}
+    ]
+  },
+  {
+    "sheet_row": 9,
+    "type": "GMV MAX",
+    "tracker_name": "ROI2 周报",
+    "description": "Weekly Friday更新过去8周GMVMAX指标波动：Rev, budget, 稳定budget, budget util, 空耗, advv, target ROI, fulfilment, ads supply, arpu",
+    "region": "ALL",
+    "pic": "Siqi Ren",
+    "assets": [
+      {"asset_id": "8234322", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=8234322"}
+    ]
+  },
+  {
+    "sheet_row": 10,
+    "type": "GMV MAX",
+    "tracker_name": "GMV Max Supply Tracker 2025",
+    "description": "daily ads perf metrics in all region and simple2 and target2 and manual",
+    "region": "ALL",
+    "pic": "Jun He",
+    "assets": [
+      {"asset_id": "7633383", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=7633383"}
+    ]
+  },
+  {
+    "sheet_row": 11,
+    "type": "GMV MAX",
+    "tracker_name": "ROI 2.0 Key Metrics Dashboard",
+    "description": "",
+    "region": "ALL",
+    "pic": "Xin Luo",
+    "assets": []
+  },
+  {
+    "sheet_row": 12,
+    "type": "GMV MAX",
+    "tracker_name": "Simple2 Performance",
+    "description": "Simple2 performance, deduction ratio, budget稳定性",
+    "region": "ALL",
+    "pic": "Siqi Ren",
+    "assets": [
+      {"asset_id": "9727176", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=9727176"}
+    ]
+  },
+  {
+    "sheet_row": 13,
+    "type": "ROI3",
+    "tracker_name": "ROI3 Performance Monitor New",
+    "description": "ROI3发券效果、链路监控",
+    "region": "ALL",
+    "pic": "Xin Luo",
+    "assets": []
+  },
+  {
+    "sheet_row": 14,
+    "type": "流量",
+    "tracker_name": "w change流量tracker",
+    "description": "分搜推场景监控各个w系数对应的biding type核心metrics",
+    "region": "ALL",
+    "pic": "Siqi Ren",
+    "assets": [
+      {"asset_id": "7594097", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=7594097"}
+    ]
+  },
+  {
+    "sheet_row": 15,
+    "type": "增长",
+    "tracker_name": "增长目标tracker(Daily)",
+    "description": "",
+    "region": "ALL",
+    "pic": "Jingwen Zhang",
+    "assets": [
+      {"asset_id": "8682579", "role": "main", "url": "https://datasuite.shopee.io/studio?asset_id=8682579&share_mode=1"}
+    ]
+  },
+  {
+    "sheet_row": 16,
+    "type": "Ads Platform",
+    "tracker_name": "ads platform touchpoint dashboard",
+    "description": "ads platform touchpoint data search(including view/imp/click pv/uv), touchpoint conversion",
+    "region": "ALL",
+    "pic": "Li Robin",
+    "assets": [
+      {"asset_id": "10729001", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10729001"}
+    ]
+  },
+  {
+    "sheet_row": 17,
+    "type": "Ads Platform",
+    "tracker_name": "touchpoint conversion tracker",
+    "description": "monitor ads platform touchpoint conversion(main metric: ads creation seller count/touchpoint total view)",
+    "region": "ALL",
+    "pic": "Li Robin",
+    "assets": [
+      {"asset_id": "10729001", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10729001"}
+    ]
+  },
+  {
+    "sheet_row": 18,
+    "type": "Ads Platform",
+    "tracker_name": "ads supply okr tracker",
+    "description": "monitor key metrics and group by sub-team features/ads creation entry points",
+    "region": "ALL",
+    "pic": "Li Robin",
+    "assets": [
+      {"asset_id": "10763783", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10763783"}
+    ]
+  },
+  {
+    "sheet_row": 19,
+    "type": "Ads Platform",
+    "tracker_name": "Rapid boost tracker",
+    "description": "monitor rapid boost ads performance",
+    "region": "ALL",
+    "pic": "Li Robin",
+    "assets": [
+      {"asset_id": "10521778", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10521778"}
+    ]
+  },
+  {
+    "sheet_row": 20,
+    "type": "Ads Platform",
+    "tracker_name": "ads gms creation tracker",
+    "description": "monitor key metrics of gms creation and group by platform/region/advertiser tier",
+    "region": "ALL",
+    "pic": "Li Robin",
+    "assets": [
+      {"asset_id": "10775765", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10775765"}
+    ]
+  },
+  {
+    "sheet_row": 21,
+    "type": "GMS",
+    "tracker_name": "Gmv Max Shop tracker",
+    "description": "daily GMS ads perf metrics in all region",
+    "region": "ALL",
+    "pic": "Jun He",
+    "assets": [
+      {"asset_id": "10168204", "role": "中间表", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10168204"},
+      {"asset_id": "10218774", "role": "结果表", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10218774"}
+    ]
+  },
+  {
+    "sheet_row": 22,
+    "type": "新品广告",
+    "tracker_name": "新品广告tracker",
+    "description": "daily new item ads perf metrics in all region",
+    "region": "ALL",
+    "pic": "Jun He",
+    "assets": [
+      {"asset_id": "10525354", "role": "中间表", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10525354"},
+      {"asset_id": "10560978", "role": "结果表1", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10560978"},
+      {"asset_id": "10774056", "role": "结果表2", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10774056"},
+      {"asset_id": "10749301", "role": "结果表3", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10749301"}
+    ]
+  },
+  {
+    "sheet_row": 23,
+    "type": "Incentive",
+    "tracker_name": "Ads Incentive Dashboard",
+    "description": "广告激励效果看板",
+    "region": "ALL",
+    "pic": "Yuanyuan Qian",
+    "assets": [
+      {"asset_id": "10032592", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10032592"}
+    ]
+  },
+  {
+    "sheet_row": 24,
+    "type": "Incentive",
+    "tracker_name": "Incentive Monthly Tracker",
+    "description": "激励+多退少补预算监控",
+    "region": "ALL",
+    "pic": "Yuanyuan Qian",
+    "assets": [
+      {"asset_id": "9535965", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=9535965"}
+    ]
+  },
+  {
+    "sheet_row": 25,
+    "type": "Incentive",
+    "tracker_name": "预算增长专项-撞线客户监控",
+    "description": "balance/budget 撞线客户监控",
+    "region": "ALL",
+    "pic": "Yuanyuan Qian",
+    "assets": [
+      {"asset_id": "10428079", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10428079"}
+    ]
+  },
+  {
+    "sheet_row": 26,
+    "type": "货款打通",
+    "tracker_name": "货款打通Tracker",
+    "description": "线下货款打通weekly监控",
+    "region": "MY/SG",
+    "pic": "Yuanyuan Qian",
+    "assets": [
+      {"asset_id": "10361405", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10361405"}
+    ]
+  },
+  {
+    "sheet_row": 27,
+    "type": "货款打通",
+    "tracker_name": "Auto Escrow Tracker",
+    "description": "线上货款打通daily监控",
+    "region": "ALL",
+    "pic": "Yuanyuan Qian",
+    "assets": [
+      {"asset_id": "10775707", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10775707"}
+    ]
+  },
+  {
+    "sheet_row": 28,
+    "type": "GMV MAX",
+    "tracker_name": "Auto Rebate Tracker汇总版",
+    "description": "target2+gms+multi多退少补监控",
+    "region": "ALL",
+    "pic": "Yuanyuan Qian",
+    "assets": [
+      {"asset_id": "11140975", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=11140975"}
+    ]
+  },
+  {
+    "sheet_row": 29,
+    "type": "Ads Others",
+    "tracker_name": "S&R&A Monthly Metrics Tracker",
+    "description": "监控by month的电商、广告核心指标",
+    "region": "ALL",
+    "pic": "Renliang Dang",
+    "assets": [
+      {"asset_id": "5794077", "role": "底层表", "url": "https://datasuite.shopee.io/studio?project_code=video_bi&asset_id=5794077"},
+      {"asset_id": "5790317", "role": "output_ID", "url": "https://datasuite.shopee.io/studio?project_code=video_bi&asset_id=5790317"},
+      {"asset_id": "5845990", "role": "output_Global", "url": "https://datasuite.shopee.io/studio?project_code=video_bi&asset_id=5845990"}
+    ]
+  },
+  {
+    "sheet_row": 30,
+    "type": "Ads Others",
+    "tracker_name": "PC1 and main components Tracking Report",
+    "description": "pc1主要组成项by day数据",
+    "region": "ALL",
+    "pic": "Renliang Dang",
+    "assets": [
+      {"asset_id": "9731509", "role": "底层表", "url": "https://datasuite.shopee.io/studio?project_code=video_bi&asset_id=9731509"},
+      {"asset_id": "9732969", "role": "output_Global", "url": "https://datasuite.shopee.io/studio?project_code=video_bi&asset_id=9732969"},
+      {"asset_id": "9732893", "role": "output_ID", "url": "https://datasuite.shopee.io/studio?project_code=video_bi&asset_id=9732893"}
+    ]
+  },
+  {
+    "sheet_row": 31,
+    "type": "增长",
+    "tracker_name": "新老客分层数据看板",
+    "description": "新老客数据",
+    "region": "ALL",
+    "pic": "Siqi Ren",
+    "assets": [
+      {"asset_id": "9004848", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=9004848"}
+    ]
+  },
+  {
+    "sheet_row": 32,
+    "type": "Ads Overall",
+    "tracker_name": "TR下钻分析",
+    "description": "TR mom, YOY对比数据，daily更新",
+    "region": "ALL",
+    "pic": "Siqi Ren",
+    "assets": []
+  },
+  {
+    "sheet_row": 33,
+    "type": "GMS",
+    "tracker_name": "Auto Escrow Tracker(GMS部分)",
+    "description": "线上货款打通创建gms部分daily监控",
+    "region": "ALL",
+    "pic": "Jun He",
+    "assets": [
+      {"asset_id": "10168204", "role": "底层表", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10168204"},
+      {"asset_id": "10769000", "role": "结果表", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10769000"}
+    ]
+  },
+  {
+    "sheet_row": 34,
+    "type": "生态体验",
+    "tracker_name": "生态体验tracker",
+    "description": "daily更新平台7d3do投广商品数量等performance, retention, 出坡率等metrics",
+    "region": "ALL",
+    "pic": "Siqi Ren",
+    "assets": [
+      {"asset_id": "10880812", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10880812"}
+    ]
+  },
+  {
+    "sheet_row": 35,
+    "type": "流量",
+    "tracker_name": "Ads traffic Buybox + winner",
+    "description": "daily更新buybox和Winner项目下的ads supply, performance metrics, conversion metrics vs organic supply",
+    "region": "ALL",
+    "pic": "Siqi Ren",
+    "assets": [
+      {"asset_id": "10720149", "role": "main", "url": "https://datasuite.shopee.io/studio?project_code=mkplpaidads_analytics&asset_id=10720149"}
+    ]
+  }
+]

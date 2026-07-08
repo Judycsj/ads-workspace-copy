@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 3050657,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "create external table if not exists dws_campaign_deduction_budget_1d__reg_s0_live\n(\n    campaign_id bigint comment 'campaign_id'\n    ,total_quota_local double comment 'total_quota_local'\n    ,total_deduction double comment 'total_deduction'\n    ,hit_total_budget tinyint comment 'hit_total_budget'\n    ,daily_quota_local double comment 'daily_quota_local'\n    ,daily_deduction double comment 'daily_deduction'\n    ,hit_daily_budget tinyint comment 'hit_daily_budget'\n) \npartitioned by\n(\n    tz_type string comment 'tz_type'\n    ,grass_region string comment 'grass_region'\n    ,grass_date DATE comment 'grass_date'\n)\nstored as PARQUET\nlocation '${path}'\n;\n\ncreate external table if not exists dws_campaign_deduction_budget_1d__${region}_s0_live\n(\n    campaign_id bigint comment 'campaign_id'\n    ,total_quota_local double comment 'total_quota_local'\n    ,total_deduction double comment 'total_deduction'\n    ,hit_total_budget tinyint comment 'hit_total_budget'\n    ,daily_quota_local double comment 'daily_quota_local'\n    ,daily_deduction double comment 'daily_deduction'\n    ,hit_daily_budget tinyint comment 'hit_daily_budget'\n) \npartitioned by\n(\n    grass_date DATE comment 'grass_date'\n)\nstored as PARQUET\nlocation '${path}/tz_type=local/grass_region=${upper_region}'\n;\n\ninsert overwrite table dws_campaign_deduction_budget_1d__reg_s0_live partition (tz_type = 'local', grass_region, grass_date)\nselect  dim_campaign_tab.campaign_id\n        ,total_quota_local\n        ,total_deduction\n        -- if total_quota_local is not set, then null, can treat total quota as maxvalue\n        ,case   when (total_quota_local is null or total_quota_local = 0) then 0\n                when (total_quota_local - total_deduction <= 0) then 1\n                else 0\n         end as hit_total_budget\n        ,daily_quota_local\n        ,daily_deduction\n        -- if daily_quota_local is not set, then null, can treat total quota as maxvalue\n        ,case   when (daily_quota_local is null or daily_quota_local = 0) then 0\n                when (daily_quota_local - daily_deduction <= 0) then 1\n                else 0\n         end as hit_daily_budget\n        ,dim_campaign_tab.grass_region as grass_region\n        ,date('${grass_date}') as grass_date\nfrom    (\n    select  campaign_id\n            ,total_quota_local\n            ,daily_quota_local\n            ,grass_region\n    from    mp_paidads.dim_campaign__reg_s0_live\n    where   grass_region = upper('${region}')\n      and   grass_date = date('${grass_date}')\n) dim_campaign_tab\nleft outer join (\n    -- total deduction\n    select  campaign_id\n            ,deduction AS total_deduction\n            ,grass_region AS region\n    from    mp_paidads.dws_campaign_deduction_td__reg_s0_live\n    where   grass_region = upper('${region}')\n      and   grass_date = date('${grass_date}')\n) t_deduction\non      dim_campaign_tab.campaign_id = t_deduction.campaign_id\n  and   dim_campaign_tab.grass_region = t_deduction.region\nleft outer join (\n    -- daily deduction\n    select  campaign_id\n            ,sum(total_expenditure_amt_local_1d) AS daily_deduction\n    from    mp_paidads.dws_advertise_revenue_1d__reg_s0_live\n    where   grass_region = upper('${region}')\n      and   grass_date = date('${grass_date}')\n      and tz_type = 'local'\n      group by 1\n) d_deduction\non      dim_campaign_tab.campaign_id = d_deduction.campaign_id\n;\n\nalter table dws_campaign_deduction_budget_1d__${region}_s0_live add if not exists partition (grass_date = \"${grass_date}\")\n;\n\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:48 GMT",
+      "task_code": "data_paidadsmart.studio_3050657",
+      "tbl_name": "dws_campaign_deduction_budget_1d__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

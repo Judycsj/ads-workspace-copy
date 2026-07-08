@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 10764701,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "create external table if not exists dim_advertiser_escrow_whitelist__reg_s0_live\n(\n\tshop_id bigint  \n\t,whitelist_date date \n) \npartitioned by\n(\n    grass_region string comment 'region'\n    ,grass_date DATE comment 'date'\n)\nstored as parquet\nlocation \"${HIVE_PATH}/dim_advertiser_escrow_whitelist__reg_s0_live\"\n;\n\nINSERT OVERWRITE TABLE dim_advertiser_escrow_whitelist__reg_s0_live PARTITION (grass_region, grass_date)\nselect shop_id\n    ,min(whitelist_date) as whitelist_date\n    ,upper('${region}') as grass_region\n    ,date('${BIZ_YESTERDAY}') as grass_date\nfrom (\n    select shop_id\n        ,whitelist_date\n    from dim_advertiser_escrow_whitelist__reg_s0_live\n    where grass_date = DATE('${PREV_2D}') and grass_region = UPPER('${region}')\n    \n    union all \n\n    select \n        shop_id \n        ,date(date_format(from_utc_timestamp(to_utc_timestamp(cast(ctime as timestamp),'Asia/Singapore'), '${timezone}'), 'yyyy-MM-dd HH:mm:ss')) as whitelist_date\n    from \n    (\n        select feature_id\n        from marketplace.shopee_seller_feature_toggle_db__feature_toggle_info_tab__${region}_df \n        where grass_date = DATE('${BIZ_YESTERDAY}')\n        and feature_key in ('ads_atu_escrow')\n        and feature_status = 1\n    ) a\n    inner join \n    (\n        select tag_id, feature_id, ctime\n        from marketplace.shopee_seller_feature_toggle_db__feature_toggle_tag_mapping_tab__${region}_df\n        where grass_date = DATE('${BIZ_YESTERDAY}')\n        and feature_toggle_tag_mapping_status != 3\n    )b\n    on a.feature_id = b.feature_id\n    inner join \n    (\n        select shop_id, tag_id\n        from marketplace.shopee_seller_shop_tag_mapping_latam_${region}_db__shop_tag_mapping_tab__reg_continuous_s0_live\n        where region = UPPER('${region}')\n        and shop_tag_mapping_status = 1\n        group by shop_id, tag_id\n    )c\n    on b.tag_id = c.tag_id\n)\ngroup by shop_id\n;",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:28 GMT",
+      "task_code": "data_paidadsmart.studio_10764701",
+      "tbl_name": "dim_advertiser_escrow_whitelist__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

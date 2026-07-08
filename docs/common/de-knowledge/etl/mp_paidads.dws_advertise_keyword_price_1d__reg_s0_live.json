@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 2924881,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "CREATE OR REPLACE TEMPORARY VIEW base as(\n    SELECT\n        distinct keyword\n        , placement\n        , keyword_status AS status\n        , create_timestamp\n        , create_datetime\n        , event_timestamp AS modified_timestamp\n        , event_datetime AS modified_datetime\n        , ads_id\n        , shop_id\n        , match_type\n        , keyword_bid_price_local AS bid_price_local\n        , keyword_bid_price_usd AS bid_price_usd\n        , date '${grass_date}' AS grass_date\n    FROM\n        mp_paidads.dwd_advertise_audit_di__${region}_s0_live\n    WHERE grass_date = date '${grass_date}'\n    AND   keyword is not NULL\n    AND   keyword_bid_price_local is not NULL\n);\n\n\nINSERT OVERWRITE TABLE dws_advertise_keyword_price_1d__reg_s0_live PARTITION (tz_type='local', grass_region, grass_date)\nSELECT\n    a.keyword\n     , a.ads_id\n     , a.shop_id\n     , c.placement\n     , c.status\n     , c.match_type\n     , c.create_timestamp\n     , c.create_datetime\n     , c.modified_timestamp AS last_modified_timestamp\n     , c.modified_datetime AS last_modified_datetime\n     , b.bid_price_local AS first_bid_price_local\n     , b.bid_price_usd AS first_bid_price_usd\n     , c.bid_price_local AS last_bid_price_local\n     , c.bid_price_usd AS last_bid_price_usd\n     , a.avg_bid_price_local\n     , a.avg_bid_price_usd\n     , a.bid_price_change_cnt\n     , upper('${region}') AS grass_region\n     , date '${grass_date}' AS grass_date\nFROM\n    (\n        SELECT\n            shop_id\n             , ads_id\n             , keyword\n             , SUM(distinct bid_price_local)/(COUNT(distinct bid_price_local) * 1.0) AS avg_bid_price_local\n             , SUM(distinct bid_price_usd)/(COUNT(distinct bid_price_usd) * 1.0) AS avg_bid_price_usd\n             , COUNT(distinct bid_price_local) AS bid_price_change_cnt\n        FROM base\n        GROUP BY 1,2,3\n    ) a\n        INNER JOIN\n    (\n        SELECT\n            keyword\n             , ads_id\n             , shop_id\n             , bid_price_local\n             , bid_price_usd\n             , ROW_NUMBER() OVER(PARTITION BY shop_id, ads_id, keyword\n                                ORDER BY modified_timestamp) AS keyword_rank_first\n        FROM base\n    ) b\n    ON a.shop_id = b.shop_id\n        AND a.ads_id  = b.ads_id\n        AND a.keyword = b.keyword\n        INNER JOIN\n    (\n        SELECT\n            keyword\n             , ads_id\n             , shop_id\n             , placement\n             , status\n             , create_timestamp\n             , create_datetime\n             , modified_timestamp\n             , modified_datetime\n             , match_type\n             , bid_price_local\n             , bid_price_usd\n             , ROW_NUMBER() OVER(PARTITION BY shop_id, ads_id, keyword\n                              ORDER BY modified_timestamp desc) AS keyword_rank_last\n        FROM base\n    ) c\n    ON a.shop_id = c.shop_id\n        AND a.ads_id  = c.ads_id\n        AND a.keyword = c.keyword\nWHERE b.keyword_rank_first = 1\n  AND   c.keyword_rank_last = 1\n;\n\nalter table dws_advertise_keyword_price_1d__${region}_s0_live add if not exists partition (grass_date = '${grass_date}');\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:45 GMT",
+      "task_code": "data_paidadsmart.studio_2924881",
+      "tbl_name": "dws_advertise_keyword_price_1d__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

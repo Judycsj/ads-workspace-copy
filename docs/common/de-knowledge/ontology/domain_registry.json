@@ -1,0 +1,35 @@
+{
+  "domains": {
+    "ads_mart": {
+      "aliases": [
+        "ads",
+        "广告",
+        "广告数仓"
+      ],
+      "default_etl_provider": "datamap",
+      "default_identity_policy": "mp_paidads_region_suffix_v1",
+      "schemas": [
+        "mp_paidads"
+      ],
+      "status": "active"
+    },
+    "srdi": {
+      "aliases": [
+        "srdi",
+        "搜推",
+        "搜索",
+        "推荐",
+        "search",
+        "recommendation"
+      ],
+      "default_etl_provider": "analytics_mart_spark",
+      "default_identity_policy": "literal_v1",
+      "schemas": [
+        "srdi_mart"
+      ],
+      "status": "active"
+    }
+  },
+  "generated_at": "2026-05-19T18:17:26+08:00",
+  "version": "domain_registry.v1"
+}

@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 2521006,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "INSERT OVERWRITE TABLE dws_advertise_keyword_performance_1d__reg_s0_live PARTITION (tz_type='local', grass_region='BR', grass_date)\n    SELECT  \n            shop_id\n            ,username\n            ,item_id\n            ,ads_id\n            ,keywords\n            ,match_type\n            ,placement\n            ,impression_cnt_1d\n            ,click_cnt_1d\n            ,expenditure_amt_local_1d\n            ,expenditure_amt_usd_1d\n            ,COALESCE(expenditure_amt_local_1d / click_cnt_1d, 0.0)   AS cpc_local_1d\n            ,COALESCE(expenditure_amt_usd_1d / click_cnt_1d, 0.0)   AS cpc_usd_1d\n            ,order_cnt_1d\n            ,ads_gmv_amt_local_1d\n            ,ads_gmv_amt_usd_1d\n            ,COALESCE(click_cnt_1d / impression_cnt_1d, 0.0)   AS ctr_1d\n            ,COALESCE(order_cnt_1d / click_cnt_1d, 0.0)   AS cr_1d\n            ,COALESCE(expenditure_amt_local_1d / ads_gmv_amt_local_1d, 0.0)   AS cir_1d\n            ,avg_ads_ranks_1d\n            ,date('${grass_date}') AS grass_date\n    FROM\n    (\n        SELECT  shop_id\n                ,username\n                ,item_id\n                ,ads_id\n                ,keywords\n                ,match_type\n                ,placement\n                ,SUM(CASE WHEN is_today = 1 THEN impression_cnt ELSE 0 END ) AS impression_cnt_1d\n                ,SUM(CASE WHEN is_today = 1 THEN click_cnt ELSE 0 END ) AS click_cnt_1d\n                ,SUM(CASE WHEN is_today = 1 THEN expenditure_amt_local ELSE 0.0 END ) AS expenditure_amt_local_1d\n                ,SUM(CASE WHEN is_today = 1 THEN expenditure_amt_usd ELSE 0.0 END ) AS expenditure_amt_usd_1d\n                ,SUM(CASE WHEN is_today = 1 THEN order_cnt ELSE 0 END ) AS order_cnt_1d\n                ,SUM(CASE WHEN is_today = 1 THEN ads_gmv_amt_local ELSE 0.0 END ) AS ads_gmv_amt_local_1d\n                ,SUM(CASE WHEN is_today = 1 THEN ads_gmv_amt_usd ELSE 0.0 END ) AS ads_gmv_amt_usd_1d\n                ,AVG(avg_ads_ranks) AS avg_ads_ranks_1d\n                ,grass_region\n        FROM (\n            SELECT  a.shop_id AS shop_id\n                    ,b.user_name AS username\n                    ,a.item_id\n                    ,a.ads_id\n                    ,a.keywords\n                    ,a.match_type\n                    ,a.placement\n                    ,COALESCE(impression_cnt ,0) AS impression_cnt\n                    ,COALESCE(click_cnt,0) AS click_cnt\n                    ,COALESCE(expenditure_amt_local,0.0) AS expenditure_amt_local\n                    ,COALESCE(expenditure_amt_usd,0.0) AS expenditure_amt_usd\n                    ,COALESCE(order_cnt,0) AS order_cnt\n                    ,COALESCE(ads_gmv_amt_local,0.0) AS ads_gmv_amt_local\n                    ,COALESCE(ads_gmv_amt_usd,0.0) AS ads_gmv_amt_usd\n                    ,COALESCE(avg_ads_ranks,0.0) AS avg_ads_ranks\n                    ,CASE WHEN a.grass_date = date('${grass_date}') THEN 1 ELSE 0 END AS is_today\n                    ,a.grass_date AS grass_date\n                    ,a.grass_region AS grass_region\n            FROM (\n                SELECT *\n                FROM mp_paidads.dws_advertise_query_gmv_event_1d__reg_s0_live\n                WHERE grass_region = upper('${region}')\n                AND grass_date = date('${grass_date}')\n                AND tz_type = 'local'\n            ) a\n            LEFT JOIN (\n                SELECT *\n                FROM mp_paidads.dim_advertiser__reg_s0_live\n                WHERE grass_region = upper('${region}')\n                AND grass_date = date('${grass_date}')\n            ) b\n            ON a.shop_id = b.shop_id\n            AND a.grass_region = b.grass_region\n        )\n        GROUP BY 1, 2, 3, 4, 5, 6, 7, grass_region\n    );\n\nalter table dws_advertise_keyword_performance_1d__${region}_s0_live add if not exists partition (grass_date = \"${grass_date}\");\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:23 GMT",
+      "task_code": "data_paidadsmart.studio_2521006",
+      "tbl_name": "dws_advertise_keyword_performance_1d__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

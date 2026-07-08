@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 2861680,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "INSERT OVERWRITE TABLE dws_advertiser_account_1d__reg_s0_live PARTITION (tz_type='local', grass_region, grass_date)\n    SELECT   /*+BROADCAST(exrate)*/\n            dim_advertiser.user_id\n            ,t.shop_id\n            ,balance.acc_before_balance\n            ,balance.acc_before_balance / exchange_rate AS acc_before_balance_usd\n            ,balance.acc_after_balance\n            ,balance.acc_after_balance / exchange_rate AS acc_after_balance_usd\n            ,t.low_threshold\n            ,t.low_threshold / exchange_rate AS low_threshold_usd\n            ,CASE WHEN t.min_acc_after_balance < t.low_threshold THEN 1 ELSE 0 END AS is_reach_threshold\n            ,t.grass_region\n            ,date('${grass_date}') AS grass_date\n    FROM\n    (\n        SELECT   shop_id\n                ,grass_region\n                ,MIN(acc_after_balance) AS min_acc_after_balance\n                ,CASE\n                    WHEN grass_region = 'TW' THEN 5\n                    WHEN grass_region = 'ID' THEN 2000\n                    WHEN grass_region = 'VN' THEN 2000\n                    WHEN grass_region = 'TH' THEN 5\n                    WHEN grass_region = 'MY' THEN 0.7\n                    WHEN grass_region = 'SG' THEN 0.2\n                    WHEN grass_region = 'PH' THEN 4\n                    WHEN grass_region = 'BR' THEN 1\n                    WHEN grass_region = 'MX' THEN 1\n                    ELSE 1\n                 END AS low_threshold\n        FROM mp_paidads.dwd_advertiser_transaction_di__reg_s0_live\n        WHERE grass_region = upper('${region}')\n        AND grass_date = date('${grass_date}')\n        GROUP BY shop_id, grass_region\n    ) t\n    LEFT OUTER JOIN (\n        SELECT   shop_id\n                ,grass_region\n                ,MAX( CASE WHEN desc_rn = 1 THEN acc_after_balance ELSE NULL END) AS acc_after_balance\n                ,MAX( CASE WHEN asc_rn = 1 THEN acc_before_balance ELSE NULL END) AS acc_before_balance\n        FROM (\n            SELECT   shop_id\n                    ,grass_region\n                    ,acc_after_balance\n                    ,acc_before_balance\n                    ,row_number() OVER (PARTITION BY grass_region, shop_id ORDER BY COALESCE(event_timestamp, 0) DESC, acc_after_balance ASC) AS desc_rn\n                    ,row_number() OVER (PARTITION BY grass_region, shop_id ORDER BY COALESCE(event_timestamp, 0) ASC, acc_before_balance DESC) AS asc_rn\n            FROM mp_paidads.dwd_advertiser_transaction_di__reg_s0_live\n            WHERE grass_region = upper('${region}')\n            AND grass_date = date('${grass_date}')\n        )\n        WHERE (desc_rn = 1 OR asc_rn = 1)\n        GROUP BY shop_id\n                ,grass_region\n    ) balance\n    ON (t.shop_id = balance.shop_id AND t.grass_region = balance.grass_region)\n    LEFT OUTER JOIN (\n        SELECT\n            grass_region\n            ,exchange_rate\n        FROM mp_order.dim_exchange_rate__reg_s0_live\n        WHERE grass_region = upper('${region}')\n        AND grass_date = date('${grass_date}')\n    ) exrate\n    ON t.grass_region = exrate.grass_region\n    LEFT OUTER JOIN\n    (\n        SELECT   shop_id\n                ,user_id\n                ,grass_region\n        FROM mp_paidads.dim_advertiser__reg_s0_live\n        WHERE grass_region = upper('${region}')\n        AND grass_date = date('${grass_date}')\n        GROUP BY shop_id\n                ,user_id\n                ,grass_region\n    ) dim_advertiser\n    ON t.shop_id = dim_advertiser.shop_id AND t.grass_region = dim_advertiser.grass_region;\n\nalter table dws_advertiser_account_1d__${region}_s0_live add if not exists partition (grass_date = \"${grass_date}\");",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:19 GMT",
+      "task_code": "data_paidadsmart.studio_2861680",
+      "tbl_name": "dws_advertiser_account_1d__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

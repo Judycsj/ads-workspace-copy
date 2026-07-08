@@ -1,0 +1,18 @@
+{
+  "table": "dws_shop_performance_1d__reg_s0_live",
+  "asset_ids": [
+    "6326249"
+  ],
+  "status": "unchanged",
+  "old_exists": true,
+  "old_hash": "7302b56b6ae4315ff40c759a066f57c598abcbb1b23c42363b86d02695e129d1",
+  "new_hash": "7302b56b6ae4315ff40c759a066f57c598abcbb1b23c42363b86d02695e129d1",
+  "fetches": [
+    {
+      "asset_id": "6326249",
+      "ok": true,
+      "fetch_info": "正在提取 asset_id=6326249 的 SQL ...\n任务名称: dws_shop_performance_1d__id_s0_live\nSQL 长度: 6495 字符\n--- SQL 内容 ---",
+      "sql_chars": 6496
+    }
+  ]
+}

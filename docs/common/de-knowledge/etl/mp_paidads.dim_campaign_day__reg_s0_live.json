@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 8464778,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "CREATE EXTERNAL TABLE IF NOT EXISTS dim_campaign_day__reg_s0_live\n(\n    id bigint comment 'id in campaign_day_tab'\n    ,campaign_name string comment 'campaign name'\n    ,start_time bigint comment 'campaign start timestamp'\n    ,end_time bigint comment 'campaign end timestamp'\n    ,campaign_day date comment 'campaign day'\n)\nCOMMENT 'real campaign day'\npartitioned by\n(\n     tz_type                        string          comment               'timezone type'\n    ,grass_region                   string          comment               'partition key'\n    ,grass_date                     date            comment               'partition key, yyyy-MM-dd'\n)\nSTORED AS PARQUET\nLOCATION '${HIVE_PATH}/dim_campaign_day__reg_s0_live/'\n;\n\ninsert overwrite table dim_campaign_day__reg_s0_live partition (tz_type='local', grass_region, grass_date)\nselect\n    id\n    ,campaign_name\n    ,start_time\n    ,end_time\n    ,explode (\n        sequence(\n            date(from_utc_timestamp(to_utc_timestamp(cast(start_time as timestamp), 'Asia/Singapore'),'${timezone}'))\n            ,date(from_utc_timestamp(to_utc_timestamp(cast(end_time as timestamp), 'Asia/Singapore'),'${timezone}'))\n            ,interval 1 day\n        )\n    ) as camapign_day\n    ,upper('${region}') as grass_region\n    ,date('${BIZ_YESTERDAY}') as grass_date\nfrom mp_paidads.shopee_ads_${region}_db__campaign_day_tab__reg_continuous_s0_live\nwhere COALESCE(cast(get_json_object(_decoded_extinfo, '$.is_not_campaign_day') as boolean), false) = false\n;\n\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:33 GMT",
+      "task_code": "data_paidadsmart.studio_8464778",
+      "tbl_name": "dim_campaign_day__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

@@ -1,0 +1,426 @@
+{
+  "generated_at": "2026-05-19T08:11:48+00:00",
+  "source_manifest": "dist/business_docs/manifest.json",
+  "table_count": 11,
+  "resolved_count": 11,
+  "unresolved_count": 0,
+  "tables": [
+    {
+      "requested_table": "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live",
+      "canonical_table": "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live",
+      "schema": "mkplpaidads_data",
+      "table": "dwd_advertise_tracking_item_hi__reg_s0_live",
+      "status": "resolved_describe",
+      "resolution": "describe:exact",
+      "source": "datasuite_describe",
+      "business_doc_ids": [
+        "roi3_ads_voucher"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/roi3_ads_voucher.md"
+      ],
+      "doc_path": "dist/external_tables/mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live.md",
+      "raw_path": "data/business_docs/external_tables/mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live.json",
+      "columns_count": 115,
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "h",
+        "bz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region"
+      ],
+      "errors": [
+        {
+          "table": "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live",
+          "endpoint": "https://sradata.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        },
+        {
+          "table": "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live",
+          "endpoint": "https://sradata.test.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        }
+      ]
+    },
+    {
+      "requested_table": "mp_item.dim_item__reg_s0_live",
+      "canonical_table": "mp_item.dim_item__reg_s0_live",
+      "schema": "mp_item",
+      "table": "dim_item__reg_s0_live",
+      "status": "resolved_describe",
+      "resolution": "describe:exact",
+      "source": "datasuite_describe",
+      "business_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "doc_path": "dist/external_tables/mp_item.dim_item__reg_s0_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_item.dim_item__reg_s0_live.json",
+      "columns_count": 103,
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "errors": [
+        {
+          "table": "mp_item.dim_item__reg_s0_live",
+          "endpoint": "https://sradata.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        },
+        {
+          "table": "mp_item.dim_item__reg_s0_live",
+          "endpoint": "https://sradata.test.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        }
+      ]
+    },
+    {
+      "requested_table": "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+      "canonical_table": "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+      "schema": "mp_mgmt",
+      "table": "ads_mgmtview_pl_1d__reg_live",
+      "status": "resolved_describe",
+      "resolution": "describe:exact",
+      "source": "datasuite_describe",
+      "business_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "doc_path": "dist/external_tables/mp_mgmt.ads_mgmtview_pl_1d__reg_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_mgmt.ads_mgmtview_pl_1d__reg_live.json",
+      "columns_count": 36,
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "errors": [
+        {
+          "table": "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+          "endpoint": "https://sradata.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        },
+        {
+          "table": "mp_mgmt.ads_mgmtview_pl_1d__reg_live",
+          "endpoint": "https://sradata.test.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        }
+      ]
+    },
+    {
+      "requested_table": "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+      "canonical_table": "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+      "schema": "mp_mgmt",
+      "table": "dws_order_3pl_margin_di__reg_s1_live",
+      "status": "resolved_describe",
+      "resolution": "describe:exact",
+      "source": "datasuite_describe",
+      "business_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "doc_path": "dist/external_tables/mp_mgmt.dws_order_3pl_margin_di__reg_s1_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_mgmt.dws_order_3pl_margin_di__reg_s1_live.json",
+      "columns_count": 156,
+      "partition_keys": [
+        "grass_date",
+        "grass_region"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region"
+      ],
+      "errors": [
+        {
+          "table": "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+          "endpoint": "https://sradata.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        },
+        {
+          "table": "mp_mgmt.dws_order_3pl_margin_di__reg_s1_live",
+          "endpoint": "https://sradata.test.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        }
+      ]
+    },
+    {
+      "requested_table": "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+      "canonical_table": "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+      "schema": "mp_mgmt",
+      "table": "dws_order_item_rebate_di__reg_s0_live",
+      "status": "resolved_describe",
+      "resolution": "describe:exact",
+      "source": "datasuite_describe",
+      "business_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "doc_path": "dist/external_tables/mp_mgmt.dws_order_item_rebate_di__reg_s0_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_mgmt.dws_order_item_rebate_di__reg_s0_live.json",
+      "columns_count": 327,
+      "partition_keys": [
+        "grass_date",
+        "grass_region"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region"
+      ],
+      "errors": [
+        {
+          "table": "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+          "endpoint": "https://sradata.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        },
+        {
+          "table": "mp_mgmt.dws_order_item_rebate_di__reg_s0_live",
+          "endpoint": "https://sradata.test.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        }
+      ]
+    },
+    {
+      "requested_table": "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+      "canonical_table": "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+      "schema": "mp_mgmt",
+      "table": "dws_order_item_rev_di__reg_s0_live",
+      "status": "resolved_describe",
+      "resolution": "describe:exact",
+      "source": "datasuite_describe",
+      "business_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "doc_path": "dist/external_tables/mp_mgmt.dws_order_item_rev_di__reg_s0_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_mgmt.dws_order_item_rev_di__reg_s0_live.json",
+      "columns_count": 278,
+      "partition_keys": [
+        "grass_date",
+        "grass_region"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region"
+      ],
+      "errors": [
+        {
+          "table": "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+          "endpoint": "https://sradata.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        },
+        {
+          "table": "mp_mgmt.dws_order_item_rev_di__reg_s0_live",
+          "endpoint": "https://sradata.test.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        }
+      ]
+    },
+    {
+      "requested_table": "mp_voucher.dim_voucher__reg_live",
+      "canonical_table": "mp_voucher.dim_voucher__reg_live",
+      "schema": "mp_voucher",
+      "table": "dim_voucher__reg_live",
+      "status": "resolved_describe",
+      "resolution": "describe:exact",
+      "source": "datasuite_describe",
+      "business_doc_ids": [
+        "roi3_ads_voucher"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/roi3_ads_voucher.md"
+      ],
+      "doc_path": "dist/external_tables/mp_voucher.dim_voucher__reg_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_voucher.dim_voucher__reg_live.json",
+      "columns_count": 69,
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "errors": [
+        {
+          "table": "mp_voucher.dim_voucher__reg_live",
+          "endpoint": "https://sradata.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        },
+        {
+          "table": "mp_voucher.dim_voucher__reg_live",
+          "endpoint": "https://sradata.test.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        }
+      ]
+    },
+    {
+      "requested_table": "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+      "canonical_table": "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+      "schema": "mp_voucher",
+      "table": "dwd_user_voucher_claim_df__reg_live",
+      "status": "resolved_describe",
+      "resolution": "describe:exact",
+      "source": "datasuite_describe",
+      "business_doc_ids": [
+        "roi3_ads_voucher"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/roi3_ads_voucher.md"
+      ],
+      "doc_path": "dist/external_tables/mp_voucher.dwd_user_voucher_claim_df__reg_live.md",
+      "raw_path": "data/business_docs/external_tables/mp_voucher.dwd_user_voucher_claim_df__reg_live.json",
+      "columns_count": 69,
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "errors": [
+        {
+          "table": "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+          "endpoint": "https://sradata.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        },
+        {
+          "table": "mp_voucher.dwd_user_voucher_claim_df__reg_live",
+          "endpoint": "https://sradata.test.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        }
+      ]
+    },
+    {
+      "requested_table": "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+      "canonical_table": "traffic_omni_oa.dim_item_pc2_rate_map__reg_live",
+      "schema": "traffic_omni_oa",
+      "table": "dim_item_pc2_rate_map__reg_live",
+      "status": "resolved",
+      "resolution": "exact",
+      "source": "https://sradata.shopee.io/admin/api/datamap/table/info",
+      "business_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "doc_path": "dist/external_tables/traffic_omni_oa.dim_item_pc2_rate_map__reg_live.md",
+      "raw_path": "data/business_docs/external_tables/traffic_omni_oa.dim_item_pc2_rate_map__reg_live.json",
+      "columns_count": 14,
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "errors": []
+    },
+    {
+      "requested_table": "traffic_omni_oa.dwd_order_item_atc_journey_di",
+      "canonical_table": "traffic_omni_oa.dwd_order_item_atc_journey_di__ar_sensitive_live",
+      "schema": "traffic_omni_oa",
+      "table": "dwd_order_item_atc_journey_di__ar_sensitive_live",
+      "status": "resolved_search",
+      "resolution": "datamap_search:exact",
+      "source": "https://sradata.shopee.io/admin/api/datamap/table/info",
+      "business_doc_ids": [
+        "ads_metric_ads_item_gmv_pct",
+        "ads_metric_ads_seller_gmv_pct",
+        "ads_metric_seller_adoption"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/ads_metric_ads_item_gmv_pct.md",
+        "dist/business_docs/ads_metric_ads_seller_gmv_pct.md",
+        "dist/business_docs/ads_metric_seller_adoption.md"
+      ],
+      "doc_path": "dist/external_tables/traffic_omni_oa.dwd_order_item_atc_journey_di.md",
+      "raw_path": "data/business_docs/external_tables/traffic_omni_oa.dwd_order_item_atc_journey_di.json",
+      "columns_count": 125,
+      "partition_keys": [
+        "grass_date"
+      ],
+      "required_filters": [
+        "grass_date"
+      ],
+      "errors": [
+        {
+          "table": "traffic_omni_oa.dwd_order_item_atc_journey_di",
+          "endpoint": "https://sradata.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        },
+        {
+          "table": "traffic_omni_oa.dwd_order_item_atc_journey_di",
+          "endpoint": "https://sradata.test.shopee.io/admin/api/datamap/table/info",
+          "error": "表不存在"
+        },
+        {
+          "table": "traffic_omni_oa.dwd_order_item_atc_journey_di",
+          "endpoint": "datasuite_describe",
+          "error": "653\n--------------------------------------------------------------------\nTask Execution Fail\n--------------------------------------------------------------------\n2026-05-19 16:14:42 (UTC+8) INFO - Whole task execution ended\n2026-05-19 16:14:42 (UTC+8) INFO - Total Elapse time: [5969]ms\n2026-05-19 16:14:42 (UTC+8) INFO - Share this execution log for troubleshooting:\n https://datasuite.shopee.io/scheduler/dev/adhoc/adhoc_fqVSaaje_20260519161434/log\n2026-05-19 16:14:42 (UTC+8) INFO - <exec-log-eof>"
+        }
+      ]
+    },
+    {
+      "requested_table": "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+      "canonical_table": "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live",
+      "schema": "traffic_omni_oa",
+      "table": "dwd_order_item_atc_journey_di__reg_sensitive_live",
+      "status": "resolved",
+      "resolution": "exact",
+      "source": "https://sradata.shopee.io/admin/api/datamap/table/info",
+      "business_doc_ids": [
+        "pc2_metrics"
+      ],
+      "business_doc_paths": [
+        "dist/business_docs/pc2_metrics.md"
+      ],
+      "doc_path": "dist/external_tables/traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live.md",
+      "raw_path": "data/business_docs/external_tables/traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live.json",
+      "columns_count": 129,
+      "partition_keys": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "required_filters": [
+        "grass_date",
+        "grass_region",
+        "tz_type"
+      ],
+      "errors": []
+    }
+  ]
+}

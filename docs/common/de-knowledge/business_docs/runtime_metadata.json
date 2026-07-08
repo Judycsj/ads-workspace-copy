@@ -1,0 +1,105 @@
+{
+  "version": "business_docs_runtime_metadata.v1",
+  "topic_tag_rules": [
+    {
+      "tag": "roi3_ads_voucher",
+      "needles": ["roi3_ads_voucher", "roi3 cost", "ads part roi3", "ads-roi", "广告券"]
+    },
+    {
+      "tag": "roi3_cost_spike",
+      "needles": ["cost", "成本", "广告承担", "ads part"]
+    },
+    {
+      "tag": "cofund_anomaly",
+      "needles": ["cofund", "voucher_cofund_ratio", "广告承担"]
+    },
+    {
+      "tag": "claim_drop",
+      "needles": ["claim", "领券", "auto claim", "自动领券"]
+    },
+    {
+      "tag": "voucher_oa",
+      "needles": ["归因", "voucher oa", "普通广告 oa", "match_voucher_click"]
+    },
+    {
+      "tag": "voucher_funnel",
+      "needles": ["发券", "曝光", "点击", "best voucher", "display label"]
+    },
+    {
+      "tag": "best_voucher_drop",
+      "needles": ["best voucher", "最优", "选券"]
+    },
+    {
+      "tag": "bid_voucher_id_missing",
+      "needles": ["bid_rerank_trace", "bid_voucher_id"]
+    },
+    {
+      "tag": "core_metrics",
+      "needles": ["核心指标", "核心拆分维度"]
+    }
+  ],
+  "diagnosis_topic_tags": [
+    "roi3_cost_spike",
+    "cofund_anomaly",
+    "claim_drop",
+    "voucher_oa",
+    "best_voucher_drop",
+    "bid_voucher_id_missing"
+  ],
+  "generic_business_aliases": [
+    "ads-roi",
+    "ads smart voucher",
+    "qcpx"
+  ],
+  "generic_topic_tags": [
+    "roi3_ads_voucher",
+    "core_metrics",
+    "voucher_funnel"
+  ],
+  "business_table_meta": {
+    "mp_paidads.ads_order_voucher_1d": {
+      "role": "primary_fact_table",
+      "read_policy": "read_when_needed",
+      "reason": "ROI3 用券金额、cofund、voucher click OA 明细"
+    },
+    "mp_paidads.ads_advertise_take_rate_v2_1d": {
+      "role": "summary_table",
+      "read_policy": "read_when_needed",
+      "reason": "ads part ROI3 cost、take rate 和平台 GMV 汇总口径"
+    },
+    "mp_paidads.dws_user_pc2_1d": {
+      "role": "pc2_table",
+      "read_policy": "read_when_needed",
+      "reason": "ROI3/ROI4 广告收入、广告券广告分担金额与 PC2 拆解"
+    },
+    "mp_paidads.dwd_advertise_performance_di": {
+      "role": "funnel_table",
+      "read_policy": "read_when_needed",
+      "reason": "发券、best voucher、点击和 auto claim 漏斗指标"
+    },
+    "mp_paidads.dwd_advertise_tracking_item_hi": {
+      "role": "tracking_table",
+      "read_policy": "read_when_needed",
+      "reason": "商品级广告 tracking 明细、display label 和 is_roi3_best_voucher"
+    },
+    "mp_paidads.ads_advertise_roi2_key_metrics_daily": {
+      "role": "roi3_key_metrics_summary",
+      "read_policy": "read_when_needed",
+      "reason": "ROI3 广告曝光、点击、收入、GMV 等 key metrics 汇总"
+    }
+  },
+  "external_table_meta": {
+    "mp_voucher.dim_voucher__reg_live": {
+      "role": "voucher_identity_table",
+      "allowed_usage": "Only when a matched business document needs to verify ADS-ROI voucher identity."
+    },
+    "mp_voucher.dwd_user_voucher_claim_df__reg_live": {
+      "role": "voucher_claim_backend_table",
+      "allowed_usage": "Only when a matched business document needs backend voucher claim records."
+    },
+    "mkplpaidads_data.dwd_advertise_tracking_item_hi__reg_s0_live": {
+      "role": "raw_tracking_detail_table",
+      "allowed_usage": "Only when a matched business document explicitly requires tracking detail."
+    }
+  }
+}

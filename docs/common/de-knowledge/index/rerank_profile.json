@@ -1,0 +1,5487 @@
+{
+  "version": "rerank_profile.v2",
+  "generated_at": "2026-05-20",
+  "tables": {
+    "mp_paidads.ads_advertise_alarm_key_metrics_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "campaign_id",
+        "entrance",
+        "entry_point",
+        "item_id",
+        "placement",
+        "pricing_type",
+        "product_type",
+        "shop_id",
+        "sub_product_type",
+        "traffic_type"
+      ]
+    },
+    "mp_paidads.ads_advertise_mkt_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": [
+          "brand_max",
+          "gmv_max",
+          "new_item_boost",
+          "npb"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "entrance",
+        "new_boost",
+        "placement"
+      ]
+    },
+    "mp_paidads.ads_advertise_roi2_key_metrics_daily": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ads_advertise_shop_ads_exp_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "shop_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "entrance",
+        "exp_id",
+        "location",
+        "placement",
+        "platform",
+        "pricing_type",
+        "shop_recall_type"
+      ]
+    },
+    "mp_paidads.ads_advertise_simple2_key_metrics_nd": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "search_ads"
+        ],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id"
+      ]
+    },
+    "mp_paidads.ads_advertise_take_rate_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "entry_point",
+        "pricing_type"
+      ]
+    },
+    "mp_paidads.ads_advertise_take_rate_v2_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "entry_point",
+        "is_cb_shop",
+        "is_cb_sip_affiliated",
+        "is_local_sip_affiliated",
+        "main_product_type",
+        "pricing_type",
+        "product_type",
+        "seller_type",
+        "seller_type_1p",
+        "sub_product_type",
+        "traffic_type"
+      ]
+    },
+    "mp_paidads.ads_advertiser_mkt_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.ads_advertiser_new_old_tag_daily": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.ads_advertiser_seller_all_metrics_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.ads_advertiser_seller_all_metrics_1m": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.ads_brand_max_ads_user_level_new_4a_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "display_ads"
+        ],
+        "attribution": [],
+        "campaign_type": [
+          "brand_max"
+        ]
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "campaign_id",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.ads_campaign_auto_rebate_details_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "search_ads"
+        ],
+        "attribution": [
+          "broad"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "campaign_id",
+        "item_id",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.ads_campaign_entrance_attribution_metrics_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "campaign_id",
+        "click_event_id"
+      ]
+    },
+    "mp_paidads.ads_campaign_manual_review_details_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "campaign_id",
+        "rebate_generated_date",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.ads_campaign_valid_budget_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "campaign_id"
+      ]
+    },
+    "mp_paidads.ads_category_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ads_item_supply_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "item_id",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.ads_new_pc2_rate_exp_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "discovery_ads",
+          "display_ads",
+          "item_ads",
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "domain",
+        "exp_group_id",
+        "scenario_tag"
+      ]
+    },
+    "mp_paidads.ads_order_voucher_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_voucher_id",
+        "item_id",
+        "order_id",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.ads_region_roi2_key_metrics_daily": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "item_ads"
+        ],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ads_report_ng_data_quality_1h": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ads_report_ng_tms_diff_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_entrance",
+        "ads_placement",
+        "app_version",
+        "entry_point",
+        "feature",
+        "feature_detail",
+        "feature_group",
+        "main_product_type",
+        "module",
+        "object",
+        "page_section",
+        "page_type",
+        "platform",
+        "product_type",
+        "rn_ver",
+        "scenario",
+        "sub_product_type",
+        "target_type",
+        "traffic_type",
+        "user_id"
+      ]
+    },
+    "mp_paidads.ads_sc_new_product_boost_new_item_daily": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": [
+          "new_item_boost",
+          "npb"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "mp_paidads.ads_sc_potential_product_ads_item_ado_hourly": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "item_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "h",
+        "item_id"
+      ]
+    },
+    "mp_paidads.ads_sc_potential_product_ads_item_rcmd_daily": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "key"
+      ]
+    },
+    "mp_paidads.ads_seller_center_npb_item_rcmd_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "item_ads"
+        ],
+        "attribution": [],
+        "campaign_type": [
+          "npb"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "item_id",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.ads_simple_roi2_npb_item_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "item_ads"
+        ],
+        "attribution": [],
+        "campaign_type": [
+          "npb"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "mp_paidads.ads_tracking_data_quality_1h": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.dim_active_item": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "discovery_ads",
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id"
+      ]
+    },
+    "mp_paidads.dim_advertise": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "placement"
+      ]
+    },
+    "mp_paidads.dim_advertiser": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dim_advertiser_escrow_whitelist": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dim_advertiser_roi3_whitelist": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dim_advertiser_segment_program": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "program_id",
+        "segment_id",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dim_advertiser_tier_threshold": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "advertiser_tier"
+      ]
+    },
+    "mp_paidads.dim_campaign": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "campaign_id"
+      ]
+    },
+    "mp_paidads.dim_campaign_day": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "campaign_day",
+        "id"
+      ]
+    },
+    "mp_paidads.dim_campaign_days_1y": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "campaign_day"
+      ]
+    },
+    "mp_paidads.dim_campaign_entrance_attribution": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "item_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "campaign_id"
+      ]
+    },
+    "mp_paidads.dim_common_feature_mapping_v2": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "entrance"
+      ]
+    },
+    "mp_paidads.dim_deduction_cost_cap": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "date_type",
+        "placement",
+        "pricing_type"
+      ]
+    },
+    "mp_paidads.dim_display_ads_whitelist_df": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "display_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dim_entry_point_mapping": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "entrance",
+        "entry_point",
+        "sub_entrance"
+      ]
+    },
+    "mp_paidads.dim_entry_point_mapping_v2": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "entry_point"
+      ]
+    },
+    "mp_paidads.dim_gmsmpd_auto_rebate_whitelist": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id",
+        "type"
+      ]
+    },
+    "mp_paidads.dim_local_scs_shop_list": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dim_product_campaign": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "campaign_id"
+      ]
+    },
+    "mp_paidads.dim_product_type_mapping": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "placement",
+        "pricing_type"
+      ]
+    },
+    "mp_paidads.dim_program": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "program_id"
+      ]
+    },
+    "mp_paidads.dim_roi2_auto_rebate_blacklist": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dim_seller_tier_threshold": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "seller_tier"
+      ]
+    },
+    "mp_paidads.dim_shop_info": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dim_shop_info_monthly": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dim_streamer_new_old_tag": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "shop_id",
+        "streamer_id"
+      ]
+    },
+    "mp_paidads.dim_traffic_ads_operation_mapping": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_operation",
+        "main_product_type",
+        "page_section",
+        "page_type",
+        "target_type"
+      ]
+    },
+    "mp_paidads.dim_translog_order_type_mapping": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "order_type"
+      ]
+    },
+    "mp_paidads.dwd_ads_request_performance_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": [
+          "new_item_boost",
+          "npb"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "entrance",
+        "placement",
+        "request_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dwd_advertise_audit_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "id"
+      ]
+    },
+    "mp_paidads.dwd_advertise_new_item_boost_event_th": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "item_ads"
+        ],
+        "attribution": [],
+        "campaign_type": [
+          "new_item_boost"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "broad_order",
+        "timestamp"
+      ]
+    },
+    "mp_paidads.dwd_advertise_order_attribution_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "item_id",
+        "order_id",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dwd_advertise_performance_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "deduct_unique_id"
+      ]
+    },
+    "mp_paidads.dwd_advertise_seller_report_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "display_ads",
+          "item_ads",
+          "livestream_ads",
+          "video_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "mp_paidads.dwd_advertise_seller_report_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "campaign_id",
+        "h",
+        "handler",
+        "item_id",
+        "keyword",
+        "placement",
+        "query",
+        "shop_id",
+        "source",
+        "sub_source",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dwd_advertise_tracking_item_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "discovery_ads",
+          "item_ads",
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "unique_id"
+      ]
+    },
+    "mp_paidads.dwd_advertise_translog_event_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "deduct_unique_id"
+      ]
+    },
+    "mp_paidads.dwd_advertiser_audit_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "id"
+      ]
+    },
+    "mp_paidads.dwd_advertiser_credit_topup_df": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_credit_id"
+      ]
+    },
+    "mp_paidads.dwd_advertiser_deduction_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_credit_id",
+        "deduct_unique_id"
+      ]
+    },
+    "mp_paidads.dwd_advertiser_program_incentive_credit_df": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.dwd_advertiser_transaction_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "deduct_unique_id",
+        "id"
+      ]
+    },
+    "mp_paidads.dwd_campaign_audit_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "id"
+      ]
+    },
+    "mp_paidads.dwd_display_ads_tracking_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "display_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "event_timestamp",
+        "request_id",
+        "session_id"
+      ]
+    },
+    "mp_paidads.dwd_livestream_performance_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "mp_paidads.dwd_log_translog_unsuccessful_event_deduction_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "unique_id"
+      ]
+    },
+    "mp_paidads.dwd_request_livestream_rank_pcoc_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "h",
+        "ls_session_id",
+        "placement",
+        "request_id",
+        "streamer_id",
+        "streamer_type",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dwd_request_tracking_video_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "video_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "ads_request_id",
+        "h",
+        "operation",
+        "raw_request_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dwd_seller_cir": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "item_id",
+        "placement",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dwd_trace_bidding_hyperx_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": [
+          "brand_max"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.dws_advertise_activeness_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_ads_exp_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "entrance",
+        "exp_id",
+        "outlier_label",
+        "placement",
+        "platform",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_display_ads_revenue": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "display_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "mp_paidads.dws_advertise_item_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.dws_advertise_keyword_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "item_id",
+        "keywords",
+        "match_type",
+        "placement",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_keyword_price_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "keyword",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_keyword_price_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "keyword",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_keyword_search_volume_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "keyword"
+      ]
+    },
+    "mp_paidads.dws_advertise_livestream_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "campaign_id",
+        "entrance",
+        "item_id",
+        "placement",
+        "pricing_type",
+        "shop_id",
+        "streamer_id",
+        "sub_entrance",
+        "target_affiliate_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_livestream_revenue_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "campaign_id",
+        "entrance",
+        "item_id",
+        "placement",
+        "pricing_type",
+        "shop_id",
+        "streamer_id",
+        "sub_entrance",
+        "target_affiliate_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_net_ads_revenue_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ab_sign",
+        "ads_id",
+        "campaign_id",
+        "credit_order_type",
+        "credit_topup_sub_type",
+        "entrance",
+        "item_id",
+        "new_boost",
+        "placement",
+        "pricing_type",
+        "shop_id",
+        "sub_entrance",
+        "sub_push_type"
+      ]
+    },
+    "mp_paidads.dws_advertise_new_item_boost_order_th": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "item_ads"
+        ],
+        "attribution": [
+          "broad"
+        ],
+        "campaign_type": [
+          "new_item_boost"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_order_attribution_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "click_datetime",
+        "event_datetime",
+        "item_id",
+        "order_id",
+        "placement",
+        "request_id",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": [
+          "new_item_boost"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "campaign_id",
+        "entrance",
+        "item_id",
+        "placement",
+        "pricing_type",
+        "traffic_source"
+      ]
+    },
+    "mp_paidads.dws_advertise_performance_nd": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "ads_type",
+        "placement",
+        "seller_id",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_query_gmv_event_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "entrance",
+        "item_id",
+        "keywords",
+        "match_type",
+        "matched_premium_segment_value",
+        "placement",
+        "pricing_type",
+        "query",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_request_benchmark_advv_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "discovery_ads",
+          "search_ads",
+          "video_ads"
+        ],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "mp_paidads.dws_advertise_revenue_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "campaign_id",
+        "entrance",
+        "item_id",
+        "placement",
+        "pricing_type",
+        "shop_id",
+        "sub_entrance",
+        "traffic_source"
+      ]
+    },
+    "mp_paidads.dws_advertise_user_exp_common_feature_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct",
+          "omni"
+        ],
+        "campaign_type": [
+          "brand_max",
+          "gmv_max",
+          "new_item_boost",
+          "npb"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "app_version",
+        "common_feature",
+        "item_id",
+        "location",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_user_exp_entrance_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "discovery_ads",
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "entrance",
+        "group_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_user_exp_live_stream_group_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "group_id"
+      ]
+    },
+    "mp_paidads.dws_advertise_user_exp_live_stream_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "entrance",
+        "group_id",
+        "if_promote_others",
+        "placement",
+        "pricing_type",
+        "streamer_type"
+      ]
+    },
+    "mp_paidads.dws_advertise_user_exp_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "discovery_ads",
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "entrance",
+        "group_id",
+        "location",
+        "placement",
+        "pricing_type",
+        "sub_entrance"
+      ]
+    },
+    "mp_paidads.dws_advertiser_account_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_account_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_active_status_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_balance_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_credit_expiry_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_deduction_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_first_active_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "search_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_livestream_revenue_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "shop_id",
+        "streamer_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_livestream_revenue_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "shop_id",
+        "streamer_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_placement_performance_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "placement",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_topup_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "seller_id",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_topup_nd": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "seller_id",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_topup_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "seller_id",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_advertiser_trd_order_gmv_nd": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dws_campaign_deduction_budget_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "campaign_id"
+      ]
+    },
+    "mp_paidads.dws_campaign_deduction_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "campaign_id"
+      ]
+    },
+    "mp_paidads.dws_common_feature_user_item_pc2_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "omni"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.dws_item_performance_nd": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "mp_paidads.dws_item_simple_roi2_first_adopted_td": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "item_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "mp_paidads.dws_item_simple_roi2_npb_created_nd": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "item_ads"
+        ],
+        "attribution": [],
+        "campaign_type": [
+          "npb"
+        ]
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "mp_paidads.dws_livestream_brand_portal_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "campaign_id",
+        "campaign_type",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_livestream_revenue_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "campaign_id",
+        "entrance",
+        "item_id",
+        "placement",
+        "pricing_type",
+        "shop_id",
+        "sub_entrance",
+        "target_affiliate_id"
+      ]
+    },
+    "mp_paidads.dws_ls_session_livestream_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "campaign_id",
+        "ls_session_id",
+        "pricing_type"
+      ]
+    },
+    "mp_paidads.dws_shop_item_order_ads_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "item_id",
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_shop_performance_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "direct"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "mp_paidads.dws_user_net_ads_revenue_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "ads_id",
+        "campaign_id",
+        "credit_order_type",
+        "credit_program_id",
+        "credit_topup_type",
+        "entrance",
+        "item_id",
+        "placement",
+        "pricing_type",
+        "shop_id",
+        "sub_entrance",
+        "user_id"
+      ]
+    },
+    "mp_paidads.dws_user_pc2_1d": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [
+          "broad",
+          "omni"
+        ],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": [
+        "user_id"
+      ]
+    },
+    "mp_paidads.ods_log_ads_report_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_log_ads_report_livestream_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_log_ads_tracking_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_log_display_ads_tracking_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "display_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_log_hyperx_exp_hi_temp_s0_live": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_log_live_ads_bidding_hyperx_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_log_livestream_ads_tracking": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [
+          "livestream_ads"
+        ],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_log_target_roi_rcmd_log_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_log_translog_event_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_log_translog_unsuccessful_event_deduction_hi": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_shopee_ads_db__topup_translog_tab_df": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "mp_paidads.ods_shopee_ads_db__translog_tab_di": {
+      "domain": "ads_mart",
+      "profile_status": "known",
+      "scope_dims": {
+        "ads_type": [],
+        "attribution": [],
+        "campaign_type": []
+      },
+      "is_general_ads_table": true,
+      "dimension_tags": []
+    },
+    "srdi_mart.ads_sr_data_warehouse_homepage_ad_revenue_exp_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "search_entrance"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_homepage_mixfeed_item_buyers_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_homepage_user_attribute_level_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "app_version",
+        "dd_click_level",
+        "item_click_level",
+        "major_app_version",
+        "platform"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_homepage_user_cardtype_ad_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "is_ads",
+        "user_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_homepage_user_duration_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.ads_sr_data_warehouse_nap_item_query_trending_pool_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_nap_trending_item_query_mapping_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_ni_boost_exp_performance_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_tag"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_platform_abtest_category_type_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "category_type",
+        "exp_group_id",
+        "exp_type",
+        "feature_group",
+        "is_ads",
+        "sort_type",
+        "target_type"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_platform_cat_level_viz_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "level1_global_be_category_id",
+        "level2_global_be_category_id",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_platform_exp_level_one_page_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "feature_detail",
+        "is_ads",
+        "platform",
+        "scenario_tag",
+        "target_type"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_platform_exp_level_report_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "group_id",
+        "is_ads",
+        "platform",
+        "report_business_line",
+        "report_module",
+        "report_object"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_platform_feature_group_ads_outlier_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_group",
+        "outlier_type",
+        "percentile"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_platform_scenario_ads_type_perf_summary_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_type",
+        "feature_group",
+        "voucher_type"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_platform_smart_ui_best_performance_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "image_id",
+        "item_id",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_search_abtest_app_performance_monitor_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "app_version",
+        "category_level",
+        "client_type",
+        "dre_version",
+        "exp_group_id",
+        "experiment_id",
+        "layout_variant",
+        "operation",
+        "parent_stage",
+        "platform",
+        "stage"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_search_abtest_other_scenario_ads_outlier_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "feature_group",
+        "target_type"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_search_app_performance_monitor_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "app_version",
+        "category_level",
+        "client_type",
+        "dre_version",
+        "layout_variant",
+        "operation",
+        "parent_stage",
+        "platform",
+        "stage"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_search_be_scores_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "request_type"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_search_keyword_top_rel_item_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "keyword"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_search_mab_layer_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "avg_video_org_competiveness_layer",
+        "avg_video_roi2_competiveness_layer",
+        "best_video_org_competiveness_layer",
+        "best_video_roi2_competiveness_layer",
+        "card_type",
+        "cum_order_prop_layer",
+        "has_order",
+        "has_video",
+        "level1_global_be_category_id",
+        "main_type",
+        "skip_mab"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_search_rcmd_abtest_advv_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "domain",
+        "exp_group_id",
+        "feature_group",
+        "outlier",
+        "product_type",
+        "voucher_type"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_search_rcmd_abtest_card_type_advv_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "domain",
+        "exp_group_id",
+        "feature_group",
+        "main_product_type",
+        "outlier",
+        "product_type",
+        "voucher_type"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_antifraud_limit_1h": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "hour",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_antifraud_ovl": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_ni_newitem_90d_pool_di": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_ni_rcmd_exp_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "is_ads",
+        "is_vsku",
+        "mapping_general",
+        "target_type"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_ni_search_exp_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "is_ads",
+        "is_vsku",
+        "mapping_general",
+        "target_type"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_pb_qc_model_level_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "item_id",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_pb_reward_banner_model_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "local_hour",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_pb_reward_banner_model_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "data_range",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_pb_reward_banner_shop_30d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "local_hour",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_pb_reward_model_uplift_7d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_pb_reward_ongoing_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_pb_reward_topwinner_7d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_pb_sr_exp_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "is_ads",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_tc_pb_sr_exp_order_fast_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "is_ads",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.ads_sr_data_warehouse_video_exp_level_roi_type_advv_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "rcmd_ab_bundle",
+        "roi_type"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_abtest_experiment": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "experiment_id",
+        "layer_id",
+        "regional_date",
+        "scene_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_abtest_group": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_abtest_scene_layer_exp_whitelist": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "experiment_id",
+        "layer_id",
+        "scene_id",
+        "type"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_abtest_user_group": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_ads_product_type_mapping": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "main_product_type",
+        "placement",
+        "pricing_type",
+        "product_type",
+        "sub_product_type"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_category_gmv_outlier": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "category_tag",
+        "feature_group",
+        "is_ads"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_curated_activity_module": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "activity_id",
+        "module_id",
+        "module_position"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_item": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_keyword_di": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "keyword"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_keyword_wide": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "keyword"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_nap_trending_pool_df": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_pb_all_cspu_link_analysis_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "local_hour"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_pb_one_variation_model_analysis_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "item_id",
+        "local_hour",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_search_guide_request": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "global_session_id",
+        "mid",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_shop": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_tc_biz_project": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "project_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_tc_exp_rule": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_tc_ni_cspu_type": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_tc_pb_winner_item_tag_df": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_user": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "user_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_user_label": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "user_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_vsku_model_mapping_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "vitem_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_vsku_remapping_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "mapping_type",
+        "regional_date",
+        "regional_hour"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_vsku_replace_status_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "exp_tag",
+        "regional_date",
+        "regional_hour",
+        "vitem_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_vsku_replace_vitem_metrics_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_tag",
+        "regional_date",
+        "regional_hour",
+        "version_date",
+        "vitem_id"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_vsku_supply_info_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "model_id",
+        "regional_date",
+        "regional_hour"
+      ]
+    },
+    "srdi_mart.dim_sr_data_warehouse_vsku_vitem": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "vitem_id"
+      ]
+    },
+    "srdi_mart.dwd_dispatch_log_for_item_expansion": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "candidate_item_id",
+        "expansion_strategy",
+        "original_item_id",
+        "regional_date",
+        "regional_hour",
+        "request_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_abtest_traffic_user_group": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "device_id",
+        "exp_group_id",
+        "local_hour",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_cspu_info_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_cspu_model_all_link_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "item_id",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_curated_search_clk_imp": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "event_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_game_ads_unify_full_link_log_1h": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "country",
+        "regional_date",
+        "regional_hour",
+        "request_id",
+        "session_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_nap_diversity_query_keyword_dls_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "keyword",
+        "level1_global_be_category_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_nap_diversity_query_keyword_source_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "keyword"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_nap_query_trending_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "trending_type"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_ni_all_cspu_link_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "biz_tag",
+        "cspu_id",
+        "item_id",
+        "model_id",
+        "regional_date",
+        "regional_hour",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_paidads_search_live_unify_full_link_log_1h": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "item_id",
+        "request_id",
+        "session_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_paidads_union_unify_full_link_log_1h": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "item_id",
+        "request_id",
+        "session_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_pb_one_variation_model_minf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "model_id",
+        "regional_date",
+        "regional_hour",
+        "regional_minute"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_pb_rcmd_replace_monitoring_v3_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "exp_tag",
+        "item_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_pb_rcmd_replace_pruning_v3_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "exp_tag",
+        "item_id",
+        "regional_date",
+        "regional_hour"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_pb_rcmd_replace_realtime_metrics_df": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "item_id",
+        "regional_date"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_pb_search_replace_monitoring_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "exp_tag",
+        "item_id",
+        "version_date"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_pb_search_replace_pruning_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "exp_tag",
+        "item_id",
+        "regional_date",
+        "regional_hour"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_pb_search_replace_realtime_metrics_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "exp_tag",
+        "item_id",
+        "traffic_tag",
+        "version_date"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_pb_search_replace_status_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "exp_tag",
+        "item_id",
+        "regional_date",
+        "regional_hour"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_platform": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "event_id",
+        "local_hour",
+        "operation"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_platform_fe_join_be_source": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "operation",
+        "request_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_platform_nmv": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "local_hour",
+        "model_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_rcmd_fll_sampled_user_impression_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "event_time",
+        "item_id",
+        "scenario_tag",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_rcmd_fll_sampled_user_order_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "order_event_time",
+        "order_id",
+        "recall_event_time",
+        "scenario_tag",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_rcmd_unify_full_link_log_1h": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "country",
+        "item_id",
+        "regional_date",
+        "regional_hour",
+        "request_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_search_be_log": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "request_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_search_be_log_request": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "request_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_search_chatgpt_be_log": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "request_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_search_session_level_metrics": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "request_id",
+        "search_session_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_search_to_page_duration": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "request_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_search_unify_full_link_log_1h": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "request_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_ssp_item_link_hf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "regional_date",
+        "regional_hour",
+        "scene",
+        "spu_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_tc_all_cspu_link_df": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "model_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_tc_item_group_di": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_group_id",
+        "item_id",
+        "rule_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_tc_item_group_hi": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_group_id",
+        "item_id",
+        "regional_date",
+        "regional_hour",
+        "rule_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_tc_pb_one_variation_minf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "model_id",
+        "regional_date",
+        "regional_hour",
+        "regional_minute"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_tc_pb_winner_model_history": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "item_id",
+        "model_id",
+        "regional_date",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_tc_pb_winner_model_minf": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "item_id",
+        "model_id",
+        "regional_date",
+        "regional_hour",
+        "regional_minute"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_video_chat_log": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "biz_session_id",
+        "dt",
+        "hour",
+        "round_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_video_unify_full_link_log_1h": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "country",
+        "item_id",
+        "regional_date",
+        "regional_hour",
+        "request_id",
+        "session_id",
+        "video_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_view_page_duration_di": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "event_id"
+      ]
+    },
+    "srdi_mart.dwd_sr_data_warehouse_vsku_replace_realtime_metrics_df": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "vitem_id"
+      ]
+    },
+    "srdi_mart.dwm_sr_data_warehouse_abtest_traffic_user_group": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "device_id",
+        "exp_group_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwm_sr_data_warehouse_dd_others_user_location": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_detail",
+        "location",
+        "operation",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwm_sr_data_warehouse_homepage_other_user": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "module",
+        "operation",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwm_sr_data_warehouse_homepage_user_item": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "app_version",
+        "card_type",
+        "feature_detail",
+        "is_ads",
+        "item_id",
+        "module",
+        "object",
+        "operation",
+        "platform",
+        "source1_feature_detail",
+        "source1_module",
+        "source1_object",
+        "source2_feature_detail",
+        "source2_module",
+        "source2_object",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwm_sr_data_warehouse_image_search_user": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "camera_page_version",
+        "feature_detail",
+        "image_source",
+        "is_ads",
+        "liked",
+        "local_hour",
+        "md5",
+        "operation",
+        "page_section",
+        "page_type",
+        "platform",
+        "regional_date",
+        "regional_hour",
+        "search_entrance",
+        "target_type",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwm_sr_data_warehouse_tc_ab_all_cards": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_detail",
+        "feature_group",
+        "is_item_card",
+        "item_id",
+        "local_hour",
+        "model_id",
+        "operation",
+        "regional_date",
+        "regional_hour",
+        "reporting_business_line",
+        "reporting_module",
+        "reporting_object",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dwm_sr_data_warehouse_tc_pb_reward_model_mini": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "full_start_timestamp",
+        "item_id",
+        "model_id",
+        "model_status",
+        "regional_date",
+        "regional_hour",
+        "regional_minute",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_ads_request_benchmark_advv_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "campaign_id",
+        "entrance",
+        "feature_groups",
+        "item_id",
+        "placement",
+        "pricing_type",
+        "product_types",
+        "request_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_ai_search_wide_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_ci_exp_scenario_level_general_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "content",
+        "exp_group_id",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_content_antifraud_scenario_level_order_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "antifraud_tag",
+        "is_ads",
+        "scenario"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_content_antifraud_user_item_level_order_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "antifraud_tag",
+        "is_ads",
+        "item_id",
+        "scenario",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_fll_diversity_funnel_10m": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "abt",
+        "bundle",
+        "card_type",
+        "country",
+        "is_ads",
+        "recall_queue_id",
+        "regional_date",
+        "regional_hour",
+        "stage",
+        "timestamp_10m"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_fll_diversity_funnel_1h": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "abt",
+        "bundle",
+        "card_type",
+        "country",
+        "is_ads",
+        "recall_queue_id",
+        "regional_date",
+        "regional_hour",
+        "stage"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_hashtag_replace_analysis_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_tag",
+        "hashtag_id",
+        "target_item_id",
+        "version_date"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_homepage_dd_ads_type_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_id",
+        "is_ads",
+        "location",
+        "main_product_type",
+        "platform",
+        "product_type",
+        "reporting_business_line",
+        "reporting_module",
+        "reporting_object",
+        "sub_product_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_homepage_dd_location_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "is_ads",
+        "location",
+        "platform",
+        "user_purchase_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_homepage_module_user_ads_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "module",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_homepage_user_attribute_level_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "app_version",
+        "dd_click_level",
+        "item_click_level",
+        "major_app_version",
+        "module",
+        "object",
+        "platform"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_homepage_user_cardtype_ad_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "is_ads",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_homepage_user_duration_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_image_search_entrance_user_exp_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_image_search_entrance_user_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "image_source",
+        "is_ads",
+        "platform",
+        "search_entrance",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_image_search_exp_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_image_search_main_dashboard_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "platform"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_image_search_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "image_source",
+        "is_ads",
+        "search_entrance"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_ni_boost_explore_item_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_tag",
+        "item_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_ni_boost_item_cspu_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_ni_boost_item_cspu_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_ni_boost_item_hourly_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_tag",
+        "item_id",
+        "regional_date",
+        "regional_hour"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_ni_boost_item_realtime_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_tag",
+        "item_id",
+        "regional_date",
+        "window_end"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_ni_boost_offline_common_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_tag",
+        "item_id",
+        "regional_date"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_pb_item_cspu_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_pb_itemcspu_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "item_id",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_pb_rcmd_replace_status_v3_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "exp_tag",
+        "item_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_pb_replace_pruning_item_manual_7d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_pb_replace_pruning_item_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_pb_search_replace_status_v2_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "exp_tag",
+        "item_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_pdp_view_event_level_stay_duration_1h": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "event_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_antifraud_exp_level_order_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "is_ads",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_antifraud_scenario_level_order_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "antifraud_tag",
+        "is_ads",
+        "scenario"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_antifraud_user_item_level_order_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "antifraud_tag",
+        "is_ads",
+        "item_id",
+        "scenario",
+        "scenario_tags",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_cspu_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_base_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "feature_detail",
+        "is_ads",
+        "platform",
+        "scenario_tag",
+        "target_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_explode_queues_level_diversity_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "exp_group_id",
+        "recall_queue",
+        "scene_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_explode_queues_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "recall_queue",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_feature_location_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "is_ads",
+        "location",
+        "scenario_tag",
+        "target_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_benchmark_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "feature_detail",
+        "is_ads",
+        "login_type",
+        "platform",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_count_statistics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "is_ads",
+        "platform",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_dedup_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "is_ads",
+        "platform",
+        "scenario_tag",
+        "target_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_diversity_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "buyer_type",
+        "card_type",
+        "exp_group_id",
+        "scene_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_diversity_dedup_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "exp_group_id",
+        "scene_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_imp_bad_rate_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "is_ads",
+        "scene_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_nmv_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "abs_tier_180d",
+        "exp_group_id",
+        "exp_type",
+        "feature_detail",
+        "is_ads",
+        "platform",
+        "scenario_tag",
+        "target_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_nmv_final_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "feature_detail",
+        "is_ads",
+        "platform",
+        "scenario_tag",
+        "target_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_order_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "feature_detail",
+        "is_ads",
+        "is_cod",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_repurchase_days_180d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "platform",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_level_view_page_duration_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "experiment_id",
+        "page_tag",
+        "scenario_tag",
+        "source1_page_tag",
+        "source2_page_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_location_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "feature_detail",
+        "feature_group",
+        "location",
+        "roi_item_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_queue_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "is_ads",
+        "queue",
+        "scenario_tag",
+        "source_level"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_scenario_retention_30d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_state_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "exp_type",
+        "feature_detail",
+        "is_ads",
+        "platform",
+        "scenario_tag",
+        "state",
+        "target_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_exp_state_level_nmv_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "feature_detail",
+        "is_ads",
+        "platform",
+        "scenario_tag",
+        "state",
+        "target_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_feature_location_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_detail",
+        "is_ads",
+        "location"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_item_level_benchmark_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_detail",
+        "is_ads",
+        "item_id",
+        "platform",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_item_level_ppv_layer_30d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_order_benchmark_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "device_id",
+        "feature_detail",
+        "is_ads",
+        "is_direct",
+        "item_id",
+        "keyword",
+        "location",
+        "order_id",
+        "page_section",
+        "page_type",
+        "platform",
+        "search_entrance",
+        "search_mid",
+        "shop_id",
+        "sort_type",
+        "target_type",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_avg_repurchase_days_180d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "platform",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_card_level_diversity_dedup_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "is_ads",
+        "scene_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_card_level_diversity_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "is_ads",
+        "scene_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_diversity_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_detail",
+        "login_type",
+        "platform",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_level_benchmark_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_detail",
+        "is_ads",
+        "login_type",
+        "platform",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_level_count_statistics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "platform",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_level_nmv_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_detail",
+        "is_ads",
+        "platform",
+        "scenario_tag",
+        "target_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_level_view_page_duration_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "page_tag",
+        "scenario_tag",
+        "source1_page_tag",
+        "source2_page_tag",
+        "source_level"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_location_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "location",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_repurchase_30d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_scenario_retention_30d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_user_attribute_level_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "app_version",
+        "dd_click_level",
+        "item_click_level",
+        "major_app_version",
+        "platform"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_user_exp_level_benchmark_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "device_id",
+        "exp_group_id",
+        "feature_detail",
+        "is_ads",
+        "platform",
+        "scenario_tag",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_user_item_category_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "operation",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_user_item_keyword_benchmark_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "dedup_scenario_tags",
+        "device_id",
+        "feature_detail",
+        "is_ads",
+        "is_direct",
+        "is_llm_deepthinking",
+        "item_id",
+        "keyword",
+        "location",
+        "original_page_type",
+        "page_section",
+        "page_type",
+        "platform",
+        "scenario_tags",
+        "search_entrance",
+        "search_mid",
+        "shop_id",
+        "sort_type",
+        "target_type",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_platform_user_level_benchmark_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_detail",
+        "is_ads",
+        "platform",
+        "scenario_tag",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_rcmd_ads_user_item_location_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "common_feature",
+        "is_roi2",
+        "item_id",
+        "location",
+        "main_product_type",
+        "product_type",
+        "sub_product_type",
+        "type",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_rcmd_exp_level_edt_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "edt_category",
+        "edt_max",
+        "edt_min",
+        "exp_group_id",
+        "exp_type",
+        "feature_detail",
+        "is_ads",
+        "scenario_tag",
+        "source",
+        "target_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_rcmd_exp_scenario_level_price_percentile_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "feature_group",
+        "is_ads",
+        "operation",
+        "percentile"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_rcmd_exp_upstream_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "feature_detail",
+        "is_ads",
+        "platform",
+        "upstream_feature"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_ads_type_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "entrance",
+        "exp_group_id",
+        "placement",
+        "pricing_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_buyer_tier_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_card_type_relevance_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "ads_type",
+        "card_type",
+        "exp_group_id",
+        "search_mid",
+        "sort_type",
+        "top_location_type",
+        "with_keyword"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_core_metrics_v2_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "experiment_id",
+        "feature_type",
+        "is_ads",
+        "sort_type",
+        "target_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_edt_keyword_category_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_entrance_card_type_core_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "exp_group_id",
+        "experiment_id",
+        "is_ads",
+        "layer_id",
+        "scene_id",
+        "search_entrance"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_entrance_card_type_nmv_metrics_7d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_entrance_card_type_other_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "exp_group_id",
+        "is_ads",
+        "search_entrance"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_entrance_mid_metrics_v2_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "exp_group_id",
+        "experiment_id",
+        "is_ads",
+        "search_entrance",
+        "search_mid",
+        "sort_type",
+        "with_keyword"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_group_metrics_14d_30d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "experiment_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_item_category_platform_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_item_category_platform_nmv_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_llm_rewrite_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_location_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_other_scenario_nmv_metrics_7d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_page_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "experiment_id",
+        "page_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_relevance_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_srp_layout_instant_filter_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "exp_group_id",
+        "experiment_id",
+        "layout_type",
+        "use_instant_filter_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_srp_shop_recall_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_abtest_state_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "state"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_card_mab_analysis_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_curated_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "activity_id",
+        "keyword",
+        "keyword_category",
+        "keyword_cluster",
+        "module_id",
+        "module_schema_id",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_entrance_card_type_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_entrance_card_type_nmv_metrics_7d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_exp_level_other_scenario_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "is_ads",
+        "platform",
+        "scenario_tag"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_food_card_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_global_session_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "global_session_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_guide_blacklist_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_guide_performance_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_guide_user_benchmark_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_instant_filter_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "address_id",
+        "card_type",
+        "device_id",
+        "item_id",
+        "keyword",
+        "layout_type",
+        "local_hour",
+        "request_id",
+        "search_filter",
+        "search_session_id",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_keyword_item_category_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_keyword_level_metrics_30d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_keyword_metrics_30d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "is_ads",
+        "keyword",
+        "time_range"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_keyword_query_cat_count_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cat_id",
+        "country",
+        "dt",
+        "keyword",
+        "level",
+        "operation"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_keyword_queue_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "keyword",
+        "queue_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_rel_score_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "card_type",
+        "is_ads",
+        "sort_type",
+        "top_location_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_session_level_metircs_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "global_session_id",
+        "keyword",
+        "search_entrance",
+        "search_mid",
+        "search_session_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_smart_ui_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "image_id",
+        "item_id",
+        "target_type",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_smart_ui_metrics_30d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "image_id",
+        "item_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_sqe_mutimodal_real_log_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "request_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_sqe_sample_user_keyword_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_srp_other_feature_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_srp_performance_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_srp_user_benchmark_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_state_srp_layout_instant_filter_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_user_feature_civ_order_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_detail",
+        "is_ads",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_user_outflow_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_user_rfm_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_search_user_stickness_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_antifraud_ovl_1h": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_exp_scene_general_upgrade_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "is_ads",
+        "is_item_card",
+        "layer_id",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_exp_scene_nmv_aggr_r7d_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "is_ads",
+        "is_item_card",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_ni_category_channel_exp_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "layer_id",
+        "level1_global_be_category_id",
+        "level2_global_be_category_id",
+        "shipping_channel_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_ni_new_item_createdate_scene_exp_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "create_date_type",
+        "exp_group_id",
+        "is_ads",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_nmv_basic_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_nmv_basic_aggr_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "is_item_card",
+        "item_id",
+        "local_hour",
+        "mapping_general",
+        "model_id",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_nmv_basic_aggr_r7d_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "is_item_card",
+        "item_id",
+        "local_hour",
+        "mapping_general",
+        "model_id",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_nmv_basic_r7d_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "feature_detail",
+        "feature_group",
+        "is_ads",
+        "item_id",
+        "local_hour",
+        "model_id",
+        "reporting_business_line",
+        "reporting_module",
+        "reporting_object",
+        "shop_id",
+        "source1_feature_detail",
+        "source1_feature_group",
+        "source1_is_ads",
+        "source1_reporting_business_line",
+        "source1_reporting_module",
+        "source1_reporting_object",
+        "source2_feature_detail",
+        "source2_feature_group",
+        "source2_is_ads",
+        "source2_reporting_business_line",
+        "source2_reporting_module",
+        "source2_reporting_object",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_basic_aggr_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "is_item_card",
+        "item_id",
+        "local_hour",
+        "mapping_general",
+        "model_id",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_basic_tag_aggr_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "is_item_card",
+        "item_id",
+        "local_hour",
+        "mapping_general",
+        "model_id",
+        "shop_id",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_cheapest_sr_user_level_aggr_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "mapping_general",
+        "user_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_cspu_level_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_item_aggr_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_item_level_ecpm_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "regional_date"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_one_variation_exp_scene_general_upgrade_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "business_type",
+        "exp_group_id",
+        "is_ads",
+        "is_item_card",
+        "local_hour",
+        "mapping_general",
+        "shop_scs_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_one_variation_model_day_level_analysis_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "item_id",
+        "mapping_general",
+        "model_id",
+        "shop_id",
+        "shop_scs_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_one_variation_model_hour_level_analysis_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "item_id",
+        "local_hour",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_one_variation_scene_overall_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "business_type",
+        "is_ads",
+        "is_item_card",
+        "item_id",
+        "mapping_general",
+        "model_id",
+        "shop_scs_type"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_reward_banner_model_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_reward_control_uplift_15d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_reward_model_exp_level_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "item_id",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_reward_ongoing_hour_level_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "latest_winner_start_timestamp",
+        "local_hour",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_reward_tbi_uplift_dictionary_30d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_k",
+        "k"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_pb_winner_order_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "item_id",
+        "model_id",
+        "shop_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_scene_995_threshold_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "is_ads",
+        "is_item_card",
+        "mapping_general"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_tc_vsku_scene_exp_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "exp_group_id",
+        "is_ads",
+        "is_video_card",
+        "scene"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_user_activeness_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": []
+    },
+    "srdi_mart.dws_sr_data_warehouse_video_chat_history_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "manual_check_date",
+        "regional_date",
+        "round_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_voice_search_session_level_metrics_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "search_session_id",
+        "voice_session_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_vsku_vitem_cspu_1d": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "cspu_id",
+        "vitem_id"
+      ]
+    },
+    "srdi_mart.dws_sr_data_warehouse_vsku_vitem_nd": {
+      "domain": "srdi",
+      "profile_status": "unknown",
+      "scope_dims": {},
+      "is_general_ads_table": false,
+      "dimension_tags": [
+        "vitem_id"
+      ]
+    }
+  }
+}

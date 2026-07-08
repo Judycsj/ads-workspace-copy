@@ -1,0 +1,18 @@
+{
+  "table": "dws_advertise_request_benchmark_advv_1d__reg_s0_live",
+  "asset_ids": [
+    "11161380"
+  ],
+  "status": "unchanged",
+  "old_exists": true,
+  "old_hash": "78fd705ae81799c45381924679fa0da72d6ace44e65e16f7e35a9f3790621a0a",
+  "new_hash": "78fd705ae81799c45381924679fa0da72d6ace44e65e16f7e35a9f3790621a0a",
+  "fetches": [
+    {
+      "asset_id": "11161380",
+      "ok": true,
+      "fetch_info": "正在提取 asset_id=11161380 的 SQL ...\n任务名称: dws_advertise_request_benchmark_advv_1d__id_s0_live\nSQL 长度: 30393 字符\n--- SQL 内容 ---",
+      "sql_chars": 30394
+    }
+  ]
+}

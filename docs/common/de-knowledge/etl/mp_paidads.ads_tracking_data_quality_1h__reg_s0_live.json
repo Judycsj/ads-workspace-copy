@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 7130645,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "-- drop table ads_tracking_data_quality_1h__reg_s0_live;\n\n\n\n\nCREATE TABLE IF NOT EXISTS ads_tracking_data_quality_1h__reg_s0_live (\n    grass_region string,\n    entrance string,\n    row_count bigint,\n    pricing_type__column_count bigint,\n    pricing_type_null_count bigint,\n    ads_id__column_count bigint,\n    ads_id_null_count bigint,\n    item_id__column_count bigint,\n    item_id_null_count bigint,\n    shop_id__column_count bigint,\n    shop_id_null_count bigint,\n    placement__column_count bigint,\n    placement_null_count bigint,\n    entrance__column_count bigint,\n    entrance_null_count bigint,\n    request_id__column_count bigint,\n    request_id_null_count bigint\n)\nCOMMENT 'table for ads_tracking_data_quality_1h__reg_s0_live'\nPARTITIONED BY (\n    grass_date date COMMENT 'partition key, yyyy-MM-dd',\n    h int COMMENT 'partition key'\n)\nSTORED AS PARQUET\nLOCATION '${HIVE_PATH}/ads_tracking_data_quality_1h__reg_s0_live';\n\ncreate or replace temporary view tracking_base\nas\nselect\n    grass_region,\n    grass_date,\n    h,\n    COALESCE(get_json_object(item.json_data, '$.entrance'), get_json_object(json_data, '$.entrance')) as entrance,\n    get_json_object(item.json_data, '$.pricing_type') as pricing_type,\n    item.adsid as ads_id,\n    item.itemid as item_id\n    ,item.shopid as shop_id\n    ,COALESCE(item.internal.deduction_info.placement, cast(get_json_object(item.json_data, '$.placement') as bigint), cast(get_json_object(json_data, '$.placement') as bigint)) as placement\n    ,COALESCE(get_json_object(item.json_data, '$.request_id'), get_json_object(json_data, '$.request_id')) as request_id\nfrom mkplpaidads_data.ods_log_ads_tracking_hi__reg_s0_live\nlateral view explode(items)  as item\nwhere grass_date = date '${BIZ_DT}' and h = ${BIZ_H} and operation in (1,2) and item.adsid > 0;\n\n\nINSERT OVERWRITE TABLE ads_tracking_data_quality_1h__reg_s0_live PARTITION (grass_date, h)\nselect\n    grass_region,\n    entrance,\n    count(1) as row_count\n    ,count(pricing_type) as pricing_type__column_count\n    ,sum(\n        case\n            when pricing_type is null then 1\n            else 0\n        end\n    ) as pricing_type_null_count\n    ,count(ads_id) as ads_id__column_count\n    ,sum(\n        case\n            when ads_id is null then 1\n            else 0\n        end\n    ) as ads_id_null_count\n    ,count(item_id) as item_id__column_count\n    ,sum(\n        case\n            when item_id <= 0  then 1\n            else 0\n        end\n    ) as item_id_null_count\n    ,count(shop_id) as shop_id__column_count\n    ,sum(\n        case\n            when shop_id <= 0 then 1\n            else 0\n        end\n    ) as shop_id_null_count\n    ,count(placement) as placement__column_count\n    ,sum(\n        case\n            when placement < 0 then 1\n            else 0\n        end\n    ) as placement_null_count\n    ,count(entrance) as entrance__column_count\n    ,sum(\n        case\n            when entrance is null then 1\n            else 0\n        end\n    ) as entrance_null_count\n    ,count(request_id) as request_id__column_count\n    ,sum(\n        case\n            when request_id is null then 1\n            else 0\n        end\n    ) as request_id_null_count\n    ,grass_date\n    ,h\nfrom tracking_base\ngroup by grass_region, grass_date, h, entrance;\n\n\n-- select * from ads_tracking_data_quality_1h__reg_s0_live;\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:53 GMT",
+      "task_code": "data_paidadsmart.studio_7130645",
+      "tbl_name": "ads_tracking_data_quality_1h__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

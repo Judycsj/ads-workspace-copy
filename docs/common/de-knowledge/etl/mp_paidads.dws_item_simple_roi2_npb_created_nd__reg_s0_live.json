@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 7514020,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "insert overwrite table dws_item_simple_roi2_npb_created_nd__reg_s0_live partition (tz_type, grass_region, grass_date)\nselect \n    item.item_id\n    ,item.create_datetime\n    ,item.create_timestamp\n    ,sum(if(date(item.create_datetime)>= date_sub(item_metric.grass_date,10),item_metric.imp_cnt_1d,0)) as imp_cnt_acc\n    ,sum(if(date(item.create_datetime)>= date_sub(item_metric.grass_date,10),item_metric.click_cnt_1d,0)) as click_cnt_acc\n    ,sum(if(date(item.create_datetime)>= date_sub(item_metric.grass_date,20),item_metric.atc_cnt_1d,0)) as atc_cnt_acc\n    ,'local' as tz_type\n    ,'${grass_region}' as grass_region\n    ,cast('${grass_date}' as date) as grass_date\nfrom \n    (\n        select\n            item_id\n            ,create_datetime\n            ,create_timestamp\n        from mp_item.rt_dim_item__reg_s0_live\n        where\n            status = 1\n            and grass_region = '${grass_region}'\n            --近20天创建的item\n            and date(create_datetime) >= date_sub(DATE(FROM_UTC_TIMESTAMP(TO_UTC_TIMESTAMP(CONCAT('${grass_date}', ' ', lpad('${BIZ_H}', 2, 0), ':00:00'), 'Asia/Singapore'),'${timezone}')), 20) --调度时间转local，并减20天\n            and date(create_datetime) <= date(FROM_UTC_TIMESTAMP(TO_UTC_TIMESTAMP(CONCAT('${grass_date}', ' ', lpad('${BIZ_H}', 2, 0), ':00:00'), 'Asia/Singapore'),'${timezone}'))\n    ) item\nleft join\n    (\n        select\n            item_id\n            ,imp_cnt_1d\n            ,click_cnt_1d\n            ,atc_cnt_1d\n            ,grass_region\n            ,grass_date\n        from traffic.dws_item_metric_1d__reg_live\n        where\n            grass_region = '${grass_region}'\n            and grass_date >= date_sub('${grass_date}',20)\n            and grass_date <= date('${grass_date}')\n    ) item_metric\non item.item_id = item_metric.item_id\nand date(item.create_datetime) <= item_metric.grass_date\ngroup by     \n    item.item_id\n    ,item.create_datetime\n    ,item.create_timestamp\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:34 GMT",
+      "task_code": "data_paidadsmart.studio_7514020",
+      "tbl_name": "dws_item_simple_roi2_npb_created_nd__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

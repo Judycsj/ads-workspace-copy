@@ -1,0 +1,74 @@
+[
+  {
+    "table_name": "ods_log_ads_tracking_hi",
+    "proto_link": "https://git.garena.com/shopee/deep/data-platform/dw/paidads-data-pipeline-protobuf/-/blob/master/src/main/proto/log/ads_tracking.proto",
+    "proto_message": "Tracking",
+    "note": "13 region candidates; proto_link is original"
+  },
+  {
+    "table_name": "ods_log_translog_event_hi",
+    "proto_link": "https://git.garena.com/shopee/deep/data-platform/dw/paidads-data-pipeline-protobuf/-/blob/master/src/main/proto/log/translog_event_streaming.proto",
+    "proto_message": "TranslogEvent",
+    "note": "proto_link is original; field mapping verified: 45/48 ODS fields match proto 1:1, 3 ODS-only partition fields (grass_date/grass_region/h)"
+  },
+  {
+    "table_name": "ods_log_ads_report_hi",
+    "proto_link": "https://git.garena.com/shopee/deep/data-platform/dw/paidads-data-pipeline-protobuf/-/blob/master/src/main/proto/log/report_event.proto",
+    "proto_message": "ReportNgEvent",
+    "note": "proto_link corrected (original pointed to message name 'ReportNgEvent', not a file)"
+  },
+  {
+    "table_name": "ods_shopee_ads_db__translog_tab_di",
+    "proto_link": null,
+    "proto_message": null,
+    "note": "DB sync table, no Kafka/proto; schema from DB directly"
+  },
+  {
+    "table_name": "ods_log_ads_report_livestream_hi",
+    "proto_link": "https://git.garena.com/shopee/deep/data-platform/dw/paidads-data-pipeline-protobuf/-/blob/master/src/main/proto/log/report_event_livestream.proto",
+    "proto_message": null,
+    "note": "proto_link is original"
+  },
+  {
+    "table_name": "ods_log_display_ads_tracking_hi",
+    "proto_link": "https://git.garena.com/shopee/deep/data-platform/dw/paidads-data-pipeline-protobuf/-/blob/master/src/main/proto/log/ads_tracking.proto",
+    "proto_message": "Tracking",
+    "note": "proto_link corrected (original pointed to message name 'Tracking'); shares proto with ods_log_ads_tracking_hi and ods_log_livestream_ads_tracking"
+  },
+  {
+    "table_name": "ods_log_translog_unsuccessful_event_deduction_hi",
+    "proto_link": "https://git.garena.com/shopee/deep/data-platform/dw/paidads-data-pipeline-protobuf/-/blob/master/src/main/proto/log/deduction/deduct_unsuccessful_event.proto",
+    "proto_message": null,
+    "note": "proto_link is original"
+  },
+  {
+    "table_name": "ods_shopee_ads_db__topup_translog_tab_df",
+    "proto_link": null,
+    "proto_message": null,
+    "note": "DB sync table, no Kafka/proto; schema from DB directly"
+  },
+  {
+    "table_name": "ods_log_hyperx_exp_hi_temp_s0_live",
+    "proto_link": "https://git.garena.com/shopee/deep/data-platform/dw/paidads-data-pipeline-protobuf/-/blob/master/src/main/proto/hyperx/hyperx_log.proto",
+    "proto_message": "HyperXLog",
+    "note": "proto_link corrected (original pointed to message name 'HyperxLog'); 2 candidates; shares proto with ods_log_live_ads_bidding_hyperx_hi"
+  },
+  {
+    "table_name": "ods_log_live_ads_bidding_hyperx_hi",
+    "proto_link": "https://git.garena.com/shopee/deep/data-platform/dw/paidads-data-pipeline-protobuf/-/blob/master/src/main/proto/hyperx/hyperx_log.proto",
+    "proto_message": "HyperXLog",
+    "note": "proto_link is original"
+  },
+  {
+    "table_name": "ods_log_target_roi_rcmd_log_hi",
+    "proto_link": "https://git.garena.com/shopee/deep/data-platform/dw/paidads-data-pipeline-protobuf/-/blob/master/src/main/proto/log/target_roi_rcmd_log.proto",
+    "proto_message": null,
+    "note": "proto_link is original"
+  },
+  {
+    "table_name": "ods_log_livestream_ads_tracking",
+    "proto_link": "https://git.garena.com/shopee/deep/data-platform/dw/paidads-data-pipeline-protobuf/-/blob/master/src/main/proto/log/ads_tracking.proto",
+    "proto_message": "Tracking",
+    "note": "proto_link corrected (original pointed to message name 'Tracking'); 9 candidates; shares proto with ods_log_ads_tracking_hi and ods_log_display_ads_tracking_hi"
+  }
+]

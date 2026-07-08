@@ -1,0 +1,131 @@
+{
+  "scope_dim_terms": {
+    "ads_type": {
+      "item ads": "item_ads",
+      "item_ads": "item_ads",
+      "product ads": "item_ads",
+      "product_ads": "item_ads",
+      "potential product ads": "item_ads",
+      "potential_product_ads": "item_ads",
+      "search ads": "search_ads",
+      "search_ads": "search_ads",
+      "search brand": "search_ads",
+      "search_brand": "search_ads",
+      "keyword ads": "search_ads",
+      "keyword_ads": "search_ads",
+      "search": "search_ads",
+      "discovery ads": "discovery_ads",
+      "discovery_ads": "discovery_ads",
+      "discovery": "discovery_ads",
+      "display ads": "display_ads",
+      "display_ads": "display_ads",
+      "banner display": "display_ads",
+      "banner_display": "display_ads",
+      "display": "display_ads",
+      "shop ads": "shop_ads",
+      "shop_ads": "shop_ads",
+      "video ads": "video_ads",
+      "video_ads": "video_ads",
+      "video": "video_ads",
+      "livestream ads": "livestream_ads",
+      "livestream_ads": "livestream_ads",
+      "live stream ads": "livestream_ads",
+      "live_stream_ads": "livestream_ads",
+      "live stream": "livestream_ads",
+      "live_stream": "livestream_ads",
+      "live streaming": "livestream_ads",
+      "live_streaming": "livestream_ads",
+      "livestream": "livestream_ads",
+      "live ads": "livestream_ads",
+      "live_ads": "livestream_ads",
+      "直播": "livestream_ads",
+      "game ads": "game_ads",
+      "game_ads": "game_ads"
+    },
+    "attribution": {
+      "broad attribution": "broad",
+      "broad_attribution": "broad",
+      "broad": "broad",
+      "direct attribution": "direct",
+      "direct_attribution": "direct",
+      "direct": "direct",
+      "omni attribution": "omni",
+      "omni_attribution": "omni",
+      "omni": "omni"
+    },
+    "campaign_type": {
+      "brand max": "brand_max",
+      "brand_max": "brand_max",
+      "gmv max": "gmv_max",
+      "gmv_max": "gmv_max",
+      "new item boost": "new_item_boost",
+      "new_item_boost": "new_item_boost",
+      "new product boost": "new_item_boost",
+      "new_product_boost": "new_item_boost",
+      "npb": "npb"
+    }
+  },
+  "metric_focus_labels": {
+      "advv": "advv",
+      "pc2": "pc2"
+    },
+    "table_use_case_labels": {
+      "experiment": "experiment",
+      "实验": "experiment",
+      "ab test": "abtest",
+      "ab_test": "abtest",
+      "benchmark": "benchmark",
+      "monitor": "monitoring",
+      "monitoring": "monitoring"
+    },
+  "specialized_ads_types": [
+    "search_ads",
+    "discovery_ads",
+    "display_ads",
+    "shop_ads",
+    "video_ads",
+    "livestream_ads",
+    "game_ads"
+  ],
+  "variant_hints": {
+    "广泛": {
+      "attribution": "broad"
+    },
+    "broad": {
+      "attribution": "broad"
+    },
+    "direct": {
+      "attribution": "direct"
+    },
+    "omni": {
+      "attribution": "omni"
+    },
+    "shop ads": {
+      "ads_type": "shop_ads"
+    },
+    "search ads": {
+      "ads_type": "search_ads"
+    },
+    "display": {
+      "ads_type": "display_ads"
+    },
+    "livestream": {
+      "ads_type": "livestream_ads"
+    },
+    "直播": {
+      "ads_type": "livestream_ads"
+    },
+    "brand max": {
+      "campaign_type": "brand_max"
+    },
+    "gmv max": {
+      "campaign_type": "gmv_max"
+    },
+    "new boost": {
+      "campaign_type": "new_item_boost"
+    },
+    "npb": {
+      "campaign_type": "npb"
+    }
+  }
+}

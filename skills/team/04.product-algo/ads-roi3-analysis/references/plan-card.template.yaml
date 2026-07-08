@@ -1,0 +1,49 @@
+# ROI3 分析计划卡模板/ROI3 Analysis Plan Card Template
+# 复制本文件到 docs/personal/<user>/roi3/plan-cards/<YYYYMMDD>-<slug>.yaml 后填写。
+version: 1
+
+decision: "<这个分析改变什么决策；答不出则先降级为事实澄清>"
+question: "<一句话问题>"
+
+axes:
+  question_type: "<校验|读数|诊断|探索|评估|决策>"
+  lever: "<发多少|发给谁|怎么发|怎么控>"
+  layer: "<效果指标层|控制器层|模型层|策略层|数据口径层>"
+  slices: [region]
+  evidence: "<AB实验|观测对比|线上trace|模型外推>"
+
+scope:
+  time_window: "<YYYY-MM-DD..YYYY-MM-DD，仅满日>"
+  regions: ["<REGION>"]
+  experiment: "<实验标识 / exp_tag / 桶号映射；没有则写 N/A>"
+
+caliber:
+  value_metric: "<advv|broad_gmv|platform_gmv|guardrail|cost_ratio>"
+  multi_caliber: false
+  notes: "<gross/net、归因窗口、tz、单位、归一方式等>"
+
+audience: "<自己|PM|老板>"
+output:
+  report_version: "<全量版|决策版|三句话版>"
+  archive_path: "docs/personal/<user>/roi3/experiments/<中文分析事项>-<YYYYMMDD>/"  # 一分析一中文文件夹；内含 <中文报告名>-<YYYYMMDD>.md + 伴生 -repro.md（见 report-skeleton.md 归档结构与命名）
+
+route:
+  entry_id: "<routing-matrix.yaml entry id>"
+  entrypoint: "<skill name 或 playbook path>"
+  maturity: "<skill|playbook|手工>"
+
+track: "<快速|标准|完整>"
+estimated_cost: "<分钟级|小时级|视查询而定>"
+
+facts_base:
+  - status: "<已确认|待验证>"
+    item: "<本次依赖的机制/口径事实>"
+    source: "<data-sources.md / datamap / AB config / code / latest data>"
+
+hypothesis:
+  statement: "<完整流程填：初始假设；快速流程可写 N/A>"
+  kill_criteria: "<什么数据会推翻它；快速流程可写 N/A>"
+
+sub_analyses: []
+checkpoints: []
+pending: []

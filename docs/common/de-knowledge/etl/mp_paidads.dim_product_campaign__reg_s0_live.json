@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 5654373,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "create external table if not exists dim_product_campaign__reg_s0_live(\n    campaign_id bigint\n    ,shop_id bigint\n    ,user_id bigint\n    ,campaign_create_datetime string\n    ,campaign_modify_datetime string\n    ,product_selection int\n    ,product_placement int\n    ,bidding_strategy int\n    ,campaign_create_timestamp bigint\n    ,campaign_modify_timestamp bigint\n    ,creative boolean\n    ,ecpc boolean \n    ,search struct<keyword_ads_id:bigint>\n    ,target struct<daily_discover:struct<price:bigint,status:int>,you_may_also_like:struct<price:bigint,status:int>>\n)partitioned by\n(\n     tz_type                        string          comment               'timezone type'\n    ,grass_region                   string          comment               'partition key'\n    ,grass_date                     date            comment               'partition key, yyyy-MM-dd'\n)\nSTORED AS PARQUET\nLOCATION '${HIVE_PATH}/dim_product_campaign/'\n;\n\n\nCREATE OR REPLACE TEMPORARY VIEW product_campaign_tab_df AS\n(\n    SELECT\n        id\n        , campaignid AS campaign_id\n        , shopid AS shop_id\n        , userid AS user_id\n        , ctime AS campaign_create_timestamp\n        , date_format(from_utc_timestamp(to_utc_timestamp(cast(ctime as timestamp),'Asia/Singapore'), '${timezone}'), 'yyyy-MM-dd HH:mm:ss') as campaign_create_datetime\n        , mtime AS campaign_modify_timestamp\n        , date_format(from_utc_timestamp(to_utc_timestamp(cast(mtime as timestamp),'Asia/Singapore'), '${timezone}'), 'yyyy-MM-dd HH:mm:ss') as campaign_modify_datetime\n        , product_selection\n        , product_placement\n        , bidding_strategy\n        , from_json(_decoded_extinfo, 'struct<search:struct<keyword_ads_id:bigint>,target:struct<daily_discover:struct<price:bigint,status:int>,you_may_also_like:struct<price:bigint,status:int>>,creative:boolean,ecpc:boolean,has_item_boost:boolean>') as decoded_extinfo\n    FROM mp_paidads.shopee_ads_${region}_db__product_campaign_tab__reg_continuous_s0_live\n    WHERE ctime < UNIX_TIMESTAMP(FROM_UTC_TIMESTAMP(TO_UTC_TIMESTAMP(DATE_ADD(DATE'${grass_date}', 1), '${timezone}'), 'Asia/Singapore'))\n);\n\nINSERT OVERWRITE TABLE dim_product_campaign__reg_s0_live PARTITION (tz_type='local', grass_region, grass_date)\n    SELECT  campaign_id\n            ,shop_id\n            ,user_id\n            ,campaign_create_datetime\n            ,campaign_modify_datetime\n            ,product_selection\n            ,product_placement\n            ,bidding_strategy\n            ,campaign_create_timestamp\n            ,campaign_modify_timestamp\n            ,decoded_extinfo.creative as creative\n            ,decoded_extinfo.ecpc as ecpc\n            ,decoded_extinfo.search as search\n            ,decoded_extinfo.target as target\n            ,upper('${region}') AS grass_region\n            ,DATE('${grass_date}') as grass_date\n    FROM product_campaign_tab_df\n;\n\nalter table dim_product_campaign__${region}_s0_live add if not exists partition (grass_date= '${grass_date}');\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:31 GMT",
+      "task_code": "data_paidadsmart.studio_5654373",
+      "tbl_name": "dim_product_campaign__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

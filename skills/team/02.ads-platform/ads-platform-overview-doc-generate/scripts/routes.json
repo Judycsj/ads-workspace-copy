@@ -1,0 +1,467 @@
+{
+  "login": {
+    "account": "adsfe_test_sg",
+    "password": "Shopee123",
+    "account_selector": "input[name='loginKey']",
+    "password_selector": "input[name='password']",
+    "submit_selector": "button[data-cy='authentication-pc/login_button_login_page']",
+    "login_url": "https://seller.test.shopee.sg/seller/login",
+    "login_success_selector": "#app > div > .shopee-header-bar",
+    "post_login_url_not_contains": "seller/login",
+    "post_login_wait_ms": 2000,
+    "post_login_wait_timeout_ms": 6000
+  },
+  "routes": [
+    {
+      "name": "seller_center_homepage",
+      "url": "https://seller.test.shopee.sg/portal/marketing/pas/index",
+      "description": "Platform Feature Overview (section 4.1.1)",
+      "doc": {
+        "section_id": "4.1.1.1",
+        "images": [
+          {
+            "source": "overview-module",
+            "caption": "Ads homepage overview"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "type": "wait",
+          "name": "wait-after-redirect",
+          "wait_for": "*[data-testid='ads-performance-chart'] canvas",
+          "description": "Wait for page main sections are ready",
+          "wait_ms": 300
+        },
+        {
+          "name": "overview-module",
+          "type": "screenshot",
+          "description": "Monthly snapshot of the Seller Center Ads landing overview.",
+          "screenshot": true,
+          "screenshot_height": 1200,
+          "screenshot_name": "overview-module",
+          "highlight": [
+            { "selector": "*[data-testid='create-new-ads-btn']", "label": "A" },
+            { "selector": "*[data-testid='account-panel']", "label": "B" },
+            { "selector": ".smart-voucher-card", "label": "C" },
+            { "selector": ".rcmd-rewards-section", "label": "D" },
+            { "selector": "*[data-testid='ads-performance-chart']", "label": "E" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "product_ads_creation_flow",
+      "url": "https://seller.test.shopee.sg/portal/marketing/pas/product/create",
+      "description": "Product Ads creation flow (section 4.1.2.1)",
+      "custom_css": ".page-bottom { position: absolute !important; bottom: -60px !important; }",
+      "doc": {
+        "section_id": "4.1.2",
+        "images": [
+          { "source": "creation-gms", "caption": "GMS Ads Creation Flow" },
+          { "source": "creation-ad-group", "caption": "Ad Group Creation Flow" },
+          { "source": "creation-individual", "caption": "Individual Ads Creation Flow" }
+        ]
+      },
+      "steps": [
+        {
+          "type": "wait",
+          "name": "creation-page-ready",
+          "wait_for": "*[data-testid='product-selection-panel']"
+        },
+        {
+          "type": "click",
+          "name": "switch-to-gms",
+          "selector": "*[data-testid='tab-selection-gms']",
+          "wait_ms": 1000
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-gms",
+          "screenshot": true,
+          "screenshot_name": "creation-gms",
+          "screenshot_height": 20000
+        },
+        {
+          "type": "click",
+          "name": "switch-to-ad-group",
+          "selector": "*[data-testid='tab-selection-manual_mpd']",
+          "wait_ms": 1000
+        },
+        {
+          "type": "click",
+          "name": "open-product-selector",
+          "selector": "*[data-testid='add-product-btn']"
+        },
+        {
+          "type": "wait",
+          "name": "wait-product-selector",
+          "selector": "*[data-testid='product-selector-modal']"
+        },
+        {
+          "type": "click",
+          "name": "show-all-products",
+          "selector": "*[data-testid='product-selector-modal-show-without-exist-ad-only-checkbox']",
+          "wait_ms": 3000
+        },
+        {
+          "type": "click",
+          "name": "select-all-products",
+          "selector": ".product-modal .eds-table__header .eds-checkbox__indicator",
+          "wait_ms": 1000
+        },
+        {
+          "type": "click",
+          "name": "product-selector-confirm",
+          "selector": ".product-modal .eds-modal__footer .eds-button--primary",
+          "wait_ms": 3000
+        },
+        {
+          "type": "wait",
+          "name": "product-selector-hide",
+          "wait_for": "*[data-testid='product-selection-panel']",
+          "wait_ms": 1000
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-ad-group",
+          "screenshot": true,
+          "screenshot_name": "creation-ad-group",
+          "screenshot_height": 20000
+        },
+        {
+          "type": "click",
+          "name": "switch-to-individual",
+          "selector": "*[data-testid='tab-selection-manual']",
+          "wait_ms": 1000
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-individual",
+          "screenshot": true,
+          "screenshot_name": "creation-individual",
+          "screenshot_height": 20000
+        }
+      ]
+    },
+    {
+      "name": "new_product_ads_creation_flow",
+      "url": "https://seller.test.shopee.sg/portal/marketing/pas/product/create-npa",
+      "description": "New Product Ads creation flow (section 4.1.2.1)",
+      "custom_css": ".page-bottom { position: absolute !important; bottom: -60px !important; }",
+      "doc": {
+        "section_id": "4.1.2",
+        "images": [
+          { "source": "creation-npa", "caption": "New Product Ads Creation Flow" }
+        ]
+      },
+      "steps": [
+        {
+          "type": "wait",
+          "name": "creation-page-ready",
+          "wait_for": "*[data-testid='product-selection-panel']",
+          "wait_ms": 3000
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-npa",
+          "screenshot": true,
+          "screenshot_name": "creation",
+          "screenshot_height": 20000
+        }
+      ]
+    },
+    {
+      "name": "product_ads_detail_page",
+      "url": "https://seller.test.shopee.sg/portal/marketing/pas/product/manual-mpd/1789536?source_page_id=2&from=1777996800&to=1778601599&group=last_week",
+      "description": "Product Ads Detail Page Performance (section 4.1.2)",
+      "doc": {
+        "section_id": "4.1.2",
+        "images": [
+          { "source": "performance-tab", "caption": "Product Ads Metrics" },
+          { "source": "dashboard", "caption": "Product Ads Dash Board" }
+        ]
+      },
+      "steps": [
+        {
+          "type": "wait",
+          "name": "detail-page-ready",
+          "wait_for": "*[data-testid='metric-chart'] canvas",
+          "wait_ms": 3000
+        },
+        {
+          "type": "screenshot",
+          "name": "dashboard",
+          "screenshot": true,
+          "screenshot_name": "dashboard",
+          "selector": "xpath=(//*[contains(concat(' ', normalize-space(@class), ' '), ' common-card ')])[last()-1]"
+        },
+        {
+          "type": "click",
+          "name": "toggle-metrics-panel",
+          "selector": "*[data-testid='select-metrics-button']"
+        },
+        {
+          "type": "screenshot",
+          "name": "performance-tab",
+          "screenshot": true,
+          "screenshot_name": "performance-tab",
+          "selector": "xpath=(//*[contains(concat(' ', normalize-space(@class), ' '), ' common-card ')])[last()]"
+        }
+      ]
+    },
+    {
+      "name": "shop_ads_creation_flow",
+      "url": "https://seller.test.shopee.sg/portal/marketing/pas/shop/create",
+      "description": "Shop Ads creation flow (section 4.1.3.2)",
+      "custom_css": ".page-bottom { position: absolute !important; bottom: -60px !important; }",
+      "doc": {
+        "section_id": "4.1.3",
+        "images": [
+          { "source": "creation-shop-ad", "caption": "Shop Ads Creation Flow" },
+          { "source": "bidding-auto", "caption": "Bidding Method Auto" },
+          { "source": "bidding-manual", "caption": "Bidding Method Manual" },
+          { "source": "keyword-selector", "caption": "Keyword Selector" },
+          { "source": "creative-custom", "caption": "Creative Custom" }
+        ]
+      },
+      "steps": [
+        {
+          "type": "wait",
+          "name": "creation-page-ready",
+          "wait_for": "*[data-testid='ad-name-form-item']",
+          "wait_ms": 3000
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-shop-ad",
+          "screenshot": true,
+          "screenshot_name": "creation-shop-ad",
+          "screenshot_height": 20000
+        },
+        {
+          "type": "click",
+          "name": "switch-auto-bidding",
+          "selector": "*[data-testid='bidding-method-auto']"
+        },
+        {
+          "type": "screenshot",
+          "name": "bidding-auto",
+          "screenshot": true,
+          "screenshot_name": "bidding-auto",
+          "selector": ".common-card:nth-child(2)",
+          "wait_ms": 300
+        },
+        {
+          "type": "click",
+          "name": "switch-manual-bidding",
+          "selector": "*[data-testid='bidding-method-manual']"
+        },
+        {
+          "type": "click",
+          "name": "open-keyword-modal",
+          "selector": "*[data-testid='add-keyword-btn']",
+          "wait_ms": 1000
+        },
+        {
+          "type": "click",
+          "name": "select-all-keywords",
+          "selector": "*[data-testid='keyword-selector-content'] *[data-testid='add-keyword-btn']"
+        },
+        {
+          "type": "screenshot",
+          "name": "keyword-selector",
+          "screenshot": true,
+          "screenshot_name": "keyword-selector",
+          "selector": ".eds-modal.keyword-selector .eds-modal__content",
+          "wait_ms": 300
+        },
+        {
+          "type": "click",
+          "name": "confirm-keywords-selector",
+          "selector": ".eds-modal.keyword-selector .eds-modal__footer .eds-button--primary"
+        },
+        {
+          "type": "screenshot",
+          "name": "bidding-manual",
+          "screenshot": true,
+          "screenshot_name": "bidding-manual",
+          "selector": ".common-card:nth-child(2)",
+          "wait_ms": 1000
+        },
+        {
+          "type": "click",
+          "name": "switch-custom-creative",
+          "selector": "*[data-testid='creative-type-Customize']"
+        },
+        {
+          "type": "screenshot",
+          "name": "creative-custom",
+          "screenshot": true,
+          "screenshot_name": "creative-custom",
+          "selector": ".common-card:nth-child(3)",
+          "wait_ms": 300
+        }
+      ]
+    },
+    {
+      "name": "shop_ads_detail_page",
+      "url": "https://seller.test.shopee.sg/portal/marketing/pas/shop/detail/824832?from=1777996800&to=1778601599&group=last_week",
+      "description": "Shop Ads Detail Page Performance (section 4.1.3)",
+      "doc": {
+        "section_id": "4.1.3",
+        "images": [
+          {
+            "source": "dashboard",
+            "caption": "Shop Ads Dash Board"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "type": "wait",
+          "name": "detail-page-ready",
+          "wait_for": "*[data-testid='metric-chart'] canvas",
+          "wait_ms": 3000
+        },
+        {
+          "type": "screenshot",
+          "name": "dashboard",
+          "screenshot": true,
+          "screenshot_name": "dashboard",
+          "selector": "*[data-testid='metric-chart']"
+        }
+      ]
+    },
+    {
+      "name": "display_ads_creation",
+      "url": "https://seller.test.shopee.sg/portal/marketing/pas/brand/create",
+      "description": "Display Ads creation flow (section 4.1.4)",
+      "custom_css": ".page-bottom { position: absolute !important; bottom: -60px !important; } .drawer-wrapper.hide { display: none !important; }",
+      "doc": {
+        "section_id": "4.1.4",
+        "images": [
+          { "source": "creation-brand-max-type-tab", "caption": "Create Brand Max Type" },
+          { "source": "creation-brand-max-basic-info", "caption": "Brand Max Ads Basic Info" },
+          { "source": "creation-brand-max-creative", "caption": "Brand Max Ads Creative Info" },
+          { "source": "creation-brand-max-preview", "caption": "Brand Max Ads Effect Preview" },
+          { "source": "creation-search-brand-type-tab", "caption": "Create Search Brand Type" },
+          { "source": "creation-search-brand-basic-info", "caption": "Search Brand Ads Basic Info" },
+          { "source": "creation-search-brand-creative", "caption": "Search Brand Ads Creative Info" },
+          { "source": "creation-search-brand-preview", "caption": "Search Brand Ads Effect Preview" }
+        ]
+      },
+      "steps": [
+        {
+          "type": "wait",
+          "name": "creation-page-ready",
+          "wait_for": "#locationTypeCard",
+          "wait_ms": 3000
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-brand-max-type-tab",
+          "selector": "#locationTypeCard",
+          "screenshot": true,
+          "screenshot_name": "creation-brand-max-type-tab"
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-brand-max-basic-info",
+          "selector": ".basic-wrapper",
+          "screenshot": true,
+          "screenshot_name": "creation-brand-max-basic-info"
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-brand-max-creative",
+          "selector": ".creative-card",
+          "screenshot": true,
+          "screenshot_name": "creation-brand-max-creative"
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-brand-max-preview",
+          "selector": ".consideration-preview",
+          "screenshot": true,
+          "screenshot_name": "creation-brand-max-preview"
+        },
+        {
+          "type": "click",
+          "name": "switch-to-search-brand",
+          "selector": "*[data-testid='selection-search_result_page']"
+        },
+        {
+          "type": "click",
+          "name": "confirm-switch",
+          "selector": ".eds-modal__footer .eds-button--primary",
+          "wait_ms": 1000
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-search-brand-type-tab",
+          "selector": "#locationTypeCard",
+          "screenshot": true,
+          "screenshot_name": "creation-search-brand-type-tab",
+          "wait_ms": 1000
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-search-brand-basic-info",
+          "selector": "#basicInfoSection",
+          "screenshot": true,
+          "screenshot_name": "creation-search-brand-basic-info"
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-search-brand-creative",
+          "selector": "#basicInfoSection + .common-card",
+          "screenshot": true,
+          "screenshot_name": "creation-search-brand-creative"
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-search-brand-preview",
+          "selector": ".creative-preview-panel",
+          "screenshot": true,
+          "screenshot_name": "creation-search-brand-preview"
+        }
+      ]
+    },
+    {
+      "name": "live_ads_creation",
+      "url": "https://seller.test.shopee.sg/portal/marketing/pas/live-stream/create",
+      "description": "Live Ads creation flow (section 4.1.5)",
+      "custom_css": ".page-bottom { position: absolute !important; bottom: -60px !important; }",
+      "doc": {
+        "section_id": "4.1.5",
+        "images": [
+          { "source": "creation-basic-info", "caption": "Live Ad Basic Info" },
+          { "source": "creation-bidding-strategy", "caption": "Live Ad Bidding Strategy" }
+        ]
+      },
+      "steps": [
+        {
+          "type": "wait",
+          "name": "creation-page-ready",
+          "wait_for": "#basic-setting-card",
+          "wait_ms": 3000
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-basic-info",
+          "selector": "#basic-setting-card",
+          "screenshot": true,
+          "screenshot_name": "creation-basic-info"
+        },
+        {
+          "type": "screenshot",
+          "name": "creation-bidding-strategy",
+          "selector": ".basic-setting-wrapper + .common-card",
+          "screenshot": true,
+          "screenshot_name": "creation-bidding-strategy"
+        }
+      ]
+    }
+  ]
+}

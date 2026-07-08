@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 3860626,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "create external table if not exists dws_advertiser_placement_performance_td__reg_s0_live\n(\n    shop_id bigint \n    ,placement bigint\n    ,impression_cnt_td bigint\n    ,click_cnt_td bigint\n    ,order_cnt_td bigint\n    ,ads_items_sold_cnt_td bigint\n    ,ads_gmv_amt_local_td double\n    ,ads_gmv_amt_usd_td double \n    ,expenditure_amt_local_td double\n    ,expenditure_amt_usd_td double\n    ,broad_gmv_amt_usd_td double\n)\npartitioned by\n(\n    tz_type string comment 'tz_type'\n    ,grass_region string comment 'grass_region'\n    ,grass_date DATE comment 'grass_date'\n)\nstored as PARQUET\nlocation '${path}'\n;\n\nINSERT OVERWRITE TABLE dws_advertiser_placement_performance_td__reg_s0_live PARTITION (tz_type='local', grass_region, grass_date)\n    SELECT  \n           shop_id\n           ,placement\n           ,sum(impression_cnt_td) as impression_cnt_td\n           ,sum(click_cnt_td) as click_cnt_td\n           ,sum(order_cnt_td) as order_cnt_td\n           ,sum(ads_items_sold_cnt_td) as ads_items_sold_cnt_td\n           ,sum(ads_gmv_amt_local_td) as ads_gmv_amt_local_td\n           ,sum(ads_gmv_amt_usd_td) as ads_gmv_amt_usd_td\n           ,sum(expenditure_amt_local_td) as expenditure_amt_local_td\n           ,sum(expenditure_amt_usd_td) as expenditure_amt_usd_td\n           ,sum(broad_gmv_amt_usd_td) as broad_gmv_amt_usd_td\n           ,upper('${region}') as grass_region\n          ,date('${grass_date}')  AS grass_date\n    FROM (\n        SELECT\n           shop_id\n           ,placement\n           ,sum(impression_cnt_1d) as impression_cnt_td\n           ,sum(click_cnt_1d) as click_cnt_td\n           ,sum(order_cnt_1d) as order_cnt_td\n           ,sum(ads_items_sold_cnt_1d) as ads_items_sold_cnt_td\n           ,sum(ads_gmv_amt_local_1d) as ads_gmv_amt_local_td\n           ,sum(ads_gmv_amt_usd_1d) as ads_gmv_amt_usd_td\n           ,sum(expenditure_amt_local_1d) as expenditure_amt_local_td\n           ,sum(expenditure_amt_usd_1d) as expenditure_amt_usd_td\n           ,sum(broad_gmv_amt_usd_1d) as broad_gmv_amt_usd_td\n        FROM mp_paidads.dws_advertise_performance_1d__reg_s0_live\n        WHERE grass_region = upper('${region}')\n        AND grass_date = date('${grass_date}') \n        and tz_type = 'local'\n        group by shop_id,placement\n\n        UNION ALL\n\n        SELECT\n           shop_id\n           ,placement\n           ,impression_cnt_td\n           ,click_cnt_td\n           ,order_cnt_td\n           ,ads_items_sold_cnt_td\n           ,ads_gmv_amt_local_td\n           ,ads_gmv_amt_usd_td\n           ,expenditure_amt_local_td\n           ,expenditure_amt_usd_td\n           ,broad_gmv_amt_usd_td\n        FROM mp_paidads.dws_advertiser_placement_performance_td__reg_s0_live\n        WHERE grass_region = upper('${region}')\n        AND grass_date = date_sub(date('${grass_date}'), 1)\n        and tz_type = 'local'\n    )\n    GROUP BY shop_id,placement;\n\n-- alter table dws_advertiser_performance_td__${region}_s0_live add if not exists partition (grass_date = \"${grass_date}\");",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:15 GMT",
+      "task_code": "data_paidadsmart.studio_3860626",
+      "tbl_name": "dws_advertiser_placement_performance_td__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

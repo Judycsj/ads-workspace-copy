@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 2861224,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "-- UTC-5: MX\nSET TIME ZONE 'America/Mexico_City';\n\ncreate or replace temporary view display_ads_tracking as\n(\n    select  banner, client_ip, country\n                    ,deviceid\n                    , from\n                    , internal_label\n                    , json_data\n                    ,operation\n                    ,placement\n                    , platform\n                    ,sessionid\n                    ,timestamp\n                    ,token\n                    ,userid\n    from mp_paidads.ods_log_display_ads_tracking_hi__reg_s0_live\n    where (grass_date='${grass_date}' or grass_date='${today_date}')\n    and country = upper('${region}')\n);\n\nINSERT OVERWRITE TABLE dwd_display_ads_tracking_di__reg_s0_live PARTITION (tz_type='local', grass_region='${upper_region}' ,grass_date)\nselect  user_id\n        ,banner.json_data.shop_id as shop_id\n        ,case   when banner.source = 2 then banner.banner_id\n                else null\n         end as ads_id\n        ,case   when banner.source = 2 then null else banner.banner_id\n         end as banner_id\n        ,banner.source as source\n        ,device_id\n        ,banner.json_data.request_id as request_id\n        ,placement\n        ,operation\n        ,platform\n        ,banner.slot_id as slot_id\n        ,session_id\n        ,client_ip\n        ,banner.json_data.ab_sign as ab_sign\n        ,event_timestamp\n        ,event_datetime\n        ,banner\n        ,from \n        ,json_data\n        ,token\n        ,CAST(get_json_object(origin_banner.json_data,'$.placement') AS int) as ads_placement\n        ,CAST(get_json_object(origin_banner.json_data,'$.entrance') AS int) as ads_entrance\n        ,date('${grass_date}') as grass_date\nfrom    (\n    select  *\n    from    (\n        select  userid AS user_id,\n            banner as origin_banner,\n                STRUCT(\n            banner.bannerid AS banner_id\n            ,banner.campaign_unitid AS campaign_unit_id\n            ,banner.image_hash AS image_hash\n            ,banner.slotid AS slot_id\n            ,banner.source\n            ,banner.target_url\n            ,STRUCT(\n                get_json_object(banner.json_data,'$.request_id') AS request_id\n                ,get_json_object(banner.json_data,'$.ab_sign') AS ab_sign\n                ,CAST(get_json_object(banner.json_data,'$.generated_time') AS bigint) AS generated_timestamp\n                ,CAST(get_json_object(banner.json_data,'$.l1_cat_id') AS bigint) AS l1_cat_id\n                ,CAST(get_json_object(banner.json_data,'$.shop_id') AS bigint) AS shop_id\n                ,get_json_object(banner.json_data,'$.track_id') AS track_id\n            ) AS json_data\n        ) AS banner\n                ,client_ip\n                ,deviceid AS device_id\n                ,from\n                ,json_data\n                ,operation\n                ,placement\n                ,platform\n                ,sessionid as session_id\n                ,timestamp as event_timestamp\n                ,from_unixtime(timestamp, 'yyyy-MM-dd HH:mm:ss') AS event_datetime\n                ,token\n                ,country as grass_region\n                ,date('${grass_date}') as grass_date\n        from    display_ads_tracking\n    ) c\n    where   DATE(from_unixtime(event_timestamp, 'yyyy-MM-dd HH:mm:ss')) < DATE_ADD(DATE('${grass_date}'), 1)\n      and   DATE(from_unixtime(event_timestamp, 'yyyy-MM-dd HH:mm:ss')) >= DATE('${grass_date}')\n) d;\n\nalter table dwd_display_ads_tracking_di__${region}_s0_live add if not exists partition (grass_date= '${grass_date}');",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:37 GMT",
+      "task_code": "data_paidadsmart.studio_2861224",
+      "tbl_name": "dwd_display_ads_tracking_di__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}

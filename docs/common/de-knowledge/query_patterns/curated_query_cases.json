@@ -1,0 +1,106 @@
+[
+  {
+    "id": "curated::budget_utilization",
+    "description": "查询分地区(region)的广告预算(budget)和预算使用率(budget utilization)",
+    "primary_table": "mp_paidads.ads_campaign_valid_budget_1d__reg_s0_live",
+    "source_tables": ["mp_paidads.ads_campaign_valid_budget_1d__reg_s0_live"],
+    "query_sql": "select\n   grass_month\n   ,grass_region\n   ,avg(campaign_valid_budget_usd) as campaign_valid_budget_usd\n   ,avg(campaign_expenditure_usd)*1.0000/avg(campaign_valid_budget_usd) as budget_utilization\nfrom\n   (\n       select\n           grass_date\n           ,substr(cast(grass_date as varchar), 1, 7) as grass_month\n           ,grass_region\n           ,sum(campaign_valid_budget_usd) as campaign_valid_budget_usd\n           ,sum(ads_expenditure_usd) as campaign_expenditure_usd\n       from mp_paidads.ads_campaign_valid_budget_1d__reg_s0_live\n       where\n           grass_date between date('2026-02-01') and date('2026-02-28')\n           and grass_region in ('ID', 'MY', 'PH', 'SG', 'TH', 'TW', 'VN', 'BR')\n       group by 1, 2, 3\n   ) t\ngroup by 1, 2",
+    "metrics": ["campaign_valid_budget_usd", "budget_utilization"],
+    "dimensions": ["grass_month", "grass_region"],
+    "notes": "先按天聚合再按月avg，预算使用率=消耗/有效预算"
+  },
+  {
+    "id": "curated::ads_item_seller_gmv_pct",
+    "description": "查询分地区(region)的广告商品GMV占比(ads item gmv%)和广告卖家GMV占比(ads seller gmv%)",
+    "primary_table": "mp_paidads.ads_advertise_mkt_1d__reg_s0_live",
+    "source_tables": ["mp_paidads.ads_advertise_mkt_1d__reg_s0_live", "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live"],
+    "query_sql": "with active_ads_item as (\n   select\n       grass_region\n       ,grass_date\n       ,cast(shop_id as bigint) as shop_id\n       ,item_id\n   from mp_paidads.ads_advertise_mkt_1d__reg_s0_live\n   where\n       tz_type = 'local'\n       and (is_ads_active = 1 or has_performance = 1)\n       and placement not in (7)\n       and grass_region in ('BR', 'TW', 'ID', 'TH', 'PH', 'MY', 'VN', 'SG')\n       and grass_date between date('2026-02-01') and date('2026-02-28')\n   group by 1, 2, 3, 4\n)\n,active_ads_seller as (\n   select\n       grass_region\n       ,grass_date\n       ,cast(shop_id as bigint) as shop_id\n   from mp_paidads.ads_advertise_mkt_1d__reg_s0_live\n   where\n       tz_type = 'local'\n       and (is_ads_active = 1 or has_performance = 1)\n       and placement not in (7)\n       and grass_region in ('BR', 'TW', 'ID', 'TH', 'PH', 'MY', 'VN', 'SG')\n       and grass_date between date('2026-02-01') and date('2026-02-28')\n   group by 1, 2, 3\n)\nselect\n   grass_month\n   ,grass_region\n   ,avg(gmv_usd_1d) as plt_gmv\n   ,avg(ads_item_gmv_usd_1d) as ads_item_gmv_usd\n   ,avg(ads_seller_gmv_usd_1d) as ads_seller_gmv_usd_1d\n   ,avg(ads_item_gmv_usd_1d)*1.0000/avg(gmv_usd_1d) as ads_item_gmv_per\n   ,avg(ads_seller_gmv_usd_1d)*1.0000/avg(gmv_usd_1d) as ads_seller_gmv_per\nfrom (...) a\ngroup by 1, 2",
+    "metrics": ["ads_item_gmv_per", "ads_seller_gmv_per", "plt_gmv"],
+    "dimensions": ["grass_month", "grass_region"],
+    "notes": "跨域JOIN：广告mkt表确定活跃广告item/seller，订单归因表(traffic_omni_oa)计算GMV。活跃条件：is_ads_active=1 OR has_performance=1, placement NOT IN (7)"
+  },
+  {
+    "id": "curated::seller_adoption",
+    "description": "查询分地区(region)的广告卖家渗透率(seller adoption%)，活跃广告卖家占全平台卖家比例",
+    "primary_table": "mp_paidads.ads_advertise_mkt_1d__reg_s0_live",
+    "source_tables": ["mp_paidads.ads_advertise_mkt_1d__reg_s0_live", "traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live"],
+    "query_sql": "with active_ads_items_advertisers as (\n   select grass_date, a.grass_region\n       ,coalesce(count(distinct a.shop_id), 0) as active_ads_seller\n   from mp_paidads.ads_advertise_mkt_1d__reg_s0_live a\n   where a.tz_type = 'local'\n       and (is_ads_active = 1 or has_performance = 1)\n       and a.placement not in (7)\n   group by 1, 2\n)\n,active_seller as (\n   select grass_region, grass_date\n       ,count(distinct shop_id) as acitve_seller_cnt\n   from traffic_omni_oa.dwd_order_item_atc_journey_di__reg_sensitive_live\n   where tz_type = 'local' and first_touchpoint_item = 1\n       and user_id > 0 and user_id is not null and order_item_id is not null\n   group by 1, 2\n)\nselect grass_month, grass_region\n   ,avg(active_ads_seller) as active_ads_seller\n   ,avg(acitve_seller_cnt) as acitve_seller_cnt\n   ,avg(seller_adoption_rate) as seller_adoption_rate\nfrom (\n   select a.grass_date, a.grass_region\n       ,active_ads_seller, acitve_seller_cnt\n       ,active_ads_seller * 1.0000 / acitve_seller_cnt as seller_adoption_rate\n   from active_ads_items_advertisers a\n   left join active_seller b on a.grass_region = b.grass_region and a.grass_date = b.grass_date\n) t\ngroup by 1, 2",
+    "metrics": ["active_ads_seller", "acitve_seller_cnt", "seller_adoption_rate"],
+    "dimensions": ["grass_month", "grass_region"],
+    "notes": "跨域JOIN：广告卖家数/全平台有订单卖家数。活跃广告卖家条件同上。全平台卖家来自订单归因表，需 first_touchpoint_item=1"
+  },
+  {
+    "id": "curated::sku_adoption",
+    "description": "查询分地区(region)的广告SKU渗透率(sku adoption%)，投放广告的商品占全平台商品比例",
+    "primary_table": "mp_paidads.ads_item_supply_1d__reg_s0_live",
+    "source_tables": ["mp_paidads.ads_item_supply_1d__reg_s0_live"],
+    "query_sql": "select\n   grass_region\n   ,substr(cast(grass_date as varchar), 1, 7) as grass_month\n   ,count(distinct grass_date) as date_cnt\n   ,count(distinct item_id) as active_sku_cnt\n   ,count(\n       distinct case\n           when is_active_ads_item = 1 and (ads_expenditure_amt_usd_1d > 0 or ads_impression_cnt_1d > 0) then item_id\n       end\n   ) as active_ads_sku_cnt\n   ,count(\n       distinct case\n           when is_active_ads_item = 1 and (ads_expenditure_amt_usd_1d > 0 or ads_impression_cnt_1d > 0) then item_id\n       end\n   )*1.0000/count(distinct item_id) as active_ads_sku_per\nfrom mp_paidads.ads_item_supply_1d__reg_s0_live\nwhere\n   grass_region in ('BR', 'TW', 'ID', 'TH', 'PH', 'MY', 'VN', 'SG')\n   and tz_type = 'local'\ngroup by 1, 2",
+    "metrics": ["active_sku_cnt", "active_ads_sku_cnt", "active_ads_sku_per"],
+    "dimensions": ["grass_region", "grass_month"],
+    "notes": "单表计算。广告SKU条件：is_active_ads_item=1 AND (expenditure>0 OR impression>0)"
+  },
+  {
+    "id": "curated::net_rev_take_rate",
+    "description": "查询分地区(region)分天的广告净收入(net revenue)、平台GMV(platform gmv)和广告变现率(take rate)",
+    "primary_table": "mp_paidads.ads_advertise_take_rate_v2_1d__reg_s0_live",
+    "source_tables": ["mp_paidads.ads_advertise_take_rate_v2_1d__reg_s0_live"],
+    "query_sql": "select\n   month(t1.grass_date) as month_rn\n   ,grass_date\n   ,grass_region\n   ,sum(platform_gmv) as platform_gmv\n   ,sum(platform_paid_with_placed_cod_gmv) as platform_paid_with_placed_cod_gmv\n   ,coalesce(sum(net_ads_rev), 0) - coalesce(sum(ads_voucher_ads_part_amt_usd), 0) as net_rev_excl_roi3_ads_part\n   ,coalesce(sum(net_ads_rev), 0) - coalesce(sum(platform_roi3_vourchor_cost), 0) as net_rev_excl_roi3\n   ,coalesce(sum(net_ads_rev), 0) as net_rev\n   ,coalesce(sum(net_ads_rev), 0)*1.0000/sum(platform_gmv) as take_rate\n   ,(coalesce(sum(net_ads_rev), 0) - coalesce(sum(ads_voucher_ads_part_amt_usd), 0))*1.0000/sum(platform_gmv) as take_rate_excl_roi3\nfrom\n   (\n       select grass_date, grass_region\n           ,sum(net_ads_rev_usd) as net_ads_rev\n           ,sum(distinct ads_voucher_omni_platform_nmv_cost_usd) as platform_roi3_vourchor_cost\n           ,sum(distinct ads_voucher_ads_part_amt_usd) as ads_voucher_ads_part_amt_usd\n           ,sum(distinct platform_gmv_excl_testorder) as platform_gmv\n           ,sum(distinct platform_paid_with_placed_cod_gmv) as platform_paid_with_placed_cod_gmv\n       from mp_paidads.ads_advertise_take_rate_v2_1d__reg_s0_live\n       where tz_type = 'regional'\n       group by 1, 2\n   ) t1\ngroup by 1, 2, 3",
+    "metrics": ["net_rev", "platform_gmv", "take_rate", "take_rate_excl_roi3"],
+    "dimensions": ["grass_date", "grass_region"],
+    "notes": "使用tz_type='regional'。注意sum(distinct ...)用于预聚合字段去重。take_rate有两个口径：含/不含roi3 voucher"
+  },
+  {
+    "id": "curated::traffic_ads_load_cpc_cpm",
+    "description": "查询分地区(region)分天分流量入口(traffic_type)的广告加载率(ads load)、每次点击成本(CPC)、千次曝光成本(CPM)",
+    "primary_table": "mp_paidads.ads_advertise_take_rate_v2_1d__reg_s0_live",
+    "source_tables": ["mp_paidads.ads_advertise_take_rate_v2_1d__reg_s0_live"],
+    "query_sql": "select\n   grass_region\n   ,grass_date\n   ,traffic_type\n   ,sum(distinct entry_point_imp) as entry_point_imp\n   ,sum(ads_imp) as ads_imp\n   ,sum(ads_click) as ads_click\n   ,sum(raw_ads_rev_usd) as ads_rev_usd\n   ,sum(ads_imp)*1.0000/sum(distinct entry_point_imp) as ads_load\n   ,sum(raw_ads_rev_usd)*1.0000*1000/sum(ads_click) as cpc\n   ,sum(raw_ads_rev_usd)*1.0000*1000/sum(ads_imp) as cpm\nfrom mp_paidads.ads_advertise_take_rate_v2_1d__reg_s0_live\nwhere tz_type = 'regional'\ngroup by 1, 2, 3",
+    "metrics": ["ads_load", "cpc", "cpm", "ads_imp", "ads_click", "ads_rev_usd"],
+    "dimensions": ["grass_region", "grass_date", "traffic_type"],
+    "notes": "ads_load=ads_imp/entry_point_imp, cpc=rev*1000/click, cpm=rev*1000/imp。使用tz_type='regional'"
+  },
+  {
+    "id": "curated::pricing_type_cpc_cpm",
+    "description": "查询分地区(region)分天分出价类型(pricing_type/product_type)的每次点击成本(CPC)和千次曝光成本(CPM)",
+    "primary_table": "mp_paidads.ads_advertise_take_rate_v2_1d__reg_s0_live",
+    "source_tables": ["mp_paidads.ads_advertise_take_rate_v2_1d__reg_s0_live"],
+    "query_sql": "select\n   grass_region\n   ,grass_date\n   ,main_product_type\n   ,product_type\n   ,sub_product_type\n   ,sum(ads_imp) as ads_imp\n   ,sum(ads_click) as ads_click\n   ,sum(raw_ads_rev_usd) as ads_rev_usd\n   ,sum(ads_imp)*1.0000/sum(distinct entry_point_imp) as ads_load\n   ,sum(raw_ads_rev_usd)*1.0000*1000/sum(ads_click) as cpc\n   ,sum(raw_ads_rev_usd)*1.0000*1000/sum(ads_imp) as cpm\nfrom mp_paidads.ads_advertise_take_rate_v2_1d__reg_s0_live\nwhere tz_type = 'regional'\ngroup by 1, 2, 3, 4, 5",
+    "metrics": ["ads_load", "cpc", "cpm"],
+    "dimensions": ["grass_region", "grass_date", "main_product_type", "product_type", "sub_product_type"],
+    "notes": "按产品类型（出价类型）拆分的效率指标。使用tz_type='regional'"
+  },
+  {
+    "id": "curated::campaign_performance",
+    "description": "查询campaign广告活动粒度的曝光(impression)、点击(click)、花费/收入(revenue)、直接GMV(ads_direct_gmv)、宽匹配GMV(ads_broad_gmv)、直接订单(direct_order)、宽匹配订单(broad_order)",
+    "primary_table": "mp_paidads.ads_advertise_mkt_1d__reg_s0_live",
+    "source_tables": ["mp_paidads.ads_advertise_mkt_1d__reg_s0_live"],
+    "query_sql": "select\n   grass_region\n   ,grass_date\n   ,shop_id\n   ,campaign_id\n   ,sum(impression_cnt) as impression_cnt\n   ,sum(click_cnt) as click_cnt\n   ,sum(ads_expenditure_amt_usd) as ads_rev\n   ,sum(ads_gmv_usd) as ads_gmv_usd\n   ,sum(broad_order_gmv_amt_usd) as broad_order_gmv_amt_usd\n   ,sum(order_cnt) as direct_order_cnt\n   ,sum(broad_order_cnt) as broad_order_cnt\nfrom mp_paidads.ads_advertise_mkt_1d__reg_s0_live\nwhere\n   tz_type = 'local'\n   and (is_ads_active = 1 or has_performance = 1)\ngroup by 1, 2, 3, 4",
+    "metrics": ["impression_cnt", "click_cnt", "ads_rev", "ads_gmv_usd", "broad_order_gmv_amt_usd", "direct_order_cnt", "broad_order_cnt"],
+    "dimensions": ["grass_region", "grass_date", "shop_id", "campaign_id"],
+    "notes": "campaign粒度明细查询。活跃条件：is_ads_active=1 OR has_performance=1"
+  },
+  {
+    "id": "curated::roi2_gms_compliance",
+    "description": "查询GMS达标率（区分target和simple模式）、ROI target2达标率、simple2达标率，按roi_ratio_group分组统计",
+    "primary_table": "mp_paidads.ads_advertise_roi2_key_metrics_daily__reg_s0_live",
+    "source_tables": [
+      "mp_paidads.ads_advertise_roi2_key_metrics_daily__reg_s0_live",
+      "dev_mkplpaidads_analytics.ads_gms_shop_metrics_di",
+      "mp_paidads.ads_advertise_simple2_key_metrics_nd__reg_s0_live"
+    ],
+    "query_sql": "-- UNION ALL 四段：\n-- 1. ROI2 target (pricing_type=11) from roi2_key_metrics\n-- 2. ROI2 target (pricing_type=25) from roi2_key_metrics（需先按campaign聚合再汇总）\n-- 3. GMS target (pricing_type=24) from ads_gms_shop_metrics_di\n-- 4. GMS simple (pricing_type=27) from ads_gms_shop_metrics_di\n-- 5. Simple2 (pricing_type=15) from simple2_key_metrics\n-- 按 roi_ratio_group_7d 分组统计达标率",
+    "metrics": ["campaign_cnt", "roi2_ads_revenue_usd", "roi2_valid_budget_usd", "roi2_direct_gmv_usd", "roi2_broad_gmv_usd"],
+    "dimensions": ["roi_ratio_group_7d", "pricing_type", "grass_region", "grass_date"],
+    "notes": "复杂UNION ALL查询，不同pricing_type用不同表。pricing_type: 11=target2, 25=target2(另一类), 24=gms_target, 27=gms_simple, 15=simple2。达标率按roi_ratio_group_7d分组统计"
+  },
+  {
+    "id": "curated::gmv_max_seller_cnt",
+    "description": "查询分地区(region)的GMV Max产品线活跃广告卖家数(gmv max seller count)，按特定pricing_type过滤",
+    "primary_table": "mp_paidads.ads_advertise_mkt_1d__reg_s0_live",
+    "source_tables": ["mp_paidads.ads_advertise_mkt_1d__reg_s0_live"],
+    "query_sql": "select\n   grass_month\n   ,grass_region\n   ,avg(gmv_max_active_ads_seller) as gmv_max_active_ads_seller\nfrom\n   (\n       select\n           grass_date\n           ,substr(cast(grass_date as varchar), 1, 7) as grass_month\n           ,grass_region\n           ,coalesce(count(distinct a.shop_id), 0) as gmv_max_active_ads_seller\n       from mp_paidads.ads_advertise_mkt_1d__reg_s0_live a\n       where\n           a.tz_type = 'local'\n           and (is_ads_active = 1 or has_performance = 1)\n           and a.placement not in (7)\n           and pricing_type in (11, 20, 24, 25, 27, 15)\n       group by 1, 2, 3\n   ) a\ngroup by 1, 2",
+    "metrics": ["gmv_max_active_ads_seller"],
+    "dimensions": ["grass_month", "grass_region"],
+    "notes": "统计gmv max产品线(pricing_type in 11,20,24,25,27,15)的活跃广告卖家数。先按天count distinct再按月avg"
+  }
+]

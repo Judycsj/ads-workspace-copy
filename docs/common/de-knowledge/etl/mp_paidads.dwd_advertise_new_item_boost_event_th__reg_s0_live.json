@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "app_spark_version": "",
+      "asset_id": 8170260,
+      "db_name": "mp_paidads",
+      "env": "prod",
+      "etlsql": "create external table if not exists dwd_advertise_new_item_boost_event_th__reg_s0_live\n(\n    ads_id bigint\n    ,broad_order bigint\n    ,timestamp bigint\n)\npartitioned by\n(\n    grass_region string comment 'grass_region'\n    ,grass_date DATE comment 'grass_date'\n    ,h int comment 'hour'\n)\nstored as PARQUET\nlocation '${HIVE_PATH}/dwd_advertise_new_item_boost_event_th';\n\nREFRESH TABLE mp_paidads.ods_log_ads_report_hi__reg_s0_live;\n\nINSERT OVERWRITE TABLE dwd_advertise_new_item_boost_event_th__reg_s0_live\npartition (grass_region, grass_date, h)\n\nselect /*+ REPARTITION(10) */ \nads_id,broad_order,timestamp,\ngrass_region,\ndate\"${bizTimeFormatter(BIZ_TIME,'yyyy-MM-dd','-1h')}\" as grass_date,\n${bizTimeFormatter(BIZ_TIME,'H','-1h')} as h\nfrom (\nselect \nads_id,broad_order,timestamp,\ngrass_region\nfrom mp_paidads.ods_log_ads_report_hi__reg_s0_live\nwhere h = ${bizTimeFormatter(BIZ_TIME,'H','-1h')}\n    and grass_date = date\"${bizTimeFormatter(BIZ_TIME,'yyyy-MM-dd','-1h')}\"\n    and pricing_type=13\n    and broad_order>0\n    and timestamp > 0\n    \nunion all \n\nselect \nads_id,broad_order,timestamp,\ngrass_region\nfrom mp_paidads.dwd_advertise_new_item_boost_event_th__reg_s0_live\nwhere h = ${bizTimeFormatter(BIZ_TIME,'H','-2h')}\n    and grass_date = date\"${bizTimeFormatter(BIZ_TIME,'yyyy-MM-dd','-2h')}\"\n)\n;\n\n\n\n",
+      "grass_date": "2026-03-31",
+      "idc_region": "SG",
+      "owner": "data_paidadsmart",
+      "project_code": "data_paidadsmart",
+      "source": "DataStudio",
+      "synced_at": "Wed, 01 Apr 2026 11:12:24 GMT",
+      "task_code": "data_paidadsmart.studio_8170260",
+      "tbl_name": "dwd_advertise_new_item_boost_event_th__reg_s0_live",
+      "team_code": "mkplpaidads"
+    }
+  ],
+  "message": "查询成功",
+  "success": true
+}
