@@ -1,46 +1,142 @@
-# 广告团队 AI Workspace / Ads Team AI Workspace
+# ads-workspace-copy
 
-One-stop AI workspace for the Ads product and engineering team. Clone, open, and start vibe working immediately.
+A filtered private copy of Shopee Ads `ads-workspace`.
 
-- **Out of the box**: Open this repo in Claude Code / Cursor / Codex — common skills load automatically, zero configuration required
-- **Skill co-creation**: Package your workflows as skills and share them with the team; every shared skill raises the floor for everyone
-- **Docs as shared context**: Migrate business and technical docs to `docs/` Markdown so `/ads-knowledge-qa` and other AI agents can read and write them directly
+This repo is not intended to reproduce the full internal development environment. It keeps the **workspace architecture**, **basic ads knowledge base**, **selected AI-native modules**, and **personal reusable materials**, while removing most OKR, rollout, TD/PRD project-process documents, local credentials, and repo-local code projects.
 
----
+## What this repo is for
 
-## 你的顿悟时刻 / Aha Moment
+- Understand how a large Ads AI workspace is structured
+- Reuse Shopee Ads basic knowledge and terminology
+- Learn how AI-native team workflows are organized in practice
+- Keep a personal reference repo that can be adapted to a new company later
 
-After cloning and opening this repo, try these:
+## What this repo is not
 
-**Ask without opening a browser:**
-```
-/ads-knowledge-qa How does the Ads bidding pipeline work?
-```
+- Not a full internal production workspace
+- Not a complete archive of all project docs
+- Not a runnable replacement for the original internal repos under `projects/`
 
-**Diagnose production issues without reading code:**
-```
-/ads-diagnose Why is ads_id=12345 bidding abnormally low recently?
-```
+## How to use this repo
 
----
+### 1. Start from the workspace structure
 
-## 快速开始 / Quick Start
+This repo is useful because the same theme is split by responsibility rather than stacked into one folder.
 
-```bash
-git clone --recursive gitlab@git.garena.com:shopee/search_recommend/ai-copilot/ads-workspace.git
-cd ads-workspace
-bash scripts/bootstrap.sh
-```
+- `docs/`: knowledge content
+- `guides/`: usage guides and working conventions
+- `skills/`: AI skills and workflows
+- `templates/`: reusable output templates
+- `rules/`: shared behavior constraints
+- `agents/`: agent specs and agent-facing role definitions
 
-Then open this directory in Claude Code / Cursor / Codex — `common` skills **load automatically**.
+Read these first:
+- [docs/README.md](docs/README.md)
+- [agents/README.md](agents/README.md)
+- [templates/README.md](templates/README.md)
 
-> For the complete setup guide (credentials, telemetry, manual skill installation, etc.), see [Workspace Quickstart](docs/team/00.paid-ads-dev/04.how-tos/01.getting-started/02.workspace-quickstart.EN.md).
+### 2. Use it as an Ads knowledge base
 
----
+The most important knowledge entry points are:
 
-## 了解更多 / Learn More
+- [docs/common/core-knowledge](docs/common/core-knowledge)
+  High-level ads overview, strategy, engine, platform, and data concepts
+- [docs/common/datamap](docs/common/datamap)
+  Table-level data and metric mapping
+- [docs/common/de-knowledge](docs/common/de-knowledge)
+  Metric and ETL-oriented knowledge
+- [docs/common/skill-knowledge](docs/common/skill-knowledge)
+  Skill-oriented operational knowledge
+- [docs/common/sub-kb](docs/common/sub-kb)
+  Topic-specific sub knowledge bases
+- [docs/team/20.paid-ads-dpm/ads_knowledge_base](docs/team/20.paid-ads-dpm/ads_knowledge_base)
+  Structured Ads business/module knowledge base
 
-- [How-Tos Index](docs/team/00.paid-ads-dev/04.how-tos/README.md) — all workspace guides and tutorials
-- [Skill Creation & Contribution](docs/team/00.paid-ads-dev/04.how-tos/09.skill-contribution/01.skill-contribution.EN.md) — build and share your own skills
-- [Skills README](skills/README.md) — skill directory conventions and naming standards
-- [CLAUDE.md](CLAUDE.md) — project instructions and coding conventions
+If the goal is to learn Shopee Ads product and system basics, start from:
+1. `docs/common/core-knowledge`
+2. `docs/team/20.paid-ads-dpm/ads_knowledge_base`
+3. `docs/common/datamap`
+
+### 3. Use it as an AI-native workspace reference
+
+This repo shows how an AI-native team workspace can be layered.
+
+The main reusable pieces are:
+
+- `skills/common/`
+  Generic skills for knowledge QA, diagnosis, SQL/data analysis, experiment analysis, documentation, and KB tooling
+- `skills/team/...`
+  Selected team-level examples that show how skills can encode recurring workflows
+- `templates/`
+  Standardized templates for OKR docs, case studies, rollout docs, reports, memories, and specs
+- `docs/team/09.ads-dev-sharing-session/`
+  Internal sharing materials that explain how the team builds and uses AI-native workflows
+
+Recommended folders to inspect:
+- `skills/common/ads-knowledge-qa`
+- `skills/common/ads-biz-diagnose`
+- `skills/common/ads-diagnose`
+- `skills/common/ads-data-sql-executor`
+- `skills/team/04.product-algo/ads-okr-epic-review`
+- `skills/team/04.product-algo/ads-roi3-analysis`
+- `skills/team/01.ads-engineering/ads-db-viewer`
+- `skills/team/02.ads-platform/ads-platform-overview-doc-generate`
+
+### 4. Use it as a personal migration base
+
+This copy also keeps personal materials that are useful for migration:
+
+- [docs/personal/shijing.chen](docs/personal/shijing.chen)
+- [guides/personal/shijing.chen](guides/personal/shijing.chen)
+- `skills/personal/shijing.chen/` if present
+
+These are the right places to keep:
+- personal rules
+- reusable PM/analysis workflows
+- personal AI collaboration conventions
+- future-company starter materials
+
+## Suggested reading order
+
+If your goal is **understanding Shopee Ads**, read:
+1. `docs/common/core-knowledge`
+2. `docs/team/20.paid-ads-dpm/ads_knowledge_base`
+3. `docs/common/datamap`
+
+If your goal is **learning AI-native team setup**, read:
+1. `docs/team/09.ads-dev-sharing-session`
+2. `skills/common`
+3. `skills/team`
+4. `templates`
+
+If your goal is **building your own future workspace**, read:
+1. `docs/personal/shijing.chen`
+2. `guides/personal/shijing.chen`
+3. `skills/personal/shijing.chen`
+4. selected `skills/common` and `templates`
+
+## Kept scope of this copy
+
+This copy intentionally keeps:
+- workspace architecture
+- common ads knowledge
+- selected common/team skills
+- selected AI-native sharing materials
+- personal materials under `shijing.chen`
+
+This copy intentionally removes or omits:
+- most OKR / rollout / TD / project process docs
+- daily/weekly operational reports
+- other people's personal folders
+- local/internal `projects/*`
+- local credentials and ignored artifacts
+
+## Practical reuse principle
+
+The most valuable pattern in this repo is not any single document. It is the structure:
+
+- separate `common`, `team`, and `personal`
+- separate `knowledge`, `workflow`, `skill`, `template`, and `agent`
+- keep reusable long-term assets, not just temporary project output
+
+That structure is the main thing worth copying to a new company.

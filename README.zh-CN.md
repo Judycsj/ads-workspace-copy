@@ -1,46 +1,142 @@
-# 广告团队 AI Workspace / Ads Team AI Workspace
+# ads-workspace-copy
 
-广告产研团队的一站式 AI 工作空间。克隆打开，立即开始 vibe working。
+这是 Shopee Ads `ads-workspace` 的一个精简私有副本。
 
-- **开箱即用**：用 Claude Code / Cursor / Codex 打开本仓库，common 技能自动加载，无需额外配置
-- **技能共创**：把你的工作流打包成技能贡献给团队；每个共享的技能都在抬高所有人的底线
-- **文档即共享上下文**：业务与技术文档迁移到 `docs/` Markdown，`/ads-knowledge-qa` 和其他 AI agent 可直接读写
+这份副本不追求还原完整内部开发环境，而是保留了 **workspace 架构**、**基础广告知识库**、**部分 AI-native 工作模块** 和 **个人可复用沉淀**，同时去掉了大部分 `OKR / rollout / TD-PRD 项目过程文档`、本地凭证，以及 `projects/` 下的内部代码仓依赖。
 
----
+## 这份仓库是用来做什么的
 
-## 你的顿悟时刻 / Aha Moment
+- 理解一个大型 Ads AI workspace 的结构是怎么搭的
+- 复用 Shopee Ads 的基础知识、口径和术语体系
+- 学习 AI-native 团队工作方式在实践里是怎么组织的
+- 作为个人私有参考仓，在未来新公司继续改造复用
 
-克隆并打开本仓库后，试试这几件事：
+## 这份仓库不是什么
 
-**不用开文档，直接问：**
-```
-/ads-knowledge-qa 广告竞价流程是怎样的？
-```
+- 不是完整的内部生产 workspace
+- 不是所有项目文档的全量备份
+- 不是 `projects/` 内部代码仓的可运行替代品
 
-**线上问题不翻代码，直接诊断：**
-```
-/ads-diagnose 排查 ads_id=12345 最近出价异常偏低的原因
-```
+## 怎么使用这份仓库
 
----
+### 1. 先看整体架构
 
-## 快速开始 / Quick Start
+这份仓库最值得学的，不是某一篇文档，而是它按职责拆层，而不是把同一主题堆在一个目录里。
 
-```bash
-git clone --recursive gitlab@git.garena.com:shopee/search_recommend/ai-copilot/ads-workspace.git
-cd ads-workspace
-bash scripts/bootstrap.sh
-```
+- `docs/`：知识内容
+- `guides/`：使用说明和工作规范
+- `skills/`：AI skill 和 workflow
+- `templates/`：固定输出模板
+- `rules/`：共享规则
+- `agents/`：agent 角色定义和入口说明
 
-完成后用 Claude Code / Cursor / Codex 打开本目录，`common` 技能**自动加载**。
+建议先看：
+- [docs/README.md](docs/README.md)
+- [agents/README.zh-CN.md](agents/README.zh-CN.md)
+- [templates/README.zh-CN.md](templates/README.zh-CN.md)
 
-> 完整配置指南（凭证、遥测、手动安装技能等）请参见 [Workspace 快速入门](docs/team/00.paid-ads-dev/04.how-tos/01.getting-started/02.workspace-quickstart.md)。
+### 2. 把它当作广告知识库来用
 
----
+最重要的知识入口有这几层：
 
-## 了解更多 / Learn More
+- [docs/common/core-knowledge](docs/common/core-knowledge)
+  广告总览、策略、引擎、平台、数据等高层知识
+- [docs/common/datamap](docs/common/datamap)
+  数据表、口径、指标映射
+- [docs/common/de-knowledge](docs/common/de-knowledge)
+  偏指标和 ETL 的知识沉淀
+- [docs/common/skill-knowledge](docs/common/skill-knowledge)
+  偏 skill 使用和方法的知识沉淀
+- [docs/common/sub-kb](docs/common/sub-kb)
+  按主题拆分的子知识库
+- [docs/team/20.paid-ads-dpm/ads_knowledge_base](docs/team/20.paid-ads-dpm/ads_knowledge_base)
+  结构化的 Ads 业务/模块知识库
 
-- [使用手册索引](docs/team/00.paid-ads-dev/04.how-tos/README.zh-CN.md) — 所有 workspace 指南和教程
-- [技能创建与贡献](docs/team/00.paid-ads-dev/04.how-tos/09.skill-contribution/01.skill-contribution.md) — 创建和贡献自定义技能
-- [Skills README](skills/README.zh-CN.md) — 技能目录规范和命名标准
-- [CLAUDE.md](CLAUDE.md) — 项目指令和编码规范
+如果目标是快速建立 Shopee Ads 认知，建议顺序是：
+1. `docs/common/core-knowledge`
+2. `docs/team/20.paid-ads-dpm/ads_knowledge_base`
+3. `docs/common/datamap`
+
+### 3. 把它当作 AI-native workspace 的参考样本
+
+这份副本也保留了足够多的模块，可以看出一个 AI-native 团队是怎么组织 workspace 的。
+
+主要看这几类：
+
+- `skills/common/`
+  通用能力，比如知识问答、诊断、SQL/数据分析、实验分析、文档能力、知识库工具链
+- `skills/team/...`
+  保留了少量 team-level skill，作为真实工作流示例
+- `templates/`
+  各类固定模板，包括 `OKR`、`case study`、`rollout doc`、`report`、`memory`、`spec`
+- `docs/team/09.ads-dev-sharing-session/`
+  团队内部关于 AI-native 工作方式的分享材料
+
+建议优先看：
+- `skills/common/ads-knowledge-qa`
+- `skills/common/ads-biz-diagnose`
+- `skills/common/ads-diagnose`
+- `skills/common/ads-data-sql-executor`
+- `skills/team/04.product-algo/ads-okr-epic-review`
+- `skills/team/04.product-algo/ads-roi3-analysis`
+- `skills/team/01.ads-engineering/ads-db-viewer`
+- `skills/team/02.ads-platform/ads-platform-overview-doc-generate`
+
+### 4. 把它当作个人迁移底座
+
+这份副本也保留了你自己的个人沉淀：
+
+- [docs/personal/shijing.chen](docs/personal/shijing.chen)
+- [guides/personal/shijing.chen](guides/personal/shijing.chen)
+- `skills/personal/shijing.chen/`（如果有）
+
+这些目录适合长期沉淀：
+- 个人规则
+- 产品/分析 workflow
+- 和 AI 协作的固定方式
+- 未来在新公司继续复用的 starter 材料
+
+## 推荐阅读顺序
+
+如果目标是 **理解虾皮广告**：
+1. `docs/common/core-knowledge`
+2. `docs/team/20.paid-ads-dpm/ads_knowledge_base`
+3. `docs/common/datamap`
+
+如果目标是 **理解 AI-native 团队工作方式**：
+1. `docs/team/09.ads-dev-sharing-session`
+2. `skills/common`
+3. `skills/team`
+4. `templates`
+
+如果目标是 **为未来新公司搭自己的 workspace**：
+1. `docs/personal/shijing.chen`
+2. `guides/personal/shijing.chen`
+3. `skills/personal/shijing.chen`
+4. 再反过来挑 `skills/common` 和 `templates`
+
+## 这份副本保留了什么
+
+这份副本有意保留：
+- workspace 的整体架构
+- common ads knowledge
+- 一部分通用和 team skill
+- 一部分 AI-native 分享材料
+- `shijing.chen` 的个人沉淀
+
+这份副本有意去掉或不包含：
+- 大部分 `OKR / rollout / TD / 项目过程文档`
+- 日报、周报、DQC 等运营性材料
+- 其他人的 personal 目录
+- `projects/*` 下的内部代码仓
+- 本地凭证和被 `.gitignore` 排除的产物
+
+## 最值得复用的原则
+
+这份仓库真正值得带走的，不是某个具体文档，而是它的组织方式：
+
+- 先分 `common / team / personal`
+- 再分 `knowledge / workflow / skill / template / agent`
+- 只长期保留可复用资产，不把临时项目过程堆成主结构
+
+这套结构本身，才是以后去新公司最值得直接复用的东西。
